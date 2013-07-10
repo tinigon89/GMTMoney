@@ -17,5 +17,4 @@
 }
 + (DownloadManager*)sharedInstance;
 - (void)downloadImages:(NSArray *)itemList;
-- (BOOL)downloadPolicy;
 @end

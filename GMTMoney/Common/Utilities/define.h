@@ -8,11 +8,11 @@
 #import "Util.h"
 #import "NetworkActivityIndicator.h"
 
-#define kServer_Post_UserInfo @"http://www.cgapp.net.au/apis/user_info"
-#define kServer_Post_DeviceInfo @"http://www.cgapp.net.au/apis/push_info"
-#define kServer_Get_Policy @"http://www.cgapp.net.au/privacy-policy.pdf"
-#define kServer_Get_List @"http://www.cgapp.net.au/apis/getlist?type="
-//#define kServer_Get_DealList @"http://server.teamios.info/apis/deallist"
+#define kServer_Get_DailyRates @"http://www.gmtmoney.com.au/dr.aspx"
+//#define kServer_Post_DeviceInfo @"http://www.cgapp.net.au/apis/push_info"
+//#define kServer_Get_Policy @"http://www.cgapp.net.au/privacy-policy.pdf"
+//#define kServer_Get_List @"http://www.cgapp.net.au/apis/getlist?type="
+////#define kServer_Get_DealList @"http://server.teamios.info/apis/deallist"
 #define kServer_ImageURL @"http://www.cgapp.net.au/img/"
 
 #define mainAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -37,6 +37,8 @@
 #define PORTRAIT_KEYBOARD_HEIGHT 216
 #define LANDSCAPE_KEYBOARD_HEIGHT  162
 #endif
+#define kDailyRateInfo @"DailyRateInfo"
+
 #define kUserInfo @"UserInfo"
 #define kUserInfoRegist @"UserInfoRegist"
 #define kDeviceInfo @"DeviceInfo"

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
+{
+
+}
+@property (strong, nonatomic) IBOutlet UIView *taskbarView;
 
 @end

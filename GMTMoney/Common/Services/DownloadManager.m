@@ -88,29 +88,6 @@ static DownloadManager *sharedInstance;
     return NO;
 }
 
-- (BOOL)downloadPolicy
-{
-    ASIFormDataRequest * request;
-    NSURL *url = [NSURL URLWithString:kServer_Get_Policy];
-    request = [ASIHTTPRequest requestWithURL:url];
-    [request setRequestMethod:@"GET"];
-    [request startSynchronous];
-    
-    if (request.responseStatusCode == 200)
-    {
-        NSString *path = [[Util imageDirectoryPath] stringByAppendingFormat:@"/privacy-policy.pdf"];
-        if (request.responseData) {
-            NSError* error;
-            if ([request.responseData writeToFile:path options:NSDataWritingAtomic error:&error]) {
-                NSLog(@"Download sucessful");
-                return YES;
-            };
-            NSLog(@"write error %@", error);
-        }
-    }
-    NSLog(@"Download fail");
-    return NO;
-}
 
 - (void)sendNotification:(NSString *)name
 {

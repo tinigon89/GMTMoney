@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TaskbarView.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) TaskbarView *taskbarView;
+@property (strong, nonatomic) UINavigationController *navController;
++ (AppDelegate *)sharedInstance;
 @end

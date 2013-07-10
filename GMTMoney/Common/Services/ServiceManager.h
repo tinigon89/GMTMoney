@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ServiceManager : NSObject
-+ (void)postUserInfo;
-+ (BOOL)getListwithType:(int)type;
-+ (void)postDeviceInfo;
+
++ (BOOL)getDailyRates;
+
 @end

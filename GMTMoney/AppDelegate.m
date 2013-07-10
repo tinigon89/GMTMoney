@@ -7,12 +7,20 @@
 //
 
 #import "AppDelegate.h"
-
+static AppDelegate *sharedInstance = nil;
 @implementation AppDelegate
+@synthesize taskbarView,navController;
++ (AppDelegate *)sharedInstance
+{
+    return sharedInstance;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"TaskbarView" owner:nil options:nil];
+    self.taskbarView = [array objectAtIndex:0];
+    sharedInstance = self;
     return YES;
 }
 							
