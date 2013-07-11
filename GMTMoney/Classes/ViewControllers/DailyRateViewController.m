@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ServiceManager.h"
 #import "define.h"
+
 @interface DailyRateViewController ()
 
 @end
@@ -33,12 +34,14 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     BOOL isSuccess = [ServiceManager getDailyRates];
     if (isSuccess) {
         dailyRateList = [userDefault objectForKey:kDailyRateInfo];
     }
     [rateTableView reloadData];
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +69,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DailyRateCell"];
+    NSDictionary *dict = [dailyRateList objectAtIndex:indexPath.row];
+    UIImageView *imgView = (UIImageView*)[cell viewWithTag:1];
+    UILabel *currSym = (UILabel*)[cell viewWithTag:2];
+    UILabel *curText = (UILabel*)[cell viewWithTag:3];
+    UILabel *eRate = (UILabel*)[cell viewWithTag:4];
+    NSString *currency = [dict objectForKey:@"CurrSym"];
+    currSym.text = currency;
+    curText.text = [dict objectForKey:@"CurText"];
+    eRate.text = [NSString stringWithFormat:@"%.4f",[[dict objectForKey:@"ERate"] floatValue]];
+    NSString *imageName = [[currency substringToIndex:2] lowercaseString];
+    imageName = [NSString stringWithFormat:@"%@.png",imageName];
+    imgView.image = [UIImage imageNamed:imageName];
     return cell;
 }
 
+
+- (void)showProcess
+{
+    [SVProgressHUD showWithStatus:@"Loading"];
+}
 @end

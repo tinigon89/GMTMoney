@@ -12,8 +12,10 @@
 {
     IBOutlet UIWebView *webview;
     BOOL isFinish;
+
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
+
 
 @end

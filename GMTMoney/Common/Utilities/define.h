@@ -7,7 +7,7 @@
 //
 #import "Util.h"
 #import "NetworkActivityIndicator.h"
-
+#import "SVProgressHUD.h"
 #define kServer_Get_DailyRates @"http://www.gmtmoney.com.au/dr.aspx"
 //#define kServer_Post_DeviceInfo @"http://www.cgapp.net.au/apis/push_info"
 //#define kServer_Get_Policy @"http://www.cgapp.net.au/privacy-policy.pdf"

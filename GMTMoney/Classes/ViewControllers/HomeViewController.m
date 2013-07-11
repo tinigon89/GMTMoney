@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "AppDelegate.h"
-
+#import <Social/Social.h>
 @interface HomeViewController ()
 
 @end
@@ -36,4 +36,14 @@
 
 
 
+- (IBAction)facebook_click:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *facebook = [SLComposeViewController
+                                             composeViewControllerForServiceType:SLServiceTypeFacebook];
+        NSString *postText = [NSString stringWithFormat:@"I'm using GMTMoney app. It's great app. \n\nShared Using GMTMoney App"];
+        [facebook setInitialText:postText];
+        [self presentViewController:facebook animated:YES completion:nil];
+    }
+}
 @end

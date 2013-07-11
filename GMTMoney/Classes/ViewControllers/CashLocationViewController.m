@@ -27,6 +27,7 @@
     NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl];
     webview.delegate = self;
     [webview loadRequest:request];
+    
 }
 
 
@@ -61,4 +62,5 @@
 - (IBAction)home_click:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 @end

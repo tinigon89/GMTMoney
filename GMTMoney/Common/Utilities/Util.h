@@ -4,7 +4,6 @@
 
 
 #import <Foundation/Foundation.h>
-#import "define.h"
 @interface Util : NSObject
 + (NSString *)GetUUID;
 + (NSString*)getBundle;

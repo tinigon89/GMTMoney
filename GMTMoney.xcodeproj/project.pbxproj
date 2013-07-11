@@ -25,7 +25,7 @@
 		852004CE178DB58B00F324F1 /* _CIS.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B2178DB58900F324F1 /* _CIS.png */; };
 		852004CF178DB58B00F324F1 /* _Commonwealth.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B3178DB58900F324F1 /* _Commonwealth.png */; };
 		852004D0178DB58B00F324F1 /* _England.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B4178DB58900F324F1 /* _England.png */; };
-		852004D1178DB58B00F324F1 /* _European-Union.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B5178DB58900F324F1 /* _European-Union.png */; };
+		852004D1178DB58B00F324F1 /* eu.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B5178DB58900F324F1 /* eu.png */; };
 		852004D2178DB58B00F324F1 /* _FAO.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B6178DB58900F324F1 /* _FAO.png */; };
 		852004D3178DB58B00F324F1 /* _Galicia.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B7178DB58900F324F1 /* _Galicia.png */; };
 		852004D4178DB58B00F324F1 /* _IAEA.png in Resources */ = {isa = PBXBuildFile; fileRef = 852003B8178DB58900F324F1 /* _IAEA.png */; };
@@ -403,6 +403,11 @@
 		855FAC731785835D00CAABCB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC581785835D00CAABCB /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		855FAC741785835D00CAABCB /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC5A1785835D00CAABCB /* Util.m */; };
 		855FAC771785839800CAABCB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC761785839800CAABCB /* HomeViewController.m */; };
+		85685F5C178E48980012BC71 /* xp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85685F5B178E48980012BC71 /* xp.png */; };
+		85685F63178EEC210012BC71 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85685F62178EEC210012BC71 /* MoreViewController.m */; };
+		85685F65178EF45E0012BC71 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85685F64178EF45E0012BC71 /* Social.framework */; };
+		85685F68178EF6DB0012BC71 /* CalculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85685F67178EF6DB0012BC71 /* CalculateViewController.m */; };
+		85685F6B178EFDDA0012BC71 /* WEPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85685F6A178EFA670012BC71 /* WEPopoverContentViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8569AA071785850A0080FC6E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8569AA061785850A0080FC6E /* CFNetwork.framework */; };
 		8569AA09178585190080FC6E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8569AA08178585190080FC6E /* libz.dylib */; };
 		8569AA0B178585220080FC6E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8569AA0A178585220080FC6E /* MobileCoreServices.framework */; };
@@ -439,7 +444,7 @@
 		852003B2178DB58900F324F1 /* _CIS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _CIS.png; sourceTree = "<group>"; };
 		852003B3178DB58900F324F1 /* _Commonwealth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _Commonwealth.png; sourceTree = "<group>"; };
 		852003B4178DB58900F324F1 /* _England.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _England.png; sourceTree = "<group>"; };
-		852003B5178DB58900F324F1 /* _European-Union.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_European-Union.png"; sourceTree = "<group>"; };
+		852003B5178DB58900F324F1 /* eu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eu.png; sourceTree = "<group>"; };
 		852003B6178DB58900F324F1 /* _FAO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _FAO.png; sourceTree = "<group>"; };
 		852003B7178DB58900F324F1 /* _Galicia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _Galicia.png; sourceTree = "<group>"; };
 		852003B8178DB58900F324F1 /* _IAEA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _IAEA.png; sourceTree = "<group>"; };
@@ -852,6 +857,14 @@
 		855FAC5A1785835D00CAABCB /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		855FAC751785839800CAABCB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		855FAC761785839800CAABCB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		85685F5B178E48980012BC71 /* xp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xp.png; sourceTree = "<group>"; };
+		85685F61178EEC210012BC71 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		85685F62178EEC210012BC71 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		85685F64178EF45E0012BC71 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		85685F66178EF6DB0012BC71 /* CalculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateViewController.h; sourceTree = "<group>"; };
+		85685F67178EF6DB0012BC71 /* CalculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateViewController.m; sourceTree = "<group>"; };
+		85685F69178EFA670012BC71 /* WEPopoverContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WEPopoverContentViewController.h; sourceTree = "<group>"; };
+		85685F6A178EFA670012BC71 /* WEPopoverContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WEPopoverContentViewController.m; sourceTree = "<group>"; };
 		8569AA061785850A0080FC6E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8569AA08178585190080FC6E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8569AA0A178585220080FC6E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -868,6 +881,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85685F65178EF45E0012BC71 /* Social.framework in Frameworks */,
 				852003A9178D51E800F324F1 /* MessageUI.framework in Frameworks */,
 				8569AA111785857E0080FC6E /* SystemConfiguration.framework in Frameworks */,
 				8569AA0F1785856B0080FC6E /* CoreData.framework in Frameworks */,
@@ -887,6 +901,8 @@
 		85200395178D1F4200F324F1 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				85685F69178EFA670012BC71 /* WEPopoverContentViewController.h */,
+				85685F6A178EFA670012BC71 /* WEPopoverContentViewController.m */,
 				85200396178D1F4200F324F1 /* UIBarButtonItem+WEPopover.h */,
 				85200397178D1F4200F324F1 /* UIBarButtonItem+WEPopover.m */,
 				85200398178D1F4200F324F1 /* WEPopoverContainerView.h */,
@@ -903,6 +919,7 @@
 		852003AA178DB58800F324F1 /* flags */ = {
 			isa = PBXGroup;
 			children = (
+				85685F5B178E48980012BC71 /* xp.png */,
 				852003AB178DB58900F324F1 /* _African-Union.png */,
 				852003AC178DB58900F324F1 /* _Alderney.png */,
 				852003AD178DB58900F324F1 /* _Arab-League.png */,
@@ -913,7 +930,7 @@
 				852003B2178DB58900F324F1 /* _CIS.png */,
 				852003B3178DB58900F324F1 /* _Commonwealth.png */,
 				852003B4178DB58900F324F1 /* _England.png */,
-				852003B5178DB58900F324F1 /* _European-Union.png */,
+				852003B5178DB58900F324F1 /* eu.png */,
 				852003B6178DB58900F324F1 /* _FAO.png */,
 				852003B7178DB58900F324F1 /* _Galicia.png */,
 				852003B8178DB58900F324F1 /* _IAEA.png */,
@@ -1384,6 +1401,7 @@
 		855FABED178582BF00CAABCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85685F64178EF45E0012BC71 /* Social.framework */,
 				852003A8178D51E800F324F1 /* MessageUI.framework */,
 				8569AA101785857E0080FC6E /* SystemConfiguration.framework */,
 				8569AA0E1785856B0080FC6E /* CoreData.framework */,
@@ -1446,12 +1464,16 @@
 		855FAC161785835D00CAABCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				85685F66178EF6DB0012BC71 /* CalculateViewController.h */,
+				85685F67178EF6DB0012BC71 /* CalculateViewController.m */,
 				852003A5178D4F5A00F324F1 /* DailyRateViewController.h */,
 				852003A6178D4F5A00F324F1 /* DailyRateViewController.m */,
 				85200392178D197400F324F1 /* CashLocationViewController.h */,
 				85200393178D197400F324F1 /* CashLocationViewController.m */,
 				855FAC751785839800CAABCB /* HomeViewController.h */,
 				855FAC761785839800CAABCB /* HomeViewController.m */,
+				85685F61178EEC210012BC71 /* MoreViewController.h */,
+				85685F62178EEC210012BC71 /* MoreViewController.m */,
 				85200395178D1F4200F324F1 /* Popover */,
 			);
 			path = ViewControllers;
@@ -1761,7 +1783,7 @@
 				852004CE178DB58B00F324F1 /* _CIS.png in Resources */,
 				852004CF178DB58B00F324F1 /* _Commonwealth.png in Resources */,
 				852004D0178DB58B00F324F1 /* _England.png in Resources */,
-				852004D1178DB58B00F324F1 /* _European-Union.png in Resources */,
+				852004D1178DB58B00F324F1 /* eu.png in Resources */,
 				852004D2178DB58B00F324F1 /* _FAO.png in Resources */,
 				852004D3178DB58B00F324F1 /* _Galicia.png in Resources */,
 				852004D4178DB58B00F324F1 /* _IAEA.png in Resources */,
@@ -2035,6 +2057,7 @@
 				852005E0178DB58B00F324F1 /* za.png in Resources */,
 				852005E1178DB58B00F324F1 /* zm.png in Resources */,
 				852005E2178DB58B00F324F1 /* zw.png in Resources */,
+				85685F5C178E48980012BC71 /* xp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2045,6 +2068,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85685F6B178EFDDA0012BC71 /* WEPopoverContentViewController.m in Sources */,
 				855FABFB178582BF00CAABCB /* main.m in Sources */,
 				855FABFF178582BF00CAABCB /* AppDelegate.m in Sources */,
 				855FAC5B1785835D00CAABCB /* CGItem+Custom.m in Sources */,
@@ -2080,6 +2104,8 @@
 				852003A1178D1F4200F324F1 /* WEPopoverController.m in Sources */,
 				852003A2178D1F4200F324F1 /* WETouchableView.m in Sources */,
 				852003A7178D4F5A00F324F1 /* DailyRateViewController.m in Sources */,
+				85685F63178EEC210012BC71 /* MoreViewController.m in Sources */,
+				85685F68178EF6DB0012BC71 /* CalculateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
