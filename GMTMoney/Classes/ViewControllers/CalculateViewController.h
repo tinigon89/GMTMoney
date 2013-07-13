@@ -25,4 +25,5 @@
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
 - (IBAction)to_Click:(id)sender;
+- (IBAction)sendmoney_Click:(id)sender;
 @end

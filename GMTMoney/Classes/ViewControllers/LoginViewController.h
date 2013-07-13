@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController<UIAlertViewDelegate>
+@interface LoginViewController : UIViewController<UIWebViewDelegate>
 {
-    BOOL isViewDidLoad;
-    IBOutlet UIButton *loginButton;
+
+    IBOutlet UITextField *userIDTF;
+    IBOutlet UITextField *passwordTF;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
-- (IBAction)facebook_click:(id)sender;
+- (IBAction)home_click:(id)sender;
 - (IBAction)login_Click:(id)sender;
-- (IBAction)account_Click:(id)sender;
+- (IBAction)register_Click:(id)sender;
+
+- (IBAction)forgot_Click:(id)sender;
 
 @end

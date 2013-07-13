@@ -9,6 +9,8 @@
 #import "CalculateViewController.h"
 #import "AppDelegate.h"
 #import "define.h"
+#import "LoginViewController.h"
+#import "AccountViewController.h"
 @interface CalculateViewController ()
 
 @end
@@ -91,6 +93,19 @@
 		[popoverController dismissPopoverAnimated:YES];
 		popoverController = nil;
 	}
+}
+
+- (IBAction)sendmoney_Click:(id)sender
+{
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo]) {
+        LoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else
+    {
+        AccountViewController *accountView = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
+        [self.navigationController pushViewController:accountView animated:YES];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

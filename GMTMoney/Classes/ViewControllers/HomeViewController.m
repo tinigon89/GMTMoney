@@ -11,6 +11,8 @@
 #import <Social/Social.h>
 #import "ServiceManager.h"
 #import "define.h"
+#import "LoginViewController.h"
+#import "AccountViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -28,6 +30,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo])
+    {
+        [loginButton setImage:[UIImage imageNamed:@"btn_login_nav.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [loginButton setImage:[UIImage imageNamed:@"btn_nav_logout.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -65,4 +75,38 @@
         [self presentViewController:facebook animated:YES completion:nil];
     }
 }
+
+- (IBAction)login_Click:(id)sender {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo]) {
+        LoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to log out?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        [alertView show];
+    }
+}
+
+- (IBAction)account_Click:(id)sender {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo]) {
+        LoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else
+    {
+        AccountViewController *accountView = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
+        [self.navigationController pushViewController:accountView animated:YES];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserInfo];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [loginButton setImage:[UIImage imageNamed:@"btn_login_nav.png"] forState:UIControlStateNormal];
+    }
+}
+
 @end

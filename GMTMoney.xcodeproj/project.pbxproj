@@ -422,6 +422,12 @@
 		8569AA111785857E0080FC6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8569AA101785857E0080FC6E /* SystemConfiguration.framework */; };
 		85734AB4178D0AC10094D84A /* TaskbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85734AB3178D0AC10094D84A /* TaskbarView.m */; };
 		85734AB6178D0ADF0094D84A /* TaskbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85734AB5178D0ADF0094D84A /* TaskbarView.xib */; };
+		857847C71790FC20008EADAD /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847C61790FC20008EADAD /* sort.png */; };
+		857847CF1790FC4C008EADAD /* menu_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847CE1790FC4C008EADAD /* menu_refresh.png */; };
+		857847D1179111C8008EADAD /* sendMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847D0179111C8008EADAD /* sendMoney.png */; };
+		857847D41791130D008EADAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D31791130D008EADAD /* LoginViewController.m */; };
+		857847D71791821C008EADAD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D61791821C008EADAD /* AccountViewController.m */; };
+		85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -892,6 +898,14 @@
 		85734AB2178D0AC10094D84A /* TaskbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskbarView.h; sourceTree = "<group>"; };
 		85734AB3178D0AC10094D84A /* TaskbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskbarView.m; sourceTree = "<group>"; };
 		85734AB5178D0ADF0094D84A /* TaskbarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskbarView.xib; sourceTree = "<group>"; };
+		857847C61790FC20008EADAD /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
+		857847CE1790FC4C008EADAD /* menu_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_refresh.png; sourceTree = "<group>"; };
+		857847D0179111C8008EADAD /* sendMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendMoney.png; sourceTree = "<group>"; };
+		857847D21791130C008EADAD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		857847D31791130D008EADAD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		857847D51791821C008EADAD /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		857847D61791821C008EADAD /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_transaction_history.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1304,6 +1318,7 @@
 			children = (
 				85547300178685D1004768A5 /* btn_pending.png */,
 				85547301178685D1004768A5 /* btn_rate_alerts.png */,
+				85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */,
 				85547302178685D1004768A5 /* btn_sendmoney.png */,
 				85547303178685D1004768A5 /* btn_track.png */,
 				85547304178685D1004768A5 /* btn_transaction.png */,
@@ -1491,6 +1506,10 @@
 		855FAC161785835D00CAABCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				857847D51791821C008EADAD /* AccountViewController.h */,
+				857847D61791821C008EADAD /* AccountViewController.m */,
+				857847D21791130C008EADAD /* LoginViewController.h */,
+				857847D31791130D008EADAD /* LoginViewController.m */,
 				85505E8C1790116A0024FBAD /* RateAlertViewController.h */,
 				85505E8D1790116B0024FBAD /* RateAlertViewController.m */,
 				85505E8917900B3D0024FBAD /* FeedDetailViewController.h */,
@@ -1548,6 +1567,9 @@
 				855472E1178685D1004768A5 /* bg_nav.png */,
 				855472E2178685D1004768A5 /* bg_popup_bank_detail.png */,
 				855472E3178685D1004768A5 /* bg_taskbar.png */,
+				857847C61790FC20008EADAD /* sort.png */,
+				857847CE1790FC4C008EADAD /* menu_refresh.png */,
+				857847D0179111C8008EADAD /* sendMoney.png */,
 				855472E4178685D1004768A5 /* button task bar */,
 				855472E9178685D1004768A5 /* contact */,
 				855472EC178685D1004768A5 /* Daily rates */,
@@ -2096,6 +2118,10 @@
 				85685F5C178E48980012BC71 /* xp.png in Resources */,
 				85505E9117901ECE0024FBAD /* check.png in Resources */,
 				85505E9217901ECE0024FBAD /* uncheck.png in Resources */,
+				857847C71790FC20008EADAD /* sort.png in Resources */,
+				857847CF1790FC4C008EADAD /* menu_refresh.png in Resources */,
+				857847D1179111C8008EADAD /* sendMoney.png in Resources */,
+				85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2150,6 +2176,8 @@
 				85505E88178FFC800024FBAD /* FeedViewController.m in Sources */,
 				85505E8B17900B3E0024FBAD /* FeedDetailViewController.m in Sources */,
 				85505E8E1790116B0024FBAD /* RateAlertViewController.m in Sources */,
+				857847D41791130D008EADAD /* LoginViewController.m in Sources */,
+				857847D71791821C008EADAD /* AccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

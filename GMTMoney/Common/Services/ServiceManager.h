@@ -13,4 +13,6 @@
 + (BOOL)getDailyRates;
 
 + (BOOL)getFeedWithURL:(NSString *)url;
+
++ (BOOL)checkUser:(NSString *)user pass:(NSString *)pass;
 @end

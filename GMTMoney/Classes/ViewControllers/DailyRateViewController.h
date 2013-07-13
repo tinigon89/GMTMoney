@@ -11,9 +11,14 @@
 @interface DailyRateViewController : UIViewController<UIWebViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     IBOutlet UITableView *rateTableView;
-    NSArray *dailyRateList;
+    NSMutableArray *dailyRateList;
+    IBOutlet UILabel *lastestLB;
+    BOOL isShowCashRate;
+    
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
+- (IBAction)refresh_Click:(id)sender;
+- (IBAction)sort:(id)sender;
 
 @end
