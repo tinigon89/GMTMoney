@@ -14,6 +14,7 @@
 #import "NSString+SBJSON.h"
 #import <AdSupport/AdSupport.h>
 #import "CGItem+Custom.h"
+#import "XMLReader.h"
 @implementation ServiceManager
 
 + (BOOL)getDailyRates
@@ -42,5 +43,41 @@
         }
     }
     return NO;;
+}
+
++ (BOOL)getFeedWithURL:(NSString *)feedurl
+{
+    
+    ASIFormDataRequest * request;
+    
+    NSURL *url = [NSURL URLWithString:feedurl];
+    request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous];
+    if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        NSString *responseStringOrigin = [request.responseString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        responseStringOrigin = [responseStringOrigin stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+        NSDictionary *feedDict = [XMLReader dictionaryForXMLString:responseStringOrigin error:nil];
+        if (feedDict && [feedDict objectForKey:@"rss"]) {
+            
+            [[NSUserDefaults standardUserDefaults] setObject:[[feedDict objectForKey:@"rss"] objectForKey:@"channel"] forKey:feedurl];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+
+        }
+        // NSArray *categoryList = [responsedict objectForKey:@"category"];
+//        if (dailyRateList && [dailyRateList count] > 0) {
+//            NSSortDescriptor *sortDescriptor;
+//            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"CurrSym"
+//                                                         ascending:YES];
+//            NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+//            NSArray *sortedArray;
+//            sortedArray = [dailyRateList sortedArrayUsingDescriptors:sortDescriptors];
+//            return YES;
+//        }
+    }
+    return NO;;
+    
 }
 @end

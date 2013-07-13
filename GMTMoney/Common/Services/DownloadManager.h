@@ -14,6 +14,7 @@
     BOOL isContinueDownload;
     NSArray *downloadList;
     NSArray *currentDownloadList;
+    
 }
 + (DownloadManager*)sharedInstance;
 - (void)downloadImages:(NSArray *)itemList;

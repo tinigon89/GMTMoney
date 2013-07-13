@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "AppDelegate.h"
 #import <Social/Social.h>
+#import "ServiceManager.h"
+#import "define.h"
 @interface HomeViewController ()
 
 @end
@@ -26,6 +28,23 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!isViewDidLoad) {
+        [self performSelectorInBackground:@selector(showProcess) withObject:nil];
+        [ServiceManager getDailyRates];
+        
+        [SVProgressHUD dismiss];
+        isViewDidLoad = YES;
+    }
+    
+}
+
+- (void)showProcess
+{
+    [SVProgressHUD showWithStatus:@"Loading"];
 }
 
 - (void)didReceiveMemoryWarning

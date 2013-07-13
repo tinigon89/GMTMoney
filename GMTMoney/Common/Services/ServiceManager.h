@@ -12,4 +12,5 @@
 
 + (BOOL)getDailyRates;
 
++ (BOOL)getFeedWithURL:(NSString *)url;
 @end
