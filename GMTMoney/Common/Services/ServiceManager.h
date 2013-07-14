@@ -15,4 +15,5 @@
 + (BOOL)getFeedWithURL:(NSString *)url;
 
 + (BOOL)checkUser:(NSString *)user pass:(NSString *)pass;
++ (BOOL)fogotpass:(NSString *)email;
 @end

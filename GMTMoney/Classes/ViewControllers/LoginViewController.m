@@ -11,6 +11,8 @@
 #import "define.h"
 #import "ServiceManager.h"
 #import "AccountViewController.h"
+#import "RegisterViewController.h"
+#import "ForgotViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -72,9 +74,13 @@
 }
 
 - (IBAction)register_Click:(id)sender {
+    RegisterViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)forgot_Click:(id)sender {
+    ForgotViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgotViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

@@ -48,7 +48,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bg_taskbar.png</string>
+							<string key="NSResourceName">bg_nav.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="303484106">
@@ -792,7 +792,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="bg_taskbar.png">{640, 88}</string>
+			<string key="bg_nav.png">{640, 88}</string>
 			<string key="btn_banking_detail.png">{126, 70}</string>
 			<string key="btn_contact_us.png">{95, 68}</string>
 			<string key="btn_more.png">{68, 54}</string>

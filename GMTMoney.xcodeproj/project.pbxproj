@@ -299,6 +299,11 @@
 		852005E0178DB58B00F324F1 /* za.png in Resources */ = {isa = PBXBuildFile; fileRef = 852004C4178DB58B00F324F1 /* za.png */; };
 		852005E1178DB58B00F324F1 /* zm.png in Resources */ = {isa = PBXBuildFile; fileRef = 852004C5178DB58B00F324F1 /* zm.png */; };
 		852005E2178DB58B00F324F1 /* zw.png in Resources */ = {isa = PBXBuildFile; fileRef = 852004C6178DB58B00F324F1 /* zw.png */; };
+		85410742179276BB0079BEF8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85410741179276BB0079BEF8 /* RegisterViewController.m */; };
+		8541074517927C0E0079BEF8 /* TrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8541074417927C0E0079BEF8 /* TrashViewController.m */; };
+		85410747179283D80079BEF8 /* btn_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 85410746179283D80079BEF8 /* btn_calendar.png */; };
+		8541074A17929D4C0079BEF8 /* ForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8541074917929D4C0079BEF8 /* ForgotViewController.m */; };
+		8541074D1792AF9B0079BEF8 /* NewStep1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8541074C1792AF9B0079BEF8 /* NewStep1ViewController.m */; };
 		85505E7E178FB9DF0024FBAD /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85505E7D178FB9DF0024FBAD /* SMSViewController.m */; };
 		85505E81178FBFA30024FBAD /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85505E80178FBFA30024FBAD /* NewsViewController.m */; };
 		85505E85178FC1050024FBAD /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 85505E84178FC1050024FBAD /* XMLReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -730,6 +735,15 @@
 		852004C4178DB58B00F324F1 /* za.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = za.png; sourceTree = "<group>"; };
 		852004C5178DB58B00F324F1 /* zm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zm.png; sourceTree = "<group>"; };
 		852004C6178DB58B00F324F1 /* zw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zw.png; sourceTree = "<group>"; };
+		85410740179276BB0079BEF8 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		85410741179276BB0079BEF8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		8541074317927C0E0079BEF8 /* TrashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashViewController.h; sourceTree = "<group>"; };
+		8541074417927C0E0079BEF8 /* TrashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashViewController.m; sourceTree = "<group>"; };
+		85410746179283D80079BEF8 /* btn_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_calendar.png; sourceTree = "<group>"; };
+		8541074817929D4B0079BEF8 /* ForgotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotViewController.h; sourceTree = "<group>"; };
+		8541074917929D4C0079BEF8 /* ForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotViewController.m; sourceTree = "<group>"; };
+		8541074B1792AF9A0079BEF8 /* NewStep1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep1ViewController.h; sourceTree = "<group>"; };
+		8541074C1792AF9B0079BEF8 /* NewStep1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep1ViewController.m; sourceTree = "<group>"; };
 		85505E7C178FB9DF0024FBAD /* SMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
 		85505E7D178FB9DF0024FBAD /* SMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
 		85505E7F178FBFA30024FBAD /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -1506,6 +1520,14 @@
 		855FAC161785835D00CAABCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8541074B1792AF9A0079BEF8 /* NewStep1ViewController.h */,
+				8541074C1792AF9B0079BEF8 /* NewStep1ViewController.m */,
+				8541074817929D4B0079BEF8 /* ForgotViewController.h */,
+				8541074917929D4C0079BEF8 /* ForgotViewController.m */,
+				8541074317927C0E0079BEF8 /* TrashViewController.h */,
+				8541074417927C0E0079BEF8 /* TrashViewController.m */,
+				85410740179276BB0079BEF8 /* RegisterViewController.h */,
+				85410741179276BB0079BEF8 /* RegisterViewController.m */,
 				857847D51791821C008EADAD /* AccountViewController.h */,
 				857847D61791821C008EADAD /* AccountViewController.m */,
 				857847D21791130C008EADAD /* LoginViewController.h */,
@@ -1570,6 +1592,7 @@
 				857847C61790FC20008EADAD /* sort.png */,
 				857847CE1790FC4C008EADAD /* menu_refresh.png */,
 				857847D0179111C8008EADAD /* sendMoney.png */,
+				85410746179283D80079BEF8 /* btn_calendar.png */,
 				855472E4178685D1004768A5 /* button task bar */,
 				855472E9178685D1004768A5 /* contact */,
 				855472EC178685D1004768A5 /* Daily rates */,
@@ -2122,6 +2145,7 @@
 				857847CF1790FC4C008EADAD /* menu_refresh.png in Resources */,
 				857847D1179111C8008EADAD /* sendMoney.png in Resources */,
 				85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */,
+				85410747179283D80079BEF8 /* btn_calendar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2178,6 +2202,10 @@
 				85505E8E1790116B0024FBAD /* RateAlertViewController.m in Sources */,
 				857847D41791130D008EADAD /* LoginViewController.m in Sources */,
 				857847D71791821C008EADAD /* AccountViewController.m in Sources */,
+				85410742179276BB0079BEF8 /* RegisterViewController.m in Sources */,
+				8541074517927C0E0079BEF8 /* TrashViewController.m in Sources */,
+				8541074A17929D4C0079BEF8 /* ForgotViewController.m in Sources */,
+				8541074D1792AF9B0079BEF8 /* NewStep1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 #import "SVProgressHUD.h"
 #define kServer_Get_DailyRates @"http://www.gmtmoney.com.au/dr.aspx"
 #define kServer_Get_Login @"http://www.gmtmoney.com.au/ilogin.aspx?uname=%@&upass=%@"
-
+#define kServer_Get_Forgot @"http://www.gmtmoney.com.au/iforget.aspx?email=%@"
 #define kServer_ImageURL @"http://www.cgapp.net.au/img/"
 
 #define mainAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])

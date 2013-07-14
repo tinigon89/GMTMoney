@@ -114,4 +114,29 @@
     return NO;
     
 }
+
++ (BOOL)fogotpass:(NSString *)email
+{
+    
+    ASIFormDataRequest * request;
+    NSString *urlString = [NSString stringWithFormat:kServer_Get_Forgot,email];
+    NSURL *url = [NSURL URLWithString:urlString];
+    request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous];
+    if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        if ([request.responseString length] == 0) {
+            return NO;
+        }
+        if ([request.responseString isEqualToString:@"OK"]) {
+            return YES;
+        }
+        [Util showAlertWithString:request.responseString];
+        return NO;
+    }
+    return NO;
+    
+}
 @end
