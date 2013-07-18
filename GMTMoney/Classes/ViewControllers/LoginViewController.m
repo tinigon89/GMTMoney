@@ -63,6 +63,9 @@
     }
     
     if ([ServiceManager checkUser:userIDTF.text pass:passwordTF.text]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kTransHistoryInfo];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kTransStatusInfo];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         AccountViewController *accountView = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
         [self.navigationController pushViewController:accountView animated:YES];
     }

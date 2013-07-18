@@ -12,10 +12,13 @@
 {
     IBOutlet UIWebView *webview;
     BOOL isFinish;
+    BOOL viewDidLoad;
 
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
 
+- (IBAction)status_Click:(id)sender;
+- (IBAction)history_Click:(id)sender;
 
 @end

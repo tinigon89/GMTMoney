@@ -45,7 +45,7 @@
     if (!isViewDidLoad) {
         [self performSelectorInBackground:@selector(showProcess) withObject:nil];
         [ServiceManager getDailyRates];
-        
+        [ServiceManager getCountryList];
         [SVProgressHUD dismiss];
         isViewDidLoad = YES;
     }

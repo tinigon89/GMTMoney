@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85099CC4179697D50026FB18 /* NewStep2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85099CC3179697D40026FB18 /* NewStep2ViewController.m */; };
+		85099CC61796A73D0026FB18 /* check2.png in Resources */ = {isa = PBXBuildFile; fileRef = 85099CC51796A73C0026FB18 /* check2.png */; };
+		85099CC81796A9E90026FB18 /* btn_nav_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 85099CC71796A9E80026FB18 /* btn_nav_new.png */; };
+		85099CCB1796AA970026FB18 /* NewSenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85099CCA1796AA960026FB18 /* NewSenderViewController.m */; };
+		85099CCE1796B1A70026FB18 /* NewStep3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85099CCD1796B1A60026FB18 /* NewStep3ViewController.m */; };
 		85200394178D197400F324F1 /* CashLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85200393178D197400F324F1 /* CashLocationViewController.m */; };
 		8520039F178D1F4200F324F1 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 85200397178D1F4200F324F1 /* UIBarButtonItem+WEPopover.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		852003A0178D1F4200F324F1 /* WEPopoverContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85200399178D1F4200F324F1 /* WEPopoverContainerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -432,10 +437,20 @@
 		857847D1179111C8008EADAD /* sendMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847D0179111C8008EADAD /* sendMoney.png */; };
 		857847D41791130D008EADAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D31791130D008EADAD /* LoginViewController.m */; };
 		857847D71791821C008EADAD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D61791821C008EADAD /* AccountViewController.m */; };
+		85ABBBEF1795861D0021BFCB /* find_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ABBBEE1795861D0021BFCB /* find_trans.png */; };
+		85B6B1231793B0B0004A5003 /* TranStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6B1221793B0B0004A5003 /* TranStatusViewController.m */; };
 		85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85099CC2179697D40026FB18 /* NewStep2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep2ViewController.h; sourceTree = "<group>"; };
+		85099CC3179697D40026FB18 /* NewStep2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep2ViewController.m; sourceTree = "<group>"; };
+		85099CC51796A73C0026FB18 /* check2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check2.png; sourceTree = "<group>"; };
+		85099CC71796A9E80026FB18 /* btn_nav_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_nav_new.png; sourceTree = "<group>"; };
+		85099CC91796AA960026FB18 /* NewSenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSenderViewController.h; sourceTree = "<group>"; };
+		85099CCA1796AA960026FB18 /* NewSenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSenderViewController.m; sourceTree = "<group>"; };
+		85099CCC1796B1A60026FB18 /* NewStep3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep3ViewController.h; sourceTree = "<group>"; };
+		85099CCD1796B1A60026FB18 /* NewStep3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep3ViewController.m; sourceTree = "<group>"; };
 		85200392178D197400F324F1 /* CashLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashLocationViewController.h; sourceTree = "<group>"; };
 		85200393178D197400F324F1 /* CashLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashLocationViewController.m; sourceTree = "<group>"; };
 		85200396178D1F4200F324F1 /* UIBarButtonItem+WEPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WEPopover.h"; sourceTree = "<group>"; };
@@ -919,6 +934,9 @@
 		857847D31791130D008EADAD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		857847D51791821C008EADAD /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		857847D61791821C008EADAD /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		85ABBBEE1795861D0021BFCB /* find_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_trans.png; sourceTree = "<group>"; };
+		85B6B1211793B0B0004A5003 /* TranStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranStatusViewController.h; sourceTree = "<group>"; };
+		85B6B1221793B0B0004A5003 /* TranStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranStatusViewController.m; sourceTree = "<group>"; };
 		85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_transaction_history.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1330,6 +1348,7 @@
 		855472FF178685D1004768A5 /* login success */ = {
 			isa = PBXGroup;
 			children = (
+				85ABBBEE1795861D0021BFCB /* find_trans.png */,
 				85547300178685D1004768A5 /* btn_pending.png */,
 				85547301178685D1004768A5 /* btn_rate_alerts.png */,
 				85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */,
@@ -1520,6 +1539,14 @@
 		855FAC161785835D00CAABCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				85099CCC1796B1A60026FB18 /* NewStep3ViewController.h */,
+				85099CCD1796B1A60026FB18 /* NewStep3ViewController.m */,
+				85099CC91796AA960026FB18 /* NewSenderViewController.h */,
+				85099CCA1796AA960026FB18 /* NewSenderViewController.m */,
+				85099CC2179697D40026FB18 /* NewStep2ViewController.h */,
+				85099CC3179697D40026FB18 /* NewStep2ViewController.m */,
+				85B6B1211793B0B0004A5003 /* TranStatusViewController.h */,
+				85B6B1221793B0B0004A5003 /* TranStatusViewController.m */,
 				8541074B1792AF9A0079BEF8 /* NewStep1ViewController.h */,
 				8541074C1792AF9B0079BEF8 /* NewStep1ViewController.m */,
 				8541074817929D4B0079BEF8 /* ForgotViewController.h */,
@@ -1585,8 +1612,10 @@
 				852003AA178DB58800F324F1 /* flags */,
 				855472DE178685D1004768A5 /* banner.png */,
 				855472DF178685D1004768A5 /* bg_banner.png */,
+				85099CC51796A73C0026FB18 /* check2.png */,
 				855472E0178685D1004768A5 /* bg_banner2.png */,
 				855472E1178685D1004768A5 /* bg_nav.png */,
+				85099CC71796A9E80026FB18 /* btn_nav_new.png */,
 				855472E2178685D1004768A5 /* bg_popup_bank_detail.png */,
 				855472E3178685D1004768A5 /* bg_taskbar.png */,
 				857847C61790FC20008EADAD /* sort.png */,
@@ -2146,6 +2175,9 @@
 				857847D1179111C8008EADAD /* sendMoney.png in Resources */,
 				85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */,
 				85410747179283D80079BEF8 /* btn_calendar.png in Resources */,
+				85ABBBEF1795861D0021BFCB /* find_trans.png in Resources */,
+				85099CC61796A73D0026FB18 /* check2.png in Resources */,
+				85099CC81796A9E90026FB18 /* btn_nav_new.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2206,6 +2238,10 @@
 				8541074517927C0E0079BEF8 /* TrashViewController.m in Sources */,
 				8541074A17929D4C0079BEF8 /* ForgotViewController.m in Sources */,
 				8541074D1792AF9B0079BEF8 /* NewStep1ViewController.m in Sources */,
+				85B6B1231793B0B0004A5003 /* TranStatusViewController.m in Sources */,
+				85099CC4179697D50026FB18 /* NewStep2ViewController.m in Sources */,
+				85099CCB1796AA970026FB18 /* NewSenderViewController.m in Sources */,
+				85099CCE1796B1A70026FB18 /* NewStep3ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

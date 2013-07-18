@@ -6,20 +6,20 @@
 //  Copyright (c) 2013 Teamios. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "NewSenderViewController.h"
 #import "AppDelegate.h"
 #import "define.h"
 #import "ServiceManager.h"
-@interface RegisterViewController ()
+@interface NewSenderViewController ()
 
 @end
 
-@implementation RegisterViewController
+@implementation NewSenderViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    scrollView.contentSize = CGSizeMake(320, 1700);
+    scrollView.contentSize = CGSizeMake(320, 1300);
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
     currentList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in countryList) {
@@ -288,33 +288,7 @@
 
 - (IBAction)submit_Click:(id)sender
 {
-    if (userNameTF.text == nil || [userNameTF.text length] == 0
-       ||[[userNameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
-                                                          whitespaceAndNewlineCharacterSet]] length] == 0 )
-    {
         
-        [Util showAlertWithString:@"Please enter your userid!"];
-        return;
-        
-    }
-    if (passTF.text == nil || [passTF.text length] == 0
-        ||[[passTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
-                                                             whitespaceAndNewlineCharacterSet]] length] == 0 )
-    {
-        
-        [Util showAlertWithString:@"Please enter your password!"];
-        return;
-    }
-    
-    if (confirmTF.text == nil || [confirmTF.text length] == 0
-        ||[[confirmTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
-                                                            whitespaceAndNewlineCharacterSet]] length] == 0 || ![confirmTF.text isEqualToString:passTF.text] )
-    {
-        
-        [Util showAlertWithString:@"Confirm password not match!"];
-        return;
-    }
-    
     if (fnameTF.text == nil || [fnameTF.text length] == 0
         ||[[fnameTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
                                                              whitespaceAndNewlineCharacterSet]] length] == 0 )
@@ -497,40 +471,16 @@ int pCountryID = rCountryID;
     postcode = ppostcodeTF.text;
     pCountryID = [[[countryList  objectAtIndex:pCountryIndex] objectForKey:@"CountryID"] intValue];
 }
-    BOOL success = [ServiceManager regist:userNameTF.text pass:passTF.text email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:identIndex+1 IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:pContact1.text PContact:pContact2TF.text SCDet:sContact1TF.text SContact:sContact2TF.text SourceD:sourceIndex+1];
-    if (success) {
-        [Util showAlertWithString:@"Successful!"];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+#warning change here
+    //BOOL success = [ServiceManager regist:userNameTF.text pass:passTF.text email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:identIndex+1 IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:pContact1.text PContact:pContact2TF.text SCDet:sContact1TF.text SContact:sContact2TF.text SourceD:sourceIndex+1];
+//    if (success) {
+//        [Util showAlertWithString:@"Successful!"];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
     
 
 }
 
-- (IBAction)source_Click:(id)sender {
-    if (!popoverController) {
-        selectedTF = sourceTF;
-        UIButton *button = (UIButton*)sender;
-		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
-        contentViewController.delegate = self;
-        contentViewController.menuList = sourceList;
-        contentViewController.width = 150;
-		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
-        [contentViewController.tableView setScrollEnabled:YES];
-        [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        [contentViewController.tableView setShowsVerticalScrollIndicator:NO];
-		popoverController.delegate = self;
-		popoverController.passthroughViews = [NSArray arrayWithObject:self.navigationController.navigationBar];
-		
-        //		[popoverController presentPopoverFromBarButtonItem:sender
-        //                                  permittedArrowDirections:(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown)
-        //                                                  animated:YES];
-        [popoverController presentPopoverFromRect:button.bounds inView:button permittedArrowDirections:(UIPopoverArrowDirectionUp) animated:YES];
-        
-	} else {
-		[popoverController dismissPopoverAnimated:YES];
-		popoverController = nil;
-	}
-}
 
 - (void)showDatePickerView
 {
@@ -629,11 +579,6 @@ int pCountryID = rCountryID;
     {
         sContactIndex = index;
         sContact1TF.text = [contactList objectAtIndex:index] ;
-    }
-    else if ([selectedTF isEqual:sourceTF])
-    {
-        sourceIndex = index;
-        sourceTF.text = [sourceList objectAtIndex:index] ;
     }
     
     [popoverController dismissPopoverAnimated:YES];

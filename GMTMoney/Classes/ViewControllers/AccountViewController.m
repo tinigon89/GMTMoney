@@ -8,7 +8,9 @@
 
 #import "AccountViewController.h"
 #import "AppDelegate.h"
-
+#import "define.h"
+#import "ServiceManager.h"
+#import "TranStatusViewController.h"
 @interface AccountViewController ()
 
 @end
@@ -51,6 +53,21 @@
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
 }
 
+-
+ (void)viewDidAppear:(BOOL)animated
+{
+    if (!viewDidLoad) {
+        [self performSelectorInBackground:@selector(showProcess) withObject:nil];
+        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+        NSString *regid = [dict objectForKey:@"RegisterID"];
+        [ServiceManager getSenderList:regid];
+        [ServiceManager getBenList:regid];
+        [SVProgressHUD dismiss];
+        viewDidLoad = YES;
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -63,4 +80,13 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (IBAction)status_Click:(id)sender {
+    TranStatusViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TranStatusViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)showProcess
+{
+    [SVProgressHUD showWithStatus:@"Loading"];
+}
 @end

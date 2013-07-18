@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WEPopoverController.h"
 #import "WEPopoverContentViewController.h"
-@interface RegisterViewController : UIViewController<UIWebViewDelegate,WEPopoverContentViewControllerDelegate,WEPopoverControllerDelegate>
+@interface NewSenderViewController : UIViewController<UIWebViewDelegate,WEPopoverContentViewControllerDelegate,WEPopoverControllerDelegate>
 {
     WEPopoverController *popoverController;
     id selectedTF;
@@ -37,12 +37,9 @@
     
     NSArray *sourceList;
     int sourceIndex;
-    IBOutlet UIWebView *webview;
     BOOL isFinish;
     IBOutlet UIScrollView *scrollView;
-    IBOutlet UITextField *userNameTF;
-    IBOutlet UITextField *passTF;
-    IBOutlet UITextField *confirmTF;
+
 
     IBOutlet UITextField *fnameTF;
     IBOutlet UITextField *snameTF;
@@ -72,7 +69,6 @@
     IBOutlet UITextField *sContact1TF;
     IBOutlet UITextField *sContact2TF;
     IBOutlet UITextField *emailTF;
-    IBOutlet UITextField *sourceTF;
     IBOutlet UIButton *acceptBT;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
@@ -92,6 +88,5 @@
 - (IBAction)sContact_Click:(id)sender;
 - (IBAction)accept_Click:(id)sender;
 - (IBAction)submit_Click:(id)sender;
-- (IBAction)source_Click:(id)sender;
 
 @end

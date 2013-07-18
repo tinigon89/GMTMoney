@@ -8,7 +8,8 @@
 
 #import "SMSViewController.h"
 #import "AppDelegate.h"
-
+#import "define.h"
+#import "ServiceManager.h"
 @interface SMSViewController ()
 
 @end
@@ -40,7 +41,33 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (IBAction)send_click:(id)sender {
+- (IBAction)send_click:(id)sender
+{
+    if (toTF.text == nil || [toTF.text length] == 0
+        ||[[toTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                           whitespaceAndNewlineCharacterSet]] length] == 0 )
+    {
+        
+        [Util showAlertWithString:@"Please enter phone number!"];
+        return;
+        
+    }
+    if (contentTV.text == nil || [contentTV.text length] == 0
+        ||[[contentTV.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                       whitespaceAndNewlineCharacterSet]] length] == 0 )
+    {
+        
+        [Util showAlertWithString:@"Please enter your message!"];
+        return;
+        
+    }
+    
+    if([ServiceManager sendSMS:toTF.text message:contentTV.text])
+    {
+        [Util showAlertWithString:@"Your message has been sent!"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
