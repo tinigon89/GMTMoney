@@ -450,12 +450,6 @@
         
     }
     
-    if (!acceptBT.selected)
-    {
-        
-        [Util showAlertWithString:@"Please must accept our terms and conditions!"];
-        return;
-    }
 int nationID = [[[countryList  objectAtIndex:nationIndex] objectForKey:@"CountryID"] intValue];
 int rCountryID = [[[countryList  objectAtIndex:rCountryIndex] objectForKey:@"CountryID"] intValue];
 NSString *street = rstreetTF.text;
@@ -471,14 +465,26 @@ int pCountryID = rCountryID;
     postcode = ppostcodeTF.text;
     pCountryID = [[[countryList  objectAtIndex:pCountryIndex] objectForKey:@"CountryID"] intValue];
 }
-#warning change here
-    //BOOL success = [ServiceManager regist:userNameTF.text pass:passTF.text email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:identIndex+1 IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:pContact1.text PContact:pContact2TF.text SCDet:sContact1TF.text SContact:sContact2TF.text SourceD:sourceIndex+1];
-//    if (success) {
-//        [Util showAlertWithString:@"Successful!"];
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }
-    
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+    NSString *regid = [dict objectForKey:@"RegisterID"];
+    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
+    BOOL success = [ServiceManager createNewSenderWithRegid:regid email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:identIndex+1 IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:[NSString stringWithFormat:@"%i",pContactIndex] PContact:pContact2TF.text SCDet:[NSString stringWithFormat:@"%i",sContactIndex] SContact:sContact2TF.text];
+    if (success) {
+        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+        NSString *regid = [dict objectForKey:@"RegisterID"];
+        [ServiceManager getSenderList:regid];
+        [Util showAlertWithString:@"Successful!"];
+        
+        [SVProgressHUD dismiss];
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    [SVProgressHUD dismiss];
+}
 
+- (void)showProcess
+{
+    [SVProgressHUD showWithStatus:@"Loading"];
 }
 
 
@@ -583,5 +589,11 @@ int pCountryID = rCountryID;
     
     [popoverController dismissPopoverAnimated:YES];
     popoverController = nil;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

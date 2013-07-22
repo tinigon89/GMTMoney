@@ -10,12 +10,15 @@
 #import "AppDelegate.h"
 #import "define.h"
 #import "ServiceManager.h"
+#import "NewStep2ViewController.h"
+#import "NewStep3ViewController.h"
+#import "SuccessViewController.h"
 @interface NewStep1ViewController ()
 
 @end
 
 @implementation NewStep1ViewController
-
+@synthesize isDuplicate,duplicateDict;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,8 +51,41 @@
             userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
         }
         isViewDidLoad = YES;
-        [SVProgressHUD dismiss];
+        
     }
+    bankNameTF.hidden = YES;
+    if (isDuplicate) {
+        titleLB.text = @"Duplicate";
+        NSArray *tempArray = [dailyRateList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"CurrID1 = %@",[duplicateDict objectForKey:@"CurrMainID"]]];
+        NSString *currencyString;
+        if ([tempArray count] > 0) {
+            NSDictionary *tempDict = [tempArray objectAtIndex:0];
+            currencyString= [tempDict objectForKey:@"CurrSym"];
+        }
+        int i=0;
+        for (NSDictionary *dict in dailyRateList) {
+            if ([[dict objectForKey:@"CurrSym"] isEqualToString:currencyString]) {
+                break;
+            }
+            i++;
+        }
+
+            NSDictionary *dict = [dailyRateList objectAtIndex:i];
+        currentIndex = i;
+            fCurrencyTF.text = [[NSString alloc] initWithFormat:@"%@ - %@",[dict objectForKey:@"CurrSym"],[dict objectForKey:@"CurText"]];
+        subTitleLB.text = [NSString stringWithFormat:@"Duplication of payment for AUD against %@",currencyString];
+        if ([[duplicateDict objectForKey:@"BankACID"] intValue]!=0) {
+            NSString *bankID = [duplicateDict objectForKey:@"BankACID"];
+            NSArray *bankList = [ServiceManager getBankDetail:bankID];
+            if ([bankList count] > 0) {
+                ishasBank = YES;
+                NSDictionary *tempDict = [bankList objectAtIndex:0];
+                bankNameTF.text = [NSString stringWithFormat:@"Bank: %@",[tempDict objectForKey:@"BankName"]];
+            }
+        }
+        
+    }
+    [SVProgressHUD dismiss];
     [super viewDidAppear:YES];
     [self didSelectMenuAtIndex:currentIndex];
 }
@@ -67,6 +103,14 @@
 }
 
 - (IBAction)segment_Click:(id)sender {
+    
+    if (segment.selectedSegmentIndex == 1 && isDuplicate && ishasBank) {
+        bankNameTF.hidden = NO;
+    }
+    else
+    {
+        bankNameTF.hidden = YES;
+    }
     isOnlineGreat  = NO;
     [self didSelectMenuAtIndex:currentIndex];
 }
@@ -94,10 +138,55 @@
         [Util showAlertWithString:@"Your payment not valid!"];
         return;
     }
+    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+    NSString *regid = [dict objectForKey:@"RegisterID"];
+    int utype = [[userInfo objectForKey:@"UType"] intValue];
+    int online = 0;
+    if (utype == 0) {
+        online = 1;
+    }
+    NSDictionary *dict2 = [dailyRateList objectAtIndex:currentIndex];
+    int currID = [[dict2 objectForKey:@"CurrID"] intValue];
+    BOOL result;
+    if (!isDuplicate) {
+        result = [ServiceManager submitStep1:regid curr:currID purpose:purpostTF.text PayMethod:segment.selectedSegmentIndex+1 PayAmount:paymentAmountTF.text Commision:lessCommission.text TranAmount:transferAmount.text ExRate:exchangeRate.text FAmount:foreignAmountTF.text Comments:commentTV.text online:online];
+        [SVProgressHUD dismiss];
+        if (result) {
+            if (online == 0) {
+                NewStep2ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep2ViewController"];
+                [self.navigationController pushViewController:viewController animated:YES];
+            }
+            else
+            {
+                NewStep3ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep3ViewController"];
+                [self.navigationController pushViewController:viewController animated:YES];
+            }
+        }
 
+    }
+    else
+    {
+        NSString *bankID = [duplicateDict objectForKey:@"BankACID"];
+        if (segment.selectedSegmentIndex == 0) {
+            bankID = @"0";
+        }
+        result = [ServiceManager submitDuplicate:regid remitID:[duplicateDict objectForKey:@"RemitId"] bnkID:bankID curr:0 purpose:purpostTF.text PayMethod:segment.selectedSegmentIndex+1 PayAmount:paymentAmountTF.text Comments:commentTV.text online:online];
+        [SVProgressHUD dismiss];
+        if (result) {
+            SuccessViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SuccessViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+
+    }
+    
+    
 }
 
 - (IBAction)fcurrency_Click:(id)sender {
+    if (isDuplicate) {
+        return;
+    }
     if (!popoverController) {
         UIButton *button = (UIButton*)sender;
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];

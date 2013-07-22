@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "define.h"
 #import "ServiceManager.h"
+#import "NewStep3ContViewController.h"
+#import "NewStep4ViewController.h"
 @interface NewStep3ViewController ()
 
 @end
@@ -90,7 +92,39 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)next_Click:(id)sender {
+- (IBAction)next_Click:(id)sender
+{
+    if (selectedSender == -1) {
+        [Util showAlertWithString:@"Please select a beneficiary!"];
+        return;
+    }
+    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+    NSString *regid = [dict objectForKey:@"RegisterID"];
+    int utype = [[dict objectForKey:@"UType"] intValue];
+    int online = 0;
+    if (utype == 0) {
+        online = 1;
+    }
+    NSString *remid = [[NSUserDefaults standardUserDefaults] objectForKey:kRemitID];
+    NSDictionary *senderDict = [searchList objectAtIndex:selectedSender];
+    NSString *beneId = [senderDict objectForKey:@"BeneficiaryID"];
+    int paytype = [[[NSUserDefaults standardUserDefaults] objectForKey:kPaymentType] intValue];
+    BOOL result = [ServiceManager submitStep3:regid remid:remid benID:beneId paytype:paytype online:online];
+    [SVProgressHUD dismiss];
+    if (result) {
+        if (paytype == 2) {
+            NewStep3ContViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep3ContViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+        else
+        {
+            //Confirm Screen
+            NewStep4ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep4ViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+        
+    }
 }
 
 - (void)popoverControllerDidDismissPopover:(WEPopoverController *)thePopoverController {

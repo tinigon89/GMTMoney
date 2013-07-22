@@ -21,6 +21,8 @@
     IBOutlet UILabel *titleLB;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
+@property (nonatomic) BOOL isDuplicate;
+@property (strong, nonatomic) NSArray *duplicateList;
 - (IBAction)home_click:(id)sender;
 
 

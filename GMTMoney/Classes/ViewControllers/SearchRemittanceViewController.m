@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Teamios. All rights reserved.
 //
 
-#import "NewStep2ViewController.h"
+#import "SearchRemittanceViewController.h"
 #import "AppDelegate.h"
 #import "define.h"
 #import "ServiceManager.h"
 #import "NewStep3ViewController.h"
-@interface NewStep2ViewController ()
+#import "TranStatusViewController.h"
+@interface SearchRemittanceViewController ()
 
 @end
 
-@implementation NewStep2ViewController
+@implementation SearchRemittanceViewController
 
 - (void)viewDidLoad
 {
@@ -24,7 +25,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //scrollView.contentSize = CGSizeMake(320, 660);
     //[self registerForKeyboardNotifications];
-    searchByArray = [[NSArray alloc] initWithObjects:@"FirstName",@"Sur name",@"Company Name",@"Phone", nil];
+    searchByArray = [[NSArray alloc] initWithObjects:@"OTT",@"First Name",@"Last Name",@"Business Name", nil];
     senderList = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderInfo];
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
 
@@ -85,8 +86,20 @@
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
     NSString *regid = [dict objectForKey:@"RegisterID"];
-    searchList = [ServiceManager searchSenderList:regid searchIndex:currentIndex searchString:searchTF.text];
+    searchList = [ServiceManager searchRemittance:regid searchIndex:currentIndex searchString:searchTF.text];
     [SVProgressHUD dismiss];
+    if ([searchList count] > 0) {
+        TranStatusViewController *viewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"TranStatusViewController"];
+        viewcontroller.duplicateList = searchList;
+        viewcontroller.isDuplicate = YES;
+        [self.navigationController pushViewController:viewcontroller animated:YES];
+        return;
+    }
+    else
+    {
+        [Util showAlertWithString:@"No Result"];
+        return;
+    }
     [searchTableView reloadData];
     [self.view endEditing:YES];
 }

@@ -10,12 +10,13 @@
 #import "AppDelegate.h"
 #import "ServiceManager.h"
 #import "define.h"
+#import "NewStep1ViewController.h"
 @interface TranStatusViewController ()
 
 @end
 
 @implementation TranStatusViewController
-
+@synthesize isDuplicate,duplicateList;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,16 +37,24 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
-
-    NSString *regid = [userInfo objectForKey:@"RegisterID"];
-
-    [ServiceManager getTransactionStatus:regid];
-    transList = [[NSUserDefaults standardUserDefaults] objectForKey:kTransStatusInfo];
+    if (!isDuplicate) {
+        [self performSelectorInBackground:@selector(showProcess) withObject:nil];
+        
+        NSString *regid = [userInfo objectForKey:@"RegisterID"];
+        
+        
+        [ServiceManager getTransactionHistory:regid];
+        transList = [[NSUserDefaults standardUserDefaults] objectForKey:kTransHistoryInfo];
+        
+        
+        [transTableView reloadData];
+        [SVProgressHUD dismiss];
+    }
+    else
+    {
+        titleLB.text = @"Transaction List";
+    }
     
-    
-    [transTableView reloadData];
-    [SVProgressHUD dismiss];
     
 }
 
@@ -61,6 +70,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (isDuplicate) {
+        return [duplicateList count];
+    }
     return [transList count];
 }
 
@@ -68,7 +80,16 @@
 {
     NSString *indentify = @"TransStatusCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentify];
-    NSDictionary *dict = [transList objectAtIndex:indexPath.row];
+    
+    NSDictionary *dict;
+    if (isDuplicate) {
+        dict = [duplicateList objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        dict = [transList objectAtIndex:indexPath.row];
+    }
     UILabel *idLB = (UILabel*)[cell viewWithTag:1];
     UILabel *dateLB = (UILabel*)[cell viewWithTag:2];
     UILabel *senderLB = (UILabel*)[cell viewWithTag:3];
@@ -95,6 +116,9 @@
             NSDictionary *tempDict = [tempArray objectAtIndex:0];
             senderLB.text = [NSString stringWithFormat:@"%@ %@",[tempDict objectForKey:@"FName"],[tempDict objectForKey:@"SurName"]];
         }
+        else{
+            senderLB.text = @"";
+        }
     }
     else
     {
@@ -109,7 +133,7 @@
     }
     NSString *dateString = [dict objectForKey:@"RDate"];
     dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
-    dateString = [dateString stringByReplacingOccurrencesOfString:@"000)/" withString:@""];
+    dateString = [dateString substringToIndex:10];
     double rtimeInterval = [dateString doubleValue];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:rtimeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -121,13 +145,36 @@
     }
     if ([[dict objectForKey:@"RState"] intValue] == 1) {
         statusLB.text = @"PENDING";
+        statusLB.textColor = [UIColor redColor];
     }
     else
     {
         statusLB.text = @"PROCESSED";
+        UIColor *myColor = [UIColor colorWithRed:6.0f/255.0f green:117.0f/255.0f blue:22.0f/255.0f alpha:1.0f];
+        statusLB.textColor = myColor;
     }
     //amount.text = [NSString stringWithFormat:@"%.4f %@",[[dict objectForKey:@"ForAmt"] floatValue],];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView cellForRowAtIndexPath:indexPath].selected = NO;
+    if (isDuplicate)
+    {
+        
+        NSDictionary *dict = [duplicateList objectAtIndex:indexPath.row];
+        if ([[dict objectForKey:@"RState"] intValue] == 1) {
+            [Util showAlertWithString:@"This transaction must be processed before can duplicate"];
+            return;
+        }
+
+        NewStep1ViewController *viewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep1ViewController"];
+        viewcontroller.isDuplicate = YES;
+        viewcontroller.duplicateDict = dict;
+        [self.navigationController pushViewController:viewcontroller animated:YES];
+        
+    }
 }
 
 

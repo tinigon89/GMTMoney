@@ -18,8 +18,11 @@
 
 #define kServer_Get_Sender @"http://www.gmtmoney.com.au/isendersrch.aspx?regid=%@&lst=0&data=%@"
 #define kServer_Get_Search_Sender @"http://www.gmtmoney.com.au/isendersrch.aspx?regid=%@&lst=%i&data=%@"
-#define kServer_Get_Bene @"http://www.gmtmoney.com.au/ibenesrch.aspx?regid=%@"
+#define kServer_Get_Bene @"http://www.gmtmoney.com.au/ibenesrch.aspx?regid=%@&lst=-1&data="
 #define kServer_Get_Search_Bene @"http://www.gmtmoney.com.au/ibenesrch.aspx?regid=%@&lst=%i&data=%@"
+#define kServer_Get_Search_Remitance @"http://www.gmtmoney.com.au/idupsrch.aspx?regid=%@&lst=%i&data=%@"
+#define kServer_Get_BankDetail @"http://www.gmtmoney.com.au/ibankdet.aspx?bankID=%@"
+#define kServer_Get_BankInfo @"http://www.gmtmoney.com.au/ibanksrch.aspx?bankID=%@"
 #define kServer_ImageURL @"http://www.cgapp.net.au/img/"
 
 #define mainAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -53,6 +56,19 @@
 #define kTransHistoryInfo @"TransHistoryInfo"
 #define kSenderInfo @"SenderInfo"
 #define kBeneInfo @"BeneInfo"
+#define kRemitID @"RemitID"
+#define kPayAmount @"PayAmount"
+#define kLessCommision @"LessCommision"
+#define kTransferAmount @"TransferAmount"
+#define kEXRate @"kEXRate"
+#define kFAmount @"kFAmount"
+#define kPaymentType @"PaymentType"
+#define kComment @"kComment"
+
+#define kSenderID @"SenderID"
+#define kBeneID @"BeneID"
+#define kBankID @"BankID"
+#define kSelectedBank @"SelectedBank"
 
 #define kUserInfoRegist @"UserInfoRegist"
 #define kDeviceInfo @"DeviceInfo"

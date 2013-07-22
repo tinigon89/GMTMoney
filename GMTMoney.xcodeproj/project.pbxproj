@@ -437,6 +437,12 @@
 		857847D1179111C8008EADAD /* sendMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847D0179111C8008EADAD /* sendMoney.png */; };
 		857847D41791130D008EADAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D31791130D008EADAD /* LoginViewController.m */; };
 		857847D71791821C008EADAD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D61791821C008EADAD /* AccountViewController.m */; };
+		858E97241798FF00001D5D1F /* NewStep3ContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E97231798FF00001D5D1F /* NewStep3ContViewController.m */; };
+		858E972717992863001D5D1F /* NewBenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E972617992863001D5D1F /* NewBenViewController.m */; };
+		858E972A179932CC001D5D1F /* NewStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E9729179932CC001D5D1F /* NewStep4ViewController.m */; };
+		858FEE33179AB30D005803BE /* NewBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858FEE32179AB30C005803BE /* NewBankViewController.m */; };
+		858FEE36179AE8C4005803BE /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858FEE35179AE8C3005803BE /* SuccessViewController.m */; };
+		85991CF0179BF56100A74A8A /* SearchRemittanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85991CEF179BF56100A74A8A /* SearchRemittanceViewController.m */; };
 		85ABBBEF1795861D0021BFCB /* find_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ABBBEE1795861D0021BFCB /* find_trans.png */; };
 		85B6B1231793B0B0004A5003 /* TranStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6B1221793B0B0004A5003 /* TranStatusViewController.m */; };
 		85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */; };
@@ -934,6 +940,18 @@
 		857847D31791130D008EADAD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		857847D51791821C008EADAD /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		857847D61791821C008EADAD /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		858E97221798FF00001D5D1F /* NewStep3ContViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep3ContViewController.h; sourceTree = "<group>"; };
+		858E97231798FF00001D5D1F /* NewStep3ContViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep3ContViewController.m; sourceTree = "<group>"; };
+		858E972517992862001D5D1F /* NewBenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBenViewController.h; sourceTree = "<group>"; };
+		858E972617992863001D5D1F /* NewBenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBenViewController.m; sourceTree = "<group>"; };
+		858E9728179932CB001D5D1F /* NewStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep4ViewController.h; sourceTree = "<group>"; };
+		858E9729179932CC001D5D1F /* NewStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep4ViewController.m; sourceTree = "<group>"; };
+		858FEE31179AB30B005803BE /* NewBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBankViewController.h; sourceTree = "<group>"; };
+		858FEE32179AB30C005803BE /* NewBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBankViewController.m; sourceTree = "<group>"; };
+		858FEE34179AE8C2005803BE /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		858FEE35179AE8C3005803BE /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
+		85991CEE179BF56100A74A8A /* SearchRemittanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRemittanceViewController.h; sourceTree = "<group>"; };
+		85991CEF179BF56100A74A8A /* SearchRemittanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRemittanceViewController.m; sourceTree = "<group>"; };
 		85ABBBEE1795861D0021BFCB /* find_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_trans.png; sourceTree = "<group>"; };
 		85B6B1211793B0B0004A5003 /* TranStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranStatusViewController.h; sourceTree = "<group>"; };
 		85B6B1221793B0B0004A5003 /* TranStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranStatusViewController.m; sourceTree = "<group>"; };
@@ -1539,6 +1557,18 @@
 		855FAC161785835D00CAABCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				85991CEE179BF56100A74A8A /* SearchRemittanceViewController.h */,
+				85991CEF179BF56100A74A8A /* SearchRemittanceViewController.m */,
+				858FEE34179AE8C2005803BE /* SuccessViewController.h */,
+				858FEE35179AE8C3005803BE /* SuccessViewController.m */,
+				858FEE31179AB30B005803BE /* NewBankViewController.h */,
+				858FEE32179AB30C005803BE /* NewBankViewController.m */,
+				858E9728179932CB001D5D1F /* NewStep4ViewController.h */,
+				858E9729179932CC001D5D1F /* NewStep4ViewController.m */,
+				858E972517992862001D5D1F /* NewBenViewController.h */,
+				858E972617992863001D5D1F /* NewBenViewController.m */,
+				858E97221798FF00001D5D1F /* NewStep3ContViewController.h */,
+				858E97231798FF00001D5D1F /* NewStep3ContViewController.m */,
 				85099CCC1796B1A60026FB18 /* NewStep3ViewController.h */,
 				85099CCD1796B1A60026FB18 /* NewStep3ViewController.m */,
 				85099CC91796AA960026FB18 /* NewSenderViewController.h */,
@@ -2242,6 +2272,12 @@
 				85099CC4179697D50026FB18 /* NewStep2ViewController.m in Sources */,
 				85099CCB1796AA970026FB18 /* NewSenderViewController.m in Sources */,
 				85099CCE1796B1A70026FB18 /* NewStep3ViewController.m in Sources */,
+				858E97241798FF00001D5D1F /* NewStep3ContViewController.m in Sources */,
+				858E972717992863001D5D1F /* NewBenViewController.m in Sources */,
+				858E972A179932CC001D5D1F /* NewStep4ViewController.m in Sources */,
+				858FEE33179AB30D005803BE /* NewBankViewController.m in Sources */,
+				858FEE36179AE8C4005803BE /* SuccessViewController.m in Sources */,
+				85991CF0179BF56100A74A8A /* SearchRemittanceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

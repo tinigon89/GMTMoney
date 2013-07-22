@@ -21,7 +21,7 @@ WEPopoverController *popoverController;
     IBOutlet UISegmentedControl *segment;
     IBOutlet UITextField *lessCommission;
     IBOutlet UITextField *transferAmount;
-
+    BOOL ishasBank;
     IBOutlet UITextField *exchangeRate;
     IBOutlet UITextView *commentTV;
     int currentIndex;
@@ -31,8 +31,13 @@ WEPopoverController *popoverController;
     BOOL isViewDidLoad;
     NSDictionary *userInfo;
     BOOL isOnlineGreat;
+    IBOutlet UILabel *titleLB;
+    IBOutlet UILabel *subTitleLB;
+    IBOutlet UILabel *bankNameTF;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
+@property (nonatomic) BOOL isDuplicate;
+@property (strong, nonatomic) NSDictionary *duplicateDict;
 - (IBAction)home_click:(id)sender;
 
 - (IBAction)segment_Click:(id)sender;

@@ -115,16 +115,22 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
-    NSString *newtext = [textField.text stringByAppendingString:string];
-    if ([newtext doubleValue] == 0) {
-        return NO;
-    }
-    return YES;
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@".1234567890"] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    return [string isEqualToString:filtered];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [self calculate];
+    if (textField == totalAmountTF) {
+        double amount = [totalAmountTF.text doubleValue]/[rateTF.text doubleValue];
+        amountTF.text = [NSString stringWithFormat:@"%.4f",amount];
+    }
+    else
+    {
+        [self calculate];
+    }
+    
 }
 
 - (void)calculate
