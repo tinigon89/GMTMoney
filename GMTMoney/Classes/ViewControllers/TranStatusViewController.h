@@ -14,8 +14,6 @@
     IBOutlet UITableView *transTableView;
     NSArray *transList;
     NSArray *dailyRates;
-    NSArray *senderList;
-    NSArray *beneList;
     
     NSDictionary *userInfo;
     IBOutlet UILabel *titleLB;

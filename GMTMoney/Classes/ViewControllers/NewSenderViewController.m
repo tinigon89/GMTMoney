@@ -65,7 +65,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = currentList;
-        contentViewController.width = 200;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -92,7 +92,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = indentifyList;
-        contentViewController.width = 200;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -121,7 +121,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = stateList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -144,7 +144,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = currentList;
-        contentViewController.width = 200;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -181,7 +181,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = stateList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -204,7 +204,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = currentList;
-        contentViewController.width = 200;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -230,7 +230,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = contactList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -256,7 +256,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = contactList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -419,6 +419,59 @@
         
     }
     
+    if(!pSameAboveBT.selected)
+    {
+        if (pstreetTF.text == nil || [pstreetTF.text length] == 0
+            ||[[pstreetTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please enter street address in postal address!"];
+            return;
+            
+        }
+        
+        if (psubburbTF.text == nil || [psubburbTF.text length] == 0
+            ||[[psubburbTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                 whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please enter subburb in postal address!"];
+            return;
+            
+        }
+        
+        if (pstateTF.text == nil || [pstateTF.text length] == 0
+            ||[[pstateTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                               whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please select state in postal address!"];
+            return;
+            
+        }
+        
+        if (ppostcodeTF.text == nil || [ppostcodeTF.text length] == 0
+            ||[[ppostcodeTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                  whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please enter postcode in postal address!"];
+            return;
+            
+        }
+        
+        if (pCountryTF.text == nil || [pCountryTF.text length] == 0
+            ||[[pCountryTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                 whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please select country in postal address!"];
+            return;
+            
+        }
+    }
+    
     
     if (pContact1.text == nil || [pContact1.text length] == 0
         ||[[pContact1.text stringByTrimmingCharactersInSet:[NSCharacterSet
@@ -450,6 +503,7 @@
         
     }
     
+    
 int nationID = [[[countryList  objectAtIndex:nationIndex] objectForKey:@"CountryID"] intValue];
 int rCountryID = [[[countryList  objectAtIndex:rCountryIndex] objectForKey:@"CountryID"] intValue];
 NSString *street = rstreetTF.text;
@@ -470,12 +524,8 @@ int pCountryID = rCountryID;
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     BOOL success = [ServiceManager createNewSenderWithRegid:regid email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:identIndex+1 IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:[NSString stringWithFormat:@"%i",pContactIndex] PContact:pContact2TF.text SCDet:[NSString stringWithFormat:@"%i",sContactIndex] SContact:sContact2TF.text];
     if (success) {
-        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
-        NSString *regid = [dict objectForKey:@"RegisterID"];
-        [ServiceManager getSenderList:regid];
-        [Util showAlertWithString:@"Successful!"];
-        
         [SVProgressHUD dismiss];
+        [Util showAlertWithString:@"Successful!"];
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }

@@ -22,8 +22,6 @@
     [super viewDidLoad];
     
     dailyRates = [[NSUserDefaults standardUserDefaults] objectForKey:kDailyRateInfo];
-    senderList = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderInfo];
-    beneList = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneInfo];
     userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
 }
 
@@ -99,7 +97,8 @@
     UILabel *rateLB = (UILabel*)[cell viewWithTag:7];
     UILabel *amount = (UILabel*)[cell viewWithTag:8];
     UILabel *paymentType = (UILabel*)[cell viewWithTag:9];
-    
+    UILabel *bankInfo = (UILabel*)[cell viewWithTag:10];
+    UILabel *accountNo = (UILabel*)[cell viewWithTag:11];
     idLB.text = [NSString stringWithFormat:@"OTT%@",[dict objectForKey:@"RemitId"]];
     depositLB.text = [NSString stringWithFormat:@"%.4f AUD",[[dict objectForKey:@"PayAmt"] floatValue]];
     rateLB.text = [NSString stringWithFormat:@"%.4f",[[dict objectForKey:@"ExRate"] floatValue]];
@@ -111,14 +110,15 @@
     }
     
     if ([[userInfo objectForKey:@"UType"] intValue] != 0) {
-        tempArray = [senderList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SendersID = %@",[dict objectForKey:@"SendersID"]]];
-        if ([tempArray count] > 0) {
-            NSDictionary *tempDict = [tempArray objectAtIndex:0];
-            senderLB.text = [NSString stringWithFormat:@"%@ %@",[tempDict objectForKey:@"FName"],[tempDict objectForKey:@"SurName"]];
-        }
-        else{
-            senderLB.text = @"";
-        }
+//        tempArray = [senderList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SendersID = %@",[dict objectForKey:@"SendersID"]]];
+//        if ([tempArray count] > 0) {
+//            NSDictionary *tempDict = [tempArray objectAtIndex:0];
+//            senderLB.text = [NSString stringWithFormat:@"%@ %@",[tempDict objectForKey:@"FName"],[tempDict objectForKey:@"SurName"]];
+//        }
+//        else{
+//            senderLB.text = @"";
+//        }
+        senderLB.text = [NSString stringWithFormat:@"%@ %@",[dict objectForKey:@"Fname2"],[dict objectForKey:@"SurName2"]];
     }
     else
     {
@@ -126,11 +126,11 @@
     }
     
     
-    tempArray = [beneList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"BeneficiaryID = %@",[dict objectForKey:@"BeneficiaryID"]]];
-    if ([tempArray count] > 0) {
-        NSDictionary *tempDict = [tempArray objectAtIndex:0];
-        beneLB.text = [NSString stringWithFormat:@"%@ %@",[tempDict objectForKey:@"FirstN"],[tempDict objectForKey:@"SurN"]];
-    }
+//    tempArray = [beneList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"BeneficiaryID = %@",[dict objectForKey:@"BeneficiaryID"]]];
+//    if ([tempArray count] > 0) {
+//        NSDictionary *tempDict = [tempArray objectAtIndex:0];
+        beneLB.text = [NSString stringWithFormat:@"%@ %@",[dict objectForKey:@"FirstN"],[dict objectForKey:@"SurN"]];
+   // }
     NSString *dateString = [dict objectForKey:@"RDate"];
     dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
     dateString = [dateString substringToIndex:10];
@@ -140,18 +140,30 @@
     [dateFormatter setDateFormat:@"M/d/y h:mm a"];
     dateLB.text = [dateFormatter stringFromDate:date];
     paymentType.text = @"CASH PAYMENT";
+    bankInfo.hidden = YES;
+    accountNo.hidden = YES;
     if ([[dict objectForKey:@"Paymethod"] intValue] != 1) {
         paymentType.text = @"ACCOUNT DEPOSIT";
+        bankInfo.text = [NSString stringWithFormat:@"Bank: %@",[dict objectForKey:@"BankName"]];
+        bankInfo.hidden = NO;
+        accountNo.hidden = NO;
+        accountNo.text = [NSString stringWithFormat:@"AccNo: %@",[dict objectForKey:@"ACNo"]];
     }
+    UIImageView *redImage = (UIImageView*)[cell viewWithTag:100];
+    UIImageView *greenImage = (UIImageView*)[cell viewWithTag:101];
     if ([[dict objectForKey:@"RState"] intValue] == 1) {
         statusLB.text = @"PENDING";
         statusLB.textColor = [UIColor redColor];
+        redImage.hidden = NO;
+        greenImage.hidden = YES;
     }
     else
     {
         statusLB.text = @"PROCESSED";
         UIColor *myColor = [UIColor colorWithRed:6.0f/255.0f green:117.0f/255.0f blue:22.0f/255.0f alpha:1.0f];
         statusLB.textColor = myColor;
+        redImage.hidden = YES;
+        greenImage.hidden = NO;
     }
     //amount.text = [NSString stringWithFormat:@"%.4f %@",[[dict objectForKey:@"ForAmt"] floatValue],];
     return cell;

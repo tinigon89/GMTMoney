@@ -13,7 +13,6 @@
 #import "NSObject+SBJSON.h"
 #import "NSString+SBJSON.h"
 #import <AdSupport/AdSupport.h>
-#import "CGItem+Custom.h"
 #import "XMLReader.h"
 @implementation ServiceManager
 
@@ -179,6 +178,34 @@ return YES;
     return NO;
 }
 
++ (BOOL)submitAlertWithEmail:(NSString*)email
+              currID:(NSString *)currID
+             status:(NSString *)status
+
+{
+    //http://www.gmtmoney.com.au/iealert.aspx?uname=sha&pcode=965&mobile=&email=itresumesha@gmail.com&currID=20&smsalert=Y&emailalert=Y&status=Y
+    ASIFormDataRequest * request;
+    NSString *urlString = [NSString stringWithFormat:@"http://www.gmtmoney.com.au/iealert.aspx?uname=%@&pcode=965&mobile=&email=%@&currID=%@&smsalert=N&emailalert=Y&status=%@",email,email,currID,status];
+    NSURL *url = [NSURL URLWithString:urlString];
+    request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous];
+    if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        if ([request.responseString length] == 0) {
+            return NO;
+        }
+        if ([[request.responseString uppercaseString] isEqualToString:@"OK"]) {
+            return YES;
+        }
+        [Util showAlertWithString:request.responseString];
+        return NO;
+        
+    }
+    return NO;
+}
+
 + (BOOL)submitDuplicate:(NSString *)regid
                 remitID:(NSString *)remitID
                   bnkID:(NSString *)bnkID
@@ -227,13 +254,13 @@ return YES;
         if ([request.responseString length] == 0) {
             return NO;
         }
-        [[NSUserDefaults standardUserDefaults] setObject:sid  forKey:kSenderID];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//        [[NSUserDefaults standardUserDefaults] setObject:sid  forKey:kSenderID];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
         
     }
-    [[NSUserDefaults standardUserDefaults] setObject:sid  forKey:kSenderID];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+//    [[NSUserDefaults standardUserDefaults] setObject:sid  forKey:kSenderID];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
     return NO;
 }
 
@@ -256,13 +283,9 @@ return YES;
         if ([request.responseString length] == 0) {
             return NO;
         }
-        [[NSUserDefaults standardUserDefaults] setObject:benID  forKey:kBeneID];
-        [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
         
     }
-    [[NSUserDefaults standardUserDefaults] setObject:benID  forKey:kBeneID];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     return NO;
 }
 

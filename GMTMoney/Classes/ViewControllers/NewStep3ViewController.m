@@ -28,7 +28,7 @@
     searchByArray = [[NSArray alloc] initWithObjects:@"FirstName",@"Sur name",@"Company Name",@"Phone", nil];
     beneList = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneInfo];
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
-
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"Step3Date"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -98,6 +98,12 @@
         [Util showAlertWithString:@"Please select a beneficiary!"];
         return;
     }
+    NSDate *viewDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"Step3Date"];
+    if ([[NSDate date] timeIntervalSince1970] - [viewDate timeIntervalSince1970] > 60*10) {
+        [Util showAlertWithString:@"Your session has expired!"];
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+        return;
+    }
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
     NSString *regid = [dict objectForKey:@"RegisterID"];
@@ -113,6 +119,9 @@
     BOOL result = [ServiceManager submitStep3:regid remid:remid benID:beneId paytype:paytype online:online];
     [SVProgressHUD dismiss];
     if (result) {
+        [[NSUserDefaults standardUserDefaults] setObject:senderDict forKey:kBeneInfo];
+        [[NSUserDefaults standardUserDefaults] setObject:beneId  forKey:kBeneID];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         if (paytype == 2) {
             NewStep3ContViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep3ContViewController"];
             [self.navigationController pushViewController:viewController animated:YES];

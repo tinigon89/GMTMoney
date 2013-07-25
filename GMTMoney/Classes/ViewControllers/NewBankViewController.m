@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    scrollView.contentSize = CGSizeMake(320, 780);
+    scrollView.contentSize = CGSizeMake(320, 850);
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
     currentList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in countryList) {

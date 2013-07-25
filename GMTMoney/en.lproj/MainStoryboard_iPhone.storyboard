@@ -24,7 +24,7 @@
             <objects>
                 <viewController id="2" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="0M3-cy-4lJ">
@@ -62,7 +62,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fkL-ww-ROe">
-                                <rect key="frame" x="17" y="157" width="90" height="90"/>
+                                <rect key="frame" x="17" y="126" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="btn_dailyrates_home.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="STf-nM-j8e">
-                                <rect key="frame" x="17" y="274" width="90" height="90"/>
+                                <rect key="frame" x="17" y="221" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="btn_cashlocations.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3lZ-Vm-y6X">
-                                <rect key="frame" x="66" y="386" width="90" height="90"/>
+                                <rect key="frame" x="66" y="311" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="calculator.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,7 +104,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qra-J9-1aO">
-                                <rect key="frame" x="164" y="386" width="90" height="90"/>
+                                <rect key="frame" x="164" y="311" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="sms.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S8D-df-GY6">
-                                <rect key="frame" x="115" y="274" width="90" height="90"/>
+                                <rect key="frame" x="115" y="221" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="btn_news_home.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ufq-PS-Etv">
-                                <rect key="frame" x="213" y="274" width="90" height="90"/>
+                                <rect key="frame" x="213" y="221" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="facebook.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t7l-rs-Evz">
-                                <rect key="frame" x="115" y="157" width="90" height="90"/>
+                                <rect key="frame" x="115" y="126" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="btn_rateAlert.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vNp-1V-IIu">
-                                <rect key="frame" x="213" y="157" width="90" height="90"/>
+                                <rect key="frame" x="213" y="126" width="90" height="90"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="btnAccount.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -174,7 +174,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="enc-av-nIZ">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -301,7 +301,7 @@
             <objects>
                 <viewController id="9iU-tz-Wp1" customClass="CashLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="anw-F6-ZKT">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="6HN-gq-chh">
@@ -339,12 +339,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="g1l-5c-9M9">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <webView contentMode="scaleToFill" id="EVE-Ta-XcJ">
-                                <rect key="frame" x="0.0" y="117" width="320" height="382"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="294"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -550,7 +550,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController id="2Yb-pu-4ia" customClass="CalculateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9NV-KQ-bfh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="AEe-Kb-hgx">
@@ -588,7 +588,7 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="8dO-hg-PYD">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -721,7 +721,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController id="Yf9-Ik-Whf" customClass="DailyRateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uzo-dk-9xW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="ltB-HQ-XsK">
@@ -759,12 +759,12 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="hbq-fl-jje">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" id="cq8-lf-9Yn">
-                                <rect key="frame" x="0.0" y="131" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="131" width="320" height="279"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -931,7 +931,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController id="gn2-wC-dYe" customClass="SMSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MJU-qc-qqT">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="Uoq-Y7-w4k">
@@ -961,7 +961,7 @@ SYDNEY NSW 2150</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="XhJ-U2-RkE">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1031,7 +1031,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController id="6La-Sl-rN1" customClass="NewsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBE-FV-OvM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="Hm1-pZ-c4m">
@@ -1069,7 +1069,7 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="ZOk-4A-aVu">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1315,7 +1315,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController storyboardIdentifier="FeedViewController" id="Ijf-ae-OOe" customClass="FeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtJ-cA-ZUP">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="bTT-UY-Idx">
@@ -1353,12 +1353,12 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="udC-sz-rjN">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="Yja-LF-oSN">
-                                <rect key="frame" x="0.0" y="117" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="293"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1412,7 +1412,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController storyboardIdentifier="FeedDetailViewController" id="FDb-sl-OFf" customClass="FeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pgv-6l-cl0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="Gof-uL-ipk">
@@ -1450,12 +1450,12 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="PF0-Fy-4YK">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="RoS-g5-lEk">
-                                <rect key="frame" x="0.0" y="117" width="320" height="382"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="294"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -1478,7 +1478,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController id="9O2-HH-T4n" customClass="RateAlertViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WGw-nv-z6K">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="E4i-eJ-7kx">
@@ -1516,7 +1516,7 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="EYy-ms-uq4">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1532,6 +1532,9 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9O2-HH-T4n" id="rsy-kj-maJ"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pgB-Zy-5hj">
                                 <rect key="frame" x="261" y="220" width="39" height="31"/>
@@ -1560,6 +1563,9 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9O2-HH-T4n" id="j8g-EH-zsr"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="AUD" borderStyle="roundedRect" minimumFontSize="17" id="Zzs-KY-P5z">
                                 <rect key="frame" x="121" y="219" width="48" height="30"/>
@@ -1604,7 +1610,7 @@ SYDNEY NSW 2150</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="home_click:" destination="9O2-HH-T4n" eventType="touchUpInside" id="8Go-Kl-o2S"/>
+                                    <action selector="regist_Click:" destination="9O2-HH-T4n" eventType="touchUpInside" id="QZm-ns-YT8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wrd-Bo-m6l">
@@ -1635,6 +1641,8 @@ SYDNEY NSW 2150</string>
                     </view>
                     <navigationItem key="navigationItem" id="mLq-xJ-ivG"/>
                     <connections>
+                        <outlet property="emailTF" destination="suV-Pn-aoj" id="0Jr-uW-xhM"/>
+                        <outlet property="rateAlertTF" destination="bgx-wl-oqX" id="aIp-Xw-fXy"/>
                         <outlet property="taskbarView" destination="EYy-ms-uq4" id="i35-Le-pMJ"/>
                         <outlet property="toTF" destination="m2E-RY-1aU" id="51D-gI-4vZ"/>
                     </connections>
@@ -1648,7 +1656,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="3gh-55-S3p" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ze-5g-zQm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="OTQ-Jz-ACW">
@@ -1686,7 +1694,7 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="eti-Rc-lif">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1865,7 +1873,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController storyboardIdentifier="AccountViewController" id="zsB-jj-z9Z" customClass="AccountViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1DN-t7-95L">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="7RC-Uf-uED">
@@ -1903,7 +1911,7 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="E60-sG-dUE">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1938,7 +1946,7 @@ SYDNEY NSW 2150</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TvL-U9-BJz">
-                                <rect key="frame" x="20" y="190" width="286" height="32"/>
+                                <rect key="frame" x="20" y="173" width="286" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="btn_sendmoney.png">
@@ -1953,7 +1961,7 @@ SYDNEY NSW 2150</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VbV-1b-xyZ">
-                                <rect key="frame" x="20" y="237" width="286" height="32"/>
+                                <rect key="frame" x="20" y="217" width="286" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="btn_transaction.png">
@@ -1968,7 +1976,7 @@ SYDNEY NSW 2150</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FOP-Xb-YiD">
-                                <rect key="frame" x="20" y="326" width="286" height="32"/>
+                                <rect key="frame" x="20" y="308" width="286" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="btn_track.png">
@@ -1983,7 +1991,7 @@ SYDNEY NSW 2150</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vst-Ym-zB2">
-                                <rect key="frame" x="20" y="281" width="286" height="32"/>
+                                <rect key="frame" x="20" y="262" width="286" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="find_trans.png">
@@ -1995,6 +2003,21 @@ SYDNEY NSW 2150</string>
                                 </state>
                                 <connections>
                                     <segue destination="Xfk-wz-owA" kind="push" id="syG-1W-RAD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W7X-wk-hQ0">
+                                <rect key="frame" x="20" y="356" width="286" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="Add-your-File.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMail_Click:" destination="zsB-jj-z9Z" eventType="touchUpInside" id="lvz-az-UhP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2014,7 +2037,7 @@ SYDNEY NSW 2150</string>
             <objects>
                 <viewController storyboardIdentifier="RegisterViewController" id="ou4-71-IWN" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q63-w0-paC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="YF8-Qs-40X">
@@ -2052,16 +2075,16 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="em8-It-Fgy">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HPK-gl-6Ss">
-                                <rect key="frame" x="0.0" y="117" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="293"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="xF7-tG-5fD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1712"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9hi-9G-nz6">
@@ -2926,7 +2949,7 @@ These terms and conditions are to be governed by any construed in accordance wit
             <objects>
                 <viewController id="CeN-Ou-Tzk" customClass="TrashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6nu-Qf-gru">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="r91-Th-u9W">
@@ -2964,12 +2987,12 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="Hkx-sO-bhE">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <webView contentMode="scaleToFill" id="UOp-rq-XL6">
-                                <rect key="frame" x="0.0" y="117" width="320" height="382"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="294"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -2991,7 +3014,7 @@ These terms and conditions are to be governed by any construed in accordance wit
             <objects>
                 <viewController storyboardIdentifier="ForgotViewController" id="coM-KX-bzt" customClass="ForgotViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Un6-tY-Qpb">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="IUJ-Jf-iES">
@@ -3029,7 +3052,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="xN6-AS-DrH">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -3079,7 +3102,7 @@ These terms and conditions are to be governed by any construed in accordance wit
             <objects>
                 <viewController storyboardIdentifier="NewStep1ViewController" id="yxL-Q5-QPR" customClass="NewStep1ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXj-NU-Gd4">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="XB9-yM-zMD">
@@ -3117,16 +3140,16 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="xYg-n4-xOS">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="GbH-Gr-Pet">
-                                <rect key="frame" x="-1" y="117" width="321" height="385"/>
+                                <rect key="frame" x="-1" y="117" width="321" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="HsQ-b5-S0c">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="748"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="660"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ntk-ei-6eK">
@@ -3142,6 +3165,13 @@ These terms and conditions are to be governed by any construed in accordance wit
                                                 <rect key="frame" x="15" y="9" width="295" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.35686275360000003" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Step 1: Select Currency Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XPj-0p-Ebd">
+                                                <rect key="frame" x="15" y="9" width="295" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.35686275360000003" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -3380,6 +3410,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                         <outlet property="purpostTF" destination="ntk-ei-6eK" id="SLm-mU-QJD"/>
                         <outlet property="scrollView" destination="GbH-Gr-Pet" id="IRL-Yi-IV7"/>
                         <outlet property="segment" destination="FpR-FO-ssb" id="DqR-io-dmQ"/>
+                        <outlet property="subTitle2" destination="XPj-0p-Ebd" id="BdO-jx-7MT"/>
                         <outlet property="subTitleLB" destination="BCW-lb-Cq4" id="L0o-Cx-uXU"/>
                         <outlet property="taskbarView" destination="xYg-n4-xOS" id="89S-zX-GDQ"/>
                         <outlet property="titleLB" destination="09I-Fo-oUq" id="0Uf-GU-1xs"/>
@@ -3395,7 +3426,7 @@ These terms and conditions are to be governed by any construed in accordance wit
             <objects>
                 <viewController storyboardIdentifier="TranStatusViewController" id="Ety-Gk-K7Y" customClass="TranStatusViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jIi-Jy-kUW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="GIU-ji-dUw">
@@ -3406,7 +3437,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <rect key="frame" x="5" y="5" width="67" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="btn_nav_home.png">
+                                <state key="normal" image="btn_nav_back.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -3433,25 +3464,31 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="KkW-CD-SMc">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="un4-dy-UxS">
-                                <rect key="frame" x="0.0" y="117" width="320" height="382"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="159" sectionHeaderHeight="22" sectionFooterHeight="22" id="un4-dy-UxS">
+                                <rect key="frame" x="0.0" y="117" width="320" height="294"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="TransStatusCell" rowHeight="159" id="33D-vb-XYL">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="159"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_cell.png" id="Gwx-Dp-7mc">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" id="Gwx-Dp-7mc">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.99936956170000002" green="0.74619861450000002" blue="0.767449253" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" id="eJk-xF-6kB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.80685161431083485" green="1" blue="0.84004532924045028" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r0f-vd-had">
                                                     <rect key="frame" x="13" y="6" width="20" height="23"/>
@@ -3463,7 +3500,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="hemantkris" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e3V-D4-sGb">
                                                     <rect key="frame" x="85" y="28" width="172" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -3475,9 +3512,9 @@ These terms and conditions are to be governed by any construed in accordance wit
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="RAMARAJA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJG-Tl-of2">
-                                                    <rect key="frame" x="85" y="52" width="172" height="27"/>
+                                                    <rect key="frame" x="85" y="52" width="172" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -3553,14 +3590,21 @@ These terms and conditions are to be governed by any construed in accordance wit
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" text="CASH PAYMENT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X3i-ql-otq">
-                                                    <rect key="frame" x="175" y="131" width="135" height="27"/>
+                                                    <rect key="frame" x="198" y="131" width="117" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pay Method:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nEW-No-VbN">
-                                                    <rect key="frame" x="132" y="131" width="64" height="27"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" text="Bank: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41F-ye-Nu9">
+                                                    <rect key="frame" x="13" y="124" width="194" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" text="AccNo: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jVj-nf-ue5">
+                                                    <rect key="frame" x="8" y="141" width="194" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3569,6 +3613,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.99936956167221069" green="0.74619861453276604" blue="0.7674492530099789" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -3595,7 +3640,7 @@ These terms and conditions are to be governed by any construed in accordance wit
             <objects>
                 <viewController storyboardIdentifier="NewStep2ViewController" id="of9-uz-MhE" customClass="NewStep2ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Me-Uj-y52">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="z76-dd-sNc">
@@ -3633,12 +3678,12 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="2tZ-DH-1bF">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9nA-dy-BAj">
-                                <rect key="frame" x="-1" y="117" width="321" height="385"/>
+                                <rect key="frame" x="-1" y="117" width="321" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="OiY-jU-brc">
@@ -3740,7 +3785,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="uYc-UF-Xma">
-                                        <rect key="frame" x="0.0" y="209" width="320" height="176"/>
+                                        <rect key="frame" x="0.0" y="209" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -3827,7 +3872,7 @@ These terms and conditions are to be governed by any construed in accordance wit
             <objects>
                 <viewController storyboardIdentifier="NewSenderViewController" id="0MN-gL-e0v" customClass="NewSenderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DaG-GS-JeU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="Ce3-tY-9IX">
@@ -3865,16 +3910,16 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="72B-uf-BoU">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="87J-7n-ypS">
-                                <rect key="frame" x="0.0" y="117" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="293"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="TB8-kz-7Cp">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1212"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mIc-eK-xut">
@@ -4587,7 +4632,7 @@ Name</string>
             <objects>
                 <viewController storyboardIdentifier="NewStep3ViewController" id="FrC-RV-U83" customClass="NewStep3ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cey-ha-jAG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="y3P-98-6fE">
@@ -4625,12 +4670,12 @@ Name</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="xH5-Jr-1dh">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pMi-wH-7gH">
-                                <rect key="frame" x="-1" y="117" width="321" height="385"/>
+                                <rect key="frame" x="-1" y="117" width="321" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="VZN-PW-O2z">
@@ -4732,7 +4777,7 @@ Name</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mg2-fX-4VL">
-                                        <rect key="frame" x="0.0" y="209" width="320" height="176"/>
+                                        <rect key="frame" x="0.0" y="209" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -4819,7 +4864,7 @@ Name</string>
             <objects>
                 <viewController storyboardIdentifier="NewStep3ContViewController" id="pY1-PY-Tvq" customClass="NewStep3ContViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i8F-o0-jlL">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="akH-E4-eSK">
@@ -4857,12 +4902,12 @@ Name</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="9Tl-zc-5Q8">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vac-hK-XNw">
-                                <rect key="frame" x="-1" y="117" width="321" height="385"/>
+                                <rect key="frame" x="-1" y="117" width="321" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="vPH-ik-TwS">
@@ -4896,7 +4941,7 @@ Name</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="nkB-2e-Ot2">
-                                        <rect key="frame" x="0.0" y="151" width="320" height="186"/>
+                                        <rect key="frame" x="0.0" y="151" width="320" height="98"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -4947,7 +4992,7 @@ Name</string>
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qtv-pw-fiq">
-                                        <rect key="frame" x="98" y="345" width="125" height="35"/>
+                                        <rect key="frame" x="98" y="257" width="125" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="btn_next_step.png">
@@ -4996,7 +5041,7 @@ Name</string>
             <objects>
                 <viewController storyboardIdentifier="NewBenViewController" id="bRB-rg-qeJ" customClass="NewBenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxE-iJ-CMY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="hHn-Ut-Hnw">
@@ -5034,16 +5079,16 @@ Name</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="j5e-UQ-DZc">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tdE-ji-1zL">
-                                <rect key="frame" x="0.0" y="117" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="293"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="qGI-m9-wu9">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="814"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="812"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M95-Ep-xWh">
@@ -5193,6 +5238,22 @@ Name</string>
                                                     <outlet property="delegate" destination="bRB-rg-qeJ" id="DkH-dk-Q4Q"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ISC-iA-Hce">
+                                                <rect key="frame" x="9" y="360" width="88" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="qAp-qL-wfF">
+                                                <rect key="frame" x="112" y="357" width="188" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="bRB-rg-qeJ" id="dO5-DQ-C5B"/>
+                                                </connections>
+                                            </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GqY-79-LMt">
                                                 <rect key="frame" x="9" y="398" width="80" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -5200,12 +5261,8 @@ Name</string>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="combobox.png" id="ymc-Dg-vGN">
-                                                <rect key="frame" x="112" y="395" width="188" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="quH-1z-7uE">
-                                                <rect key="frame" x="112" y="395" width="149" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="quH-1z-7uE">
+                                                <rect key="frame" x="112" y="395" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -5213,21 +5270,6 @@ Name</string>
                                                     <outlet property="delegate" destination="bRB-rg-qeJ" id="NIE-7S-HPD"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mNM-I1-4wk">
-                                                <rect key="frame" x="112" y="395" width="188" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="rstart_Click:" destination="bRB-rg-qeJ" eventType="touchUpInside" id="BPV-R2-z6s"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Post Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MKL-yl-dTB">
                                                 <rect key="frame" x="9" y="442" width="95" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -5390,30 +5432,6 @@ Name</string>
                                                     <outlet property="delegate" destination="bRB-rg-qeJ" id="IAf-2h-Bka"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m5p-mz-gcF">
-                                                <rect key="frame" x="7" y="1027" width="31" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                                <state key="normal" image="uncheck.png">
-                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected" image="check.png"/>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="accept_Click:" destination="bRB-rg-qeJ" eventType="touchUpInside" id="twA-Jy-364"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="103-fa-Hnk">
-                                                <rect key="frame" x="44" y="1015" width="270" height="75"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">I certify that I have read and agree to all the above terms and conditions and confirm to receive all account related communications by phone, fax or email.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LDC-DI-GpK">
                                                 <rect key="frame" x="112" y="775" width="100" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -5429,22 +5447,6 @@ Name</string>
                                                     <action selector="submit_Click:" destination="bRB-rg-qeJ" eventType="touchUpInside" id="XyT-9B-BeN"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ISC-iA-Hce">
-                                                <rect key="frame" x="9" y="360" width="88" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="qAp-qL-wfF">
-                                                <rect key="frame" x="112" y="357" width="188" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="bRB-rg-qeJ" id="dO5-DQ-C5B"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.78039222959999999" green="0.87843143940000001" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     </view>
@@ -5455,7 +5457,6 @@ Name</string>
                     </view>
                     <navigationItem key="navigationItem" id="IAX-Yr-Kcs"/>
                     <connections>
-                        <outlet property="acceptBT" destination="m5p-mz-gcF" id="AhN-FS-f1T"/>
                         <outlet property="bnameTF" destination="32C-uu-zjr" id="wBP-sY-Inz"/>
                         <outlet property="emailTF" destination="G4L-xb-JET" id="HFz-qc-vTz"/>
                         <outlet property="fnameTF" destination="AbA-11-aCy" id="3y3-z7-MDV"/>
@@ -5485,7 +5486,7 @@ Name</string>
             <objects>
                 <viewController storyboardIdentifier="NewStep4ViewController" id="cUH-kg-jhO" customClass="NewStep4ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TAm-Dk-1N0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="CN1-ka-NOK">
@@ -5523,12 +5524,12 @@ Name</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="9X2-dT-6Ux">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NxO-dM-q5E">
-                                <rect key="frame" x="-1" y="117" width="321" height="385"/>
+                                <rect key="frame" x="-1" y="117" width="321" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="dcN-ZW-6SD">
@@ -6060,7 +6061,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
             <objects>
                 <viewController storyboardIdentifier="NewBankViewController" id="bdC-EM-aXt" customClass="NewBankViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n54-VE-TFx">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="dGI-46-OpN">
@@ -6098,20 +6099,20 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="hxo-TB-ZJ1">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ilK-ME-cV3">
-                                <rect key="frame" x="0.0" y="117" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="293"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="cqi-4c-IJF">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="781"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="762"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Holder Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J9n-pr-kGS">
-                                                <rect key="frame" x="20" y="40" width="101" height="21"/>
+                                                <rect key="frame" x="20" y="40" width="273" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6134,7 +6135,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Branch Name/Address1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tEZ-pE-cx4">
-                                                <rect key="frame" x="20" y="415" width="181" height="21"/>
+                                                <rect key="frame" x="20" y="415" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6150,7 +6151,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Branch Name/Address2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Coq-LJ-HIK">
-                                                <rect key="frame" x="24" y="479" width="181" height="21"/>
+                                                <rect key="frame" x="24" y="479" width="276" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6182,7 +6183,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Post Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="THG-gp-xZ6">
-                                                <rect key="frame" x="24" y="647" width="95" height="21"/>
+                                                <rect key="frame" x="24" y="647" width="88" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6264,7 +6265,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Account Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mgN-P8-rSP">
-                                                <rect key="frame" x="20" y="101" width="127" height="21"/>
+                                                <rect key="frame" x="20" y="101" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6280,7 +6281,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bank Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ej2-Hu-Cet">
-                                                <rect key="frame" x="20" y="164" width="89" height="21"/>
+                                                <rect key="frame" x="20" y="164" width="278" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6296,7 +6297,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bank Code(IFSC CODE)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cnc-HI-wGM">
-                                                <rect key="frame" x="20" y="227" width="188" height="21"/>
+                                                <rect key="frame" x="20" y="227" width="278" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6312,7 +6313,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swift Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bqV-dG-Jok">
-                                                <rect key="frame" x="20" y="289" width="83" height="21"/>
+                                                <rect key="frame" x="20" y="289" width="278" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6328,7 +6329,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Routing Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DgR-rh-sWB">
-                                                <rect key="frame" x="20" y="352" width="124" height="21"/>
+                                                <rect key="frame" x="20" y="352" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -6378,7 +6379,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
             <objects>
                 <viewController storyboardIdentifier="SuccessViewController" id="L90-9y-3wV" customClass="SuccessViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ddc-oD-vYO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="RFL-AQ-vJC">
@@ -6416,7 +6417,7 @@ The closing cash balance has been agreed with the balance deposited / transferre
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="jyJ-vk-rgu">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -6505,7 +6506,7 @@ Please email us the copy of bank deposit slip to </string>
             <objects>
                 <viewController storyboardIdentifier="SearchRemittanceViewController" id="Xfk-wz-owA" customClass="SearchRemittanceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6n6-yG-yuX">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="Iiy-Pk-rVc">
@@ -6543,12 +6544,12 @@ Please email us the copy of bank deposit slip to </string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="O22-Dn-Yg3">
-                                <rect key="frame" x="0.0" y="498" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fxY-LY-icb">
-                                <rect key="frame" x="-1" y="117" width="321" height="385"/>
+                                <rect key="frame" x="-1" y="117" width="321" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="x7n-wJ-HPg">
@@ -6652,6 +6653,7 @@ Please email us the copy of bank deposit slip to </string>
         </scene>
     </scenes>
     <resources>
+        <image name="Add-your-File.png" width="543" height="63"/>
         <image name="au.png" width="128" height="128"/>
         <image name="background.png" width="299" height="200"/>
         <image name="banner.png" width="553" height="104"/>
@@ -6701,7 +6703,7 @@ Please email us the copy of bank deposit slip to </string>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="IIU-rr-gmo"/>

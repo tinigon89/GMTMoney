@@ -27,7 +27,7 @@
     searchByArray = [[NSArray alloc] initWithObjects:@"FirstName",@"Sur name",@"Company Name",@"Phone", nil];
     beneList = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneInfo];
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
-
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"Step3CDate"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,6 +66,12 @@
 {
     if (selectedSender == -1) {
         [Util showAlertWithString:@"Please select a bank account!"];
+        return;
+    }
+    NSDate *viewDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"Step3CDate"];
+    if ([[NSDate date] timeIntervalSince1970] - [viewDate timeIntervalSince1970] > 60*10) {
+        [Util showAlertWithString:@"Your session has expired!"];
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
         return;
     }
     NSDictionary *dict = [searchList objectAtIndex:selectedSender];

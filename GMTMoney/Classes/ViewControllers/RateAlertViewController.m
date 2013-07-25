@@ -9,6 +9,7 @@
 #import "RateAlertViewController.h"
 #import "AppDelegate.h"
 #import "define.h"
+#import "ServiceManager.h"
 @interface RateAlertViewController ()
 
 @end
@@ -82,6 +83,36 @@
         
 }
 
+- (IBAction)regist_Click:(id)sender {
+    if (![Util NSStringIsValidEmail:emailTF.text]) {
+        [Util showAlertWithString:@"Email invalid"];
+        return;
+    }
+    
+    
+    if (toTF.text == nil || [toTF.text length] == 0
+        ||[[toTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                          whitespaceAndNewlineCharacterSet]] length] == 0 )
+    {        
+        [Util showAlertWithString:@"Please select currency!"];
+        return;        
+    }
+    NSDictionary *dict2 = [dailyRateList objectAtIndex:currentIndex];
+    NSString * currID = [[dict2 objectForKey:@"CurrID"] stringValue];
+    BOOL result = [ServiceManager submitAlertWithEmail:emailTF.text currID:currID status:@"Y"];
+    if (result) {
+        [Util showAlertWithString:@"Successful!"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+    {
+        [Util showAlertWithString:@"Can't connect to server!"];
+    }
+
+    
+    
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -89,10 +120,13 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
-    NSString *newtext = [textField.text stringByAppendingString:string];
-    if ([newtext doubleValue] == 0) {
-        return NO;
+    if (textField == rateAlertTF) {
+        NSString *newtext = [textField.text stringByAppendingString:string];
+        if ([newtext doubleValue] == 0) {
+            return NO;
+        }
     }
+    
     return YES;
 }
 

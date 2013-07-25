@@ -28,7 +28,7 @@
     searchByArray = [[NSArray alloc] initWithObjects:@"FirstName",@"Sur name",@"Company Name",@"Phone", nil];
     beneList = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneInfo];
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
-
+[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"Step4Date"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,11 +44,17 @@
     
     
     // Setup sender
-    NSArray *senderList = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderInfo];
-    NSString *senderID = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderID];
-    NSArray *tempArray = [senderList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SendersID = %@",senderID]];
-    if ([tempArray count] > 0) {
-        NSDictionary *tempDict = [tempArray objectAtIndex:0];
+    NSDictionary *senderDict = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderInfo];
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+
+    int utype = [[dict objectForKey:@"UType"] intValue];
+    int online = 0;
+    if (utype == 0) {
+        online = 1;
+    }
+
+    if (senderDict) {
+        NSDictionary *tempDict = senderDict;
         sNameTF.text = [NSString stringWithFormat:@"%@ %@",[tempDict objectForKey:@"FName"],[tempDict objectForKey:@"SurName"]];
         NSString *dateString = [tempDict objectForKey:@"DBirth"];
         dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
@@ -89,11 +95,11 @@
         sPAddress.text = [NSString stringWithFormat:@"%@ %@,%@,%@,%@",[tempDict objectForKey:@"PStreet"],[tempDict objectForKey:@"PSub"],[tempDict objectForKey:@"PState"],[tempDict objectForKey:@"PPost"],country];
     }
     
-    NSArray *beneListInfo = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneInfo];
-    NSString *beneID = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneID];
-    tempArray = [beneListInfo filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"BeneficiaryID = %@",beneID]];
-    if ([tempArray count] > 0) {
-        NSDictionary *tempDict = [tempArray objectAtIndex:0];
+    NSDictionary *beneInfo = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneInfo];
+    //NSString *beneID = [[NSUserDefaults standardUserDefaults] objectForKey:kBeneID];
+    NSArray *tempArray;
+    if (beneInfo) {
+        NSDictionary *tempDict = beneInfo;
         bFullNameTF.text = [NSString stringWithFormat:@"%@ %@",[tempDict objectForKey:@"FirstN"],[tempDict objectForKey:@"SurN"]];
         bCNameTF.text = [tempDict objectForKey:@"CompN"];
         bIndentTF.text = [tempDict objectForKey:@"IDNo"];
@@ -159,6 +165,7 @@
 
 
 - (IBAction)next_Click:(id)sender {
+    
 }
 
 - (IBAction)submit_Click:(id)sender {
@@ -167,7 +174,12 @@
         [Util showAlertWithString:@"Please must agree to continue!"];
         return;
     }
-    
+    NSDate *viewDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"Step4Date"];
+    if ([[NSDate date] timeIntervalSince1970] - [viewDate timeIntervalSince1970] > 60*10) {
+        [Util showAlertWithString:@"Your session has expired!"];
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+        return;
+    }
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
     NSString *regid = [dict objectForKey:@"RegisterID"];
     int utype = [[dict objectForKey:@"UType"] intValue];

@@ -25,7 +25,7 @@
     for (NSDictionary *dict in countryList) {
         [currentList addObject:[dict objectForKey:@"CountryName"]];
     }
-    indentifyList = [[NSArray alloc] initWithObjects:@"Alien registration number",@"Bank account",@"Benefits card/ID",@"Birth certificate",@"Business registration/licence",@"Credit/debit card",@"Customer account/ID",@"Driver's licence",@"Employee ID",@"Employer number",@"Identity card/number",@"Membership ID",@"Passport",@"Photo ID",@"Security ID",@"Social security ID",@"Student ID",@"Tax number/ID", nil];
+    indentifyList = [[NSArray alloc] initWithObjects:@"Drivers licence",@"Passport",@"Photo ID", nil];
     stateList = [[NSArray alloc] initWithObjects:@"NSW",@"ACT",@"VIC",@"QLD",@"SA",@"WA",@"NT",@"TAS",@"OTHER",@"N/A", nil];
     contactList = [[NSArray alloc] initWithObjects:@"HOME PHONE",@"WORK PHONE",@"MOBILE",@"FAX", nil];
     sourceList = [[NSArray alloc] initWithObjects:@"Website",@"Newspaper/Magazine",@"Poster",@"Printed/Web Article",@"Direct Post",@"Pamphlet",@"Internet search engineer",@"Email",@"Seminar",@"Tradeshow/Function",@"Word of Mouth",@"Others", nil];
@@ -497,8 +497,15 @@ int pCountryID = rCountryID;
     postcode = ppostcodeTF.text;
     pCountryID = [[[countryList  objectAtIndex:pCountryIndex] objectForKey:@"CountryID"] intValue];
 }
+    
+    int tempIndent = 8;
+    if (identIndex == 1) {
+        tempIndent = 13;
+    }else if(identIndex == 2) {
+        tempIndent = 14;
+    }
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
-    BOOL success = [ServiceManager regist:userNameTF.text pass:passTF.text email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:identIndex+1 IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:[NSString stringWithFormat:@"%i",pContactIndex] PContact:pContact2TF.text SCDet:[NSString stringWithFormat:@"%i",sContactIndex] SContact:sContact2TF.text SourceD:sourceIndex+1];
+    BOOL success = [ServiceManager regist:userNameTF.text pass:passTF.text email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text DBirth:dateofbirthTF.text NationID:nationID IdentyID:tempIndent IdCode:idnumTF.text IDExpiry:idExpiredTF.text IDIssuer:idIssuerTF.text Occup:occupation.text RStreet:rstreetTF.text RSub:rsubburbTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PStatus:pSameAboveBT.selected PStreet:street PSub:sub PState:state PPost:postcode PCountryID:pCountryID PCDet:[NSString stringWithFormat:@"%i",pContactIndex] PContact:pContact2TF.text SCDet:[NSString stringWithFormat:@"%i",sContactIndex] SContact:sContact2TF.text SourceD:sourceIndex+1];
     if (success) {
         [Util showAlertWithString:@"Successful! Please check your email for more info to verify your account!"];
         [SVProgressHUD dismiss];

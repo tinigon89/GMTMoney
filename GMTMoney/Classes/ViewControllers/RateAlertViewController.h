@@ -16,9 +16,12 @@
     int currentIndex;
     NSMutableArray *currencyList;
     NSMutableArray *dailyRateList;
+    IBOutlet UITextField *emailTF;
+    IBOutlet UITextField *rateAlertTF;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
 - (IBAction)to_Click:(id)sender;
 - (IBAction)check_click:(id)sender;
+- (IBAction)regist_Click:(id)sender;
 @end

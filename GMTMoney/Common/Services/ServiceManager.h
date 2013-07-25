@@ -139,6 +139,9 @@
                         PContact:(NSString *)PContact
                            SCDet:(NSString *)SCDet
                         SContact:(NSString *)SContact;
++ (BOOL)submitAlertWithEmail:(NSString*)email
+                      currID:(NSString *)currID
+                      status:(NSString *)status;
 
 + (BOOL)createNewBeneWithRegid:(NSString *)regid
                          email:(NSString *)email

@@ -25,8 +25,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //scrollView.contentSize = CGSizeMake(320, 660);
     //[self registerForKeyboardNotifications];
-    searchByArray = [[NSArray alloc] initWithObjects:@"OTT",@"First Name",@"Last Name",@"Business Name", nil];
-    senderList = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderInfo];
+    searchByArray = [[NSArray alloc] initWithObjects:@"OTT",@"First Name",@"Last Name",@"Business Name",@"Phone Number", nil];
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
 
 }

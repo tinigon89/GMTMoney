@@ -33,13 +33,29 @@
         NSString *string = [[NSString alloc] initWithFormat:@"%@ - %@",[dict objectForKey:@"CurrSym"],[dict objectForKey:@"CurText"]];
         [currencyList addObject:string];
     }
-   
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
+    if (isDuplicate) {
+        titleLB.text = @"Duplicate";
+        NSArray *tempArray = [dailyRateList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"CurrID1 = %@",[duplicateDict objectForKey:@"CurrMainID"]]];
+        NSString *currencyString;
+        if ([tempArray count] > 0) {
+            NSDictionary *tempDict = [tempArray objectAtIndex:0];
+            currencyString= [tempDict objectForKey:@"CurrSym"];
+        }
+        subTitle2.text = [NSString stringWithFormat:@"Duplicate payment for AUD against %@",currencyString];
+        subTitleLB.hidden = YES;
+    }
+    else
+    {
+        subTitle2.hidden = YES;
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -50,12 +66,19 @@
         if ([ServiceManager checkUser:[userInfo objectForKey:@"UserName"] pass:[userInfo  objectForKey:@"UPassword"]]) {
             userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
         }
+        if (![ServiceManager getDailyRates]) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Can't connect to server!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+            [SVProgressHUD dismiss];
+            return;
+        }
+        dailyRateList = [[NSUserDefaults standardUserDefaults] objectForKey:kDailyRateInfo];
         isViewDidLoad = YES;
         
     }
     bankNameTF.hidden = YES;
     if (isDuplicate) {
-        titleLB.text = @"Duplicate";
+        
         NSArray *tempArray = [dailyRateList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"CurrID1 = %@",[duplicateDict objectForKey:@"CurrMainID"]]];
         NSString *currencyString;
         if ([tempArray count] > 0) {
@@ -73,14 +96,14 @@
             NSDictionary *dict = [dailyRateList objectAtIndex:i];
         currentIndex = i;
             fCurrencyTF.text = [[NSString alloc] initWithFormat:@"%@ - %@",[dict objectForKey:@"CurrSym"],[dict objectForKey:@"CurText"]];
-        subTitleLB.text = [NSString stringWithFormat:@"Duplication of payment for AUD against %@",currencyString];
+        
         if ([[duplicateDict objectForKey:@"BankACID"] intValue]!=0) {
             NSString *bankID = [duplicateDict objectForKey:@"BankACID"];
             NSArray *bankList = [ServiceManager getBankDetail:bankID];
             if ([bankList count] > 0) {
                 ishasBank = YES;
                 NSDictionary *tempDict = [bankList objectAtIndex:0];
-                bankNameTF.text = [NSString stringWithFormat:@"Bank: %@",[tempDict objectForKey:@"BankName"]];
+                bankNameTF.text = [NSString stringWithFormat:@"Bank: %@ - %@",[tempDict objectForKey:@"BankName"],[tempDict objectForKey:@"ACNo"]];
             }
         }
         
@@ -138,6 +161,9 @@
         [Util showAlertWithString:@"Your payment not valid!"];
         return;
     }
+   
+    
+    
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
     NSString *regid = [dict objectForKey:@"RegisterID"];
@@ -159,6 +185,18 @@
             }
             else
             {
+                NSString *dateString = [dict objectForKey:@"IDExpiry"];
+                dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
+                dateString = [dateString substringToIndex:10];
+                double rtimeInterval = [dateString doubleValue];
+                if ([[NSDate date] timeIntervalSince1970] - rtimeInterval > 0) {
+                    [Util showAlertWithString:@"Your ID has expired please update your new ID!"];
+                    return;
+                }
+
+                [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kSenderInfo];
+                [[NSUserDefaults standardUserDefaults] setObject:[[dict objectForKey:@"RegisterID"] stringValue] forKey:kSenderID];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 NewStep3ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep3ViewController"];
                 [self.navigationController pushViewController:viewController animated:YES];
             }
@@ -168,6 +206,15 @@
     else
     {
         NSString *bankID = [duplicateDict objectForKey:@"BankACID"];
+        NSString *dateString = [dict objectForKey:@"IDExpiry"];
+        dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
+        dateString = [dateString substringToIndex:10];
+        double rtimeInterval = [dateString doubleValue];
+        if ([[NSDate date] timeIntervalSince1970] - rtimeInterval > 0) {
+            [SVProgressHUD dismiss];
+            [Util showAlertWithString:@"Your ID has expired please update your new ID!"];
+            return;
+        }
         if (segment.selectedSegmentIndex == 0) {
             bankID = @"0";
         }
@@ -225,6 +272,11 @@
         }
         if (textField == paymentAmountTF) {
             double payment = [newString doubleValue];
+            if (payment == 0) {
+                transferAmount.text = @"";
+                foreignAmountTF.text = @"";
+                return YES;
+            }
             NSDictionary *dict = [dailyRateList objectAtIndex:currentIndex];
             if (isOnlineGreat && segment.selectedSegmentIndex == 1) {
                 if (payment < 2500) {
@@ -244,6 +296,11 @@
         {
             
             double transfer = [newString doubleValue] / [exchangeRate.text doubleValue];
+            if (transfer == 0) {
+                transferAmount.text = @"";
+                paymentAmountTF.text = @"";
+                return YES;
+            }
             transferAmount.text = [NSString stringWithFormat:@"%.4f",transfer];
             double payment = transfer + [lessCommission.text doubleValue];
             paymentAmountTF.text = [NSString stringWithFormat:@"%.4f",payment];
@@ -398,11 +455,19 @@
             lessCommission.text = [[dict objectForKey:@"Great5"] stringValue];
         }
     }
+    if (payment == 0) {
+        return;
+    }
     double transfer = payment - [lessCommission.text doubleValue];
     transferAmount.text = [NSString stringWithFormat:@"%.4f",transfer];
     double fAmount = transfer * [exchangeRate.text doubleValue];
     foreignAmountTF.text = [NSString stringWithFormat:@"%.4f",fAmount];
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WEPopoverController.h"
 #import "WEPopoverContentViewController.h"
-@interface NewStep1ViewController : UIViewController<UIWebViewDelegate,UITextFieldDelegate,UITextViewDelegate,WEPopoverContentViewControllerDelegate,WEPopoverControllerDelegate>
+@interface NewStep1ViewController : UIViewController<UIWebViewDelegate,UITextFieldDelegate,UITextViewDelegate,WEPopoverContentViewControllerDelegate,WEPopoverControllerDelegate,UIAlertViewDelegate>
 {
 WEPopoverController *popoverController;
     IBOutlet UIScrollView *scrollView;
@@ -34,6 +34,8 @@ WEPopoverController *popoverController;
     IBOutlet UILabel *titleLB;
     IBOutlet UILabel *subTitleLB;
     IBOutlet UILabel *bankNameTF;
+    IBOutlet UILabel *subTitle2;
+    
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 @property (nonatomic) BOOL isDuplicate;

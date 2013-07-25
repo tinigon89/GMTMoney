@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AccountViewController : UIViewController<UIWebViewDelegate>
+#import <MessageUI/MessageUI.h>
+@interface AccountViewController : UIViewController<UIWebViewDelegate,MFMailComposeViewControllerDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     IBOutlet UIWebView *webview;
     BOOL isFinish;
     BOOL viewDidLoad;
+    UIActionSheet *actionsheet;
 
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
@@ -20,5 +21,6 @@
 
 - (IBAction)status_Click:(id)sender;
 
+- (IBAction)sendMail_Click:(id)sender;
 
 @end

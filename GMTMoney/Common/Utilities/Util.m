@@ -51,7 +51,7 @@
             [output appendFormat:@"%%%02X", thisChar];
         }
     }
-    return output;
+    return [output uppercaseString];
 }
 
 + (BOOL) NSStringIsValidEmail:(NSString *)checkString

@@ -21,7 +21,7 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSString* url = @"http://www.instantcashworldwide.com/track.asp";
+    NSString* url = @"http://www.instantcashworldwide.com/include/transtatus.asp";
     NSURL* nsUrl = [NSURL URLWithString:url];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl];

@@ -13,7 +13,6 @@
 {
 WEPopoverController *popoverController;
     NSArray *searchByArray;
-    NSArray *senderList;
     int currentIndex;
     IBOutlet UITextField *searchByTF;
     IBOutlet UITextField *searchTF;

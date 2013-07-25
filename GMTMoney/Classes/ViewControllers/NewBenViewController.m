@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    scrollView.contentSize = CGSizeMake(320, 814);
+    scrollView.contentSize = CGSizeMake(320, 900);
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
     currentList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in countryList) {
@@ -60,7 +60,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = indentifyList;
-        contentViewController.width = 200;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -85,7 +85,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = stateList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -108,7 +108,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = currentList;
-        contentViewController.width = 200;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -147,7 +147,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = contactList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -173,7 +173,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = contactList;
-        contentViewController.width = 100;
+        contentViewController.width = 188;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -224,10 +224,7 @@
         [Util showAlertWithString:@"Please enter your last name!"];
         return;
         
-    }
-
-    
-        
+    }       
     
     
     if (rstreetTF.text == nil || [rstreetTF.text length] == 0
@@ -246,6 +243,16 @@
     {
         
         [Util showAlertWithString:@"Please enter city!"];
+        return;
+        
+    }
+    
+    if (rstateTF.text == nil || [rstateTF.text length] == 0
+        ||[[rstateTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                          whitespaceAndNewlineCharacterSet]] length] == 0 )
+    {
+        
+        [Util showAlertWithString:@"Please enter State!"];
         return;
         
     }
@@ -298,11 +305,8 @@ int rCountryID = [[[countryList  objectAtIndex:rCountryIndex] objectForKey:@"Cou
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     BOOL success = [ServiceManager createNewBeneWithRegid:regid email:emailTF.text FName:fnameTF.text SurName:snameTF.text BisName:bnameTF.text IdentyID:[indentifyList objectAtIndex:identIndex] IdCode:idnumTF.text RStreet:rstreetTF.text RSub:rsubburbTF.text City:rcityTF.text RState:rstateTF.text RPost:rpostcodeTF.text RCountryID:rCountryID PCDet:[NSString stringWithFormat:@"%i",pContactIndex] PContact:pContact2TF.text SCDet:[NSString stringWithFormat:@"%i",sContactIndex] SContact:sContact2TF.text];
     if (success) {
-        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
-        NSString *regid = [dict objectForKey:@"RegisterID"];
-        [ServiceManager getBenList:regid];
-        [Util showAlertWithString:@"Successful!"];
         [SVProgressHUD dismiss];
+        [Util showAlertWithString:@"Successful!"];
         [self.navigationController popViewControllerAnimated:YES];
         return;
         

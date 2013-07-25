@@ -392,8 +392,6 @@
 		855FAC05178582BF00CAABCB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 855FAC04178582BF00CAABCB /* Default-568h@2x.png */; };
 		855FAC08178582BF00CAABCB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855FAC06178582BF00CAABCB /* MainStoryboard_iPhone.storyboard */; };
 		855FAC0B178582BF00CAABCB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855FAC09178582BF00CAABCB /* MainStoryboard_iPad.storyboard */; };
-		855FAC5B1785835D00CAABCB /* CGItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC1C1785835D00CAABCB /* CGItem+Custom.m */; };
-		855FAC5C1785835D00CAABCB /* CGItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC1E1785835D00CAABCB /* CGItem.m */; };
 		855FAC5D1785835D00CAABCB /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC201785835D00CAABCB /* CoreDataHelper.m */; };
 		855FAC5E1785835D00CAABCB /* Hotfm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC211785835D00CAABCB /* Hotfm.xcdatamodeld */; };
 		855FAC5F1785835D00CAABCB /* NSManagedObjectContext+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC241785835D00CAABCB /* NSManagedObjectContext+Custom.m */; };
@@ -411,7 +409,6 @@
 		855FAC6B1785835D00CAABCB /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC441785835D00CAABCB /* SBJsonParser.m */; };
 		855FAC6C1785835D00CAABCB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC461785835D00CAABCB /* SBJsonWriter.m */; };
 		855FAC6D1785835D00CAABCB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC491785835D00CAABCB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		855FAC6E1785835D00CAABCB /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC4C1785835D00CAABCB /* DownloadManager.m */; };
 		855FAC6F1785835D00CAABCB /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC4E1785835D00CAABCB /* ServiceManager.m */; };
 		855FAC701785835D00CAABCB /* GlobalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC521785835D00CAABCB /* GlobalObject.m */; };
 		855FAC711785835D00CAABCB /* NetworkActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 855FAC541785835D00CAABCB /* NetworkActivityIndicator.m */; };
@@ -437,6 +434,7 @@
 		857847D1179111C8008EADAD /* sendMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847D0179111C8008EADAD /* sendMoney.png */; };
 		857847D41791130D008EADAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D31791130D008EADAD /* LoginViewController.m */; };
 		857847D71791821C008EADAD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D61791821C008EADAD /* AccountViewController.m */; };
+		85822DEC17A15DC80025E50F /* Add-your-File.png in Resources */ = {isa = PBXBuildFile; fileRef = 85822DEB17A15DC80025E50F /* Add-your-File.png */; };
 		858E97241798FF00001D5D1F /* NewStep3ContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E97231798FF00001D5D1F /* NewStep3ContViewController.m */; };
 		858E972717992863001D5D1F /* NewBenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E972617992863001D5D1F /* NewBenViewController.m */; };
 		858E972A179932CC001D5D1F /* NewStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E9729179932CC001D5D1F /* NewStep4ViewController.m */; };
@@ -858,10 +856,6 @@
 		855FAC04178582BF00CAABCB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		855FAC07178582BF00CAABCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		855FAC0A178582BF00CAABCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		855FAC1B1785835D00CAABCB /* CGItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGItem+Custom.h"; sourceTree = "<group>"; };
-		855FAC1C1785835D00CAABCB /* CGItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGItem+Custom.m"; sourceTree = "<group>"; };
-		855FAC1D1785835D00CAABCB /* CGItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGItem.h; sourceTree = "<group>"; };
-		855FAC1E1785835D00CAABCB /* CGItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGItem.m; sourceTree = "<group>"; };
 		855FAC1F1785835D00CAABCB /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		855FAC201785835D00CAABCB /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		855FAC221785835D00CAABCB /* Hotfm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hotfm.xcdatamodel; sourceTree = "<group>"; };
@@ -900,8 +894,6 @@
 		855FAC461785835D00CAABCB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		855FAC481785835D00CAABCB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		855FAC491785835D00CAABCB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		855FAC4B1785835D00CAABCB /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
-		855FAC4C1785835D00CAABCB /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		855FAC4D1785835D00CAABCB /* ServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
 		855FAC4E1785835D00CAABCB /* ServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceManager.m; sourceTree = "<group>"; };
 		855FAC501785835D00CAABCB /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
@@ -940,6 +932,7 @@
 		857847D31791130D008EADAD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		857847D51791821C008EADAD /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		857847D61791821C008EADAD /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		85822DEB17A15DC80025E50F /* Add-your-File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-your-File.png"; sourceTree = "<group>"; };
 		858E97221798FF00001D5D1F /* NewStep3ContViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep3ContViewController.h; sourceTree = "<group>"; };
 		858E97231798FF00001D5D1F /* NewStep3ContViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep3ContViewController.m; sourceTree = "<group>"; };
 		858E972517992862001D5D1F /* NewBenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBenViewController.h; sourceTree = "<group>"; };
@@ -1366,6 +1359,7 @@
 		855472FF178685D1004768A5 /* login success */ = {
 			isa = PBXGroup;
 			children = (
+				85822DEB17A15DC80025E50F /* Add-your-File.png */,
 				85ABBBEE1795861D0021BFCB /* find_trans.png */,
 				85547300178685D1004768A5 /* btn_pending.png */,
 				85547301178685D1004768A5 /* btn_rate_alerts.png */,
@@ -1675,10 +1669,6 @@
 		855FAC1A1785835D00CAABCB /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				855FAC1B1785835D00CAABCB /* CGItem+Custom.h */,
-				855FAC1C1785835D00CAABCB /* CGItem+Custom.m */,
-				855FAC1D1785835D00CAABCB /* CGItem.h */,
-				855FAC1E1785835D00CAABCB /* CGItem.m */,
 				855FAC1F1785835D00CAABCB /* CoreDataHelper.h */,
 				855FAC201785835D00CAABCB /* CoreDataHelper.m */,
 				855FAC211785835D00CAABCB /* Hotfm.xcdatamodeld */,
@@ -1756,8 +1746,6 @@
 		855FAC4A1785835D00CAABCB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				855FAC4B1785835D00CAABCB /* DownloadManager.h */,
-				855FAC4C1785835D00CAABCB /* DownloadManager.m */,
 				855FAC4D1785835D00CAABCB /* ServiceManager.h */,
 				855FAC4E1785835D00CAABCB /* ServiceManager.m */,
 			);
@@ -2208,6 +2196,7 @@
 				85ABBBEF1795861D0021BFCB /* find_trans.png in Resources */,
 				85099CC61796A73D0026FB18 /* check2.png in Resources */,
 				85099CC81796A9E90026FB18 /* btn_nav_new.png in Resources */,
+				85822DEC17A15DC80025E50F /* Add-your-File.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2221,8 +2210,6 @@
 				85685F6B178EFDDA0012BC71 /* WEPopoverContentViewController.m in Sources */,
 				855FABFB178582BF00CAABCB /* main.m in Sources */,
 				855FABFF178582BF00CAABCB /* AppDelegate.m in Sources */,
-				855FAC5B1785835D00CAABCB /* CGItem+Custom.m in Sources */,
-				855FAC5C1785835D00CAABCB /* CGItem.m in Sources */,
 				855FAC5D1785835D00CAABCB /* CoreDataHelper.m in Sources */,
 				855FAC5E1785835D00CAABCB /* Hotfm.xcdatamodeld in Sources */,
 				855FAC5F1785835D00CAABCB /* NSManagedObjectContext+Custom.m in Sources */,
@@ -2240,7 +2227,6 @@
 				855FAC6B1785835D00CAABCB /* SBJsonParser.m in Sources */,
 				855FAC6C1785835D00CAABCB /* SBJsonWriter.m in Sources */,
 				855FAC6D1785835D00CAABCB /* Reachability.m in Sources */,
-				855FAC6E1785835D00CAABCB /* DownloadManager.m in Sources */,
 				855FAC6F1785835D00CAABCB /* ServiceManager.m in Sources */,
 				855FAC701785835D00CAABCB /* GlobalObject.m in Sources */,
 				855FAC711785835D00CAABCB /* NetworkActivityIndicator.m in Sources */,

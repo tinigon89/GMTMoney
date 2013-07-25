@@ -25,9 +25,8 @@
     //scrollView.contentSize = CGSizeMake(320, 660);
     //[self registerForKeyboardNotifications];
     searchByArray = [[NSArray alloc] initWithObjects:@"FirstName",@"Sur name",@"Company Name",@"Phone", nil];
-    senderList = [[NSUserDefaults standardUserDefaults] objectForKey:kSenderInfo];
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
-
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"Step2Date"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,6 +38,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
+    
     //[self didSelectMenuAtIndex:currentIndex];
 }
 
@@ -97,6 +97,27 @@
         [Util showAlertWithString:@"Please select a sender"];
         return;
     }
+     NSDate *viewDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"Step2Date"];
+    if ([[NSDate date] timeIntervalSince1970] - [viewDate timeIntervalSince1970] > 60*10) {
+        [Util showAlertWithString:@"Your session has expired!"];
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+        return;
+    }
+    NSString *remid = [[NSUserDefaults standardUserDefaults] objectForKey:kRemitID];
+    NSDictionary *senderDict = [searchList objectAtIndex:selectedSender];
+    NSString *senderid = [senderDict objectForKey:@"SendersID"];
+    
+    
+    NSString *dateString = [senderDict objectForKey:@"IDExpiry"];
+    dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
+    dateString = [dateString substringToIndex:10];
+    double rtimeInterval = [dateString doubleValue];
+    if ([[NSDate date] timeIntervalSince1970] - rtimeInterval > 0) {
+        [Util showAlertWithString:@"Your ID has expired please update your new ID or select another sender!"];
+        return;
+    }
+
+    
     [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
     NSString *regid = [dict objectForKey:@"RegisterID"];
@@ -105,13 +126,15 @@
     if (utype == 0) {
         online = 1;
     }
-    NSString *remid = [[NSUserDefaults standardUserDefaults] objectForKey:kRemitID];
-    NSDictionary *senderDict = [searchList objectAtIndex:selectedSender];
-    NSString *senderid = [senderDict objectForKey:@"SendersID"];
+   
     int paytype = [[[NSUserDefaults standardUserDefaults] objectForKey:kPaymentType] intValue];
     BOOL result = [ServiceManager submitStep2:regid remid:remid sid:senderid paytype:paytype online:online];
+    
     [SVProgressHUD dismiss];
     if (result) {
+        [[NSUserDefaults standardUserDefaults] setObject:senderDict forKey:kSenderInfo];
+        [[NSUserDefaults standardUserDefaults] setObject:senderid forKey:kSenderID];
+        [[NSUserDefaults standardUserDefaults] synchronize];
             NewStep3ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep3ViewController"];
             [self.navigationController pushViewController:viewController animated:YES];
     }
