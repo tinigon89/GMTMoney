@@ -729,7 +729,7 @@ SYDNEY NSW 2150</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AEy-0o-cJK">
-                                <rect key="frame" x="5" y="5" width="67" height="39"/>
+                                <rect key="frame" x="7" y="5" width="67" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="btn_nav_home.png">
@@ -751,7 +751,7 @@ SYDNEY NSW 2150</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_nav.png" id="mCb-UO-Sjq">
-                                <rect key="frame" x="0.0" y="50" width="320" height="82"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="95"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="banner.png" id="r8h-sA-X1l">
@@ -764,7 +764,7 @@ SYDNEY NSW 2150</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" id="cq8-lf-9Yn">
-                                <rect key="frame" x="0.0" y="131" width="320" height="279"/>
+                                <rect key="frame" x="0.0" y="189" width="320" height="221"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -876,10 +876,10 @@ SYDNEY NSW 2150</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gal-h4-RrX">
-                                <rect key="frame" x="245" y="10" width="32" height="32"/>
+                                <rect key="frame" x="234" y="5" width="43" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="sort.png">
+                                <state key="normal" title="Button" image="btn_edit2.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -905,19 +905,39 @@ SYDNEY NSW 2150</string>
                                     <action selector="refresh_Click:" destination="Yf9-Ik-Whf" eventType="touchUpInside" id="ifu-Ms-xed"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lastest update:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X3x-Zz-H58">
-                                <rect key="frame" x="0.0" y="111" width="320" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last update:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X3x-Zz-H58">
+                                <rect key="frame" x="0.0" y="107" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.90287028329219421" green="1" blue="0.48356894718895682" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" id="IAH-E2-c20">
+                                <rect key="frame" x="0.0" y="145" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yf9-Ik-Whf" id="TLU-a8-5Yu"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1 AUD =" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eZ9-Fa-MKB">
+                                <rect key="frame" x="0.0" y="124" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="au.png" id="BdF-8g-ZdC">
+                                <rect key="frame" x="114" y="127" width="20" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.78039222959999999" green="0.87843143940000001" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="wty-du-PEE"/>
                     <connections>
                         <outlet property="lastestLB" destination="X3x-Zz-H58" id="o9o-40-ePd"/>
+                        <outlet property="rateSearchBar" destination="IAH-E2-c20" id="GM8-UV-Xn1"/>
                         <outlet property="rateTableView" destination="cq8-lf-9Yn" id="ynn-4g-d3b"/>
                         <outlet property="taskbarView" destination="hbq-fl-jje" id="wHf-tY-7H7"/>
                     </connections>
@@ -3498,7 +3518,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="hemantkris" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e3V-D4-sGb">
-                                                    <rect key="frame" x="85" y="28" width="172" height="27"/>
+                                                    <rect key="frame" x="78" y="28" width="179" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3512,7 +3532,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="RAMARAJA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJG-Tl-of2">
-                                                    <rect key="frame" x="85" y="52" width="172" height="28"/>
+                                                    <rect key="frame" x="78" y="52" width="179" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3919,7 +3939,7 @@ These terms and conditions are to be governed by any construed in accordance wit
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="TB8-kz-7Cp">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1212"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1300"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mIc-eK-xut">
@@ -6667,6 +6687,7 @@ Please email us the copy of bank deposit slip to </string>
         <image name="btn_cashlocations.png" width="184" height="185"/>
         <image name="btn_daily_rates.png" width="251" height="55"/>
         <image name="btn_dailyrates_home.png" width="184" height="185"/>
+        <image name="btn_edit2.png" width="87" height="66"/>
         <image name="btn_help.png" width="244" height="44"/>
         <image name="btn_login.png" width="251" height="55"/>
         <image name="btn_login_nav.png" width="106" height="66"/>
@@ -6697,9 +6718,447 @@ Please email us the copy of bank deposit slip to </string>
         <image name="sendMoney.png" width="326" height="59"/>
         <image name="sms.png" width="184" height="186"/>
         <image name="smsto.png" width="106" height="59"/>
-        <image name="sort.png" width="64" height="64"/>
         <image name="uncheck.png" width="128" height="128"/>
     </resources>
+    <classes>
+        <class className="AccountViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="sendMail_Click:"/>
+                <relationship kind="action" name="status_Click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CalculateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="sendmoney_Click:"/>
+                <relationship kind="action" name="to_Click:"/>
+                <relationship kind="outlet" name="amountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="toTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CashLocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CashLocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="DailyRateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyRateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="refresh_Click:"/>
+                <relationship kind="action" name="sort:"/>
+                <relationship kind="outlet" name="lastestLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rateSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="rateTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="FeedDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="feedTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="topTitleLB" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ForgotViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ForgotViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="account_Click:"/>
+                <relationship kind="action" name="facebook_click:"/>
+                <relationship kind="action" name="login_Click:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="forgot_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="login_Click:"/>
+                <relationship kind="action" name="register_Click:"/>
+                <relationship kind="outlet" name="passwordTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="userIDTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="help_Click:"/>
+                <relationship kind="action" name="news_Click:"/>
+                <relationship kind="action" name="visit_Click:"/>
+            </relationships>
+        </class>
+        <class className="NewBankViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewBankViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="accountNumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankCodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rcityTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="routingNumberTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="swiftCodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewBenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewBenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="ident_Click:"/>
+                <relationship kind="action" name="pcontact_Click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="rstart_Click:"/>
+                <relationship kind="action" name="sContact_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="acceptBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="identificationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idnumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rcityTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="snameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewSenderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewSenderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="dateofbirth_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="ident_Click:"/>
+                <relationship kind="action" name="idexpired_Click:"/>
+                <relationship kind="action" name="nation_Click:"/>
+                <relationship kind="action" name="pcontact_Click:"/>
+                <relationship kind="action" name="pcountry_Click:"/>
+                <relationship kind="action" name="pstate_Click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="rstart_Click:"/>
+                <relationship kind="action" name="sContact_Click:"/>
+                <relationship kind="action" name="sameabove_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="acceptBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateofbirthTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idExpiredTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idIssuerTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="identificationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idnumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="occupation" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pSameAboveBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ppostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="psubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="snameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep1ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep1ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fcurrency_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="segment_Click:"/>
+                <relationship kind="outlet" name="bankNameTF" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commentTV" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="exchangeRate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fCurrencyTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="foreignAmount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="foreignAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lessCommission" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="paymentAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="purpostTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="subTitle2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subTitleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="transferAmount" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewStep2ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep2ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="search_Click:"/>
+                <relationship kind="action" name="select_Click:"/>
+                <relationship kind="outlet" name="searchByTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep3ContViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep3ContViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep3ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep3ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="search_Click:"/>
+                <relationship kind="action" name="select_Click:"/>
+                <relationship kind="outlet" name="searchByTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep4ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep4ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="BCode1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="BCode2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="BCode3TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="FAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="accountHolderTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="accountNumberTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bCNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bEmailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bFullNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bIndentTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bPContact" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bSContactTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankDetailView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="bankNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bottomView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="btnAccept" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="commentTV" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="commissionTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dobTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="exchangeRateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="paymentAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sBAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sEmailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sPAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sPContact" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sRAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sSContactTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scompanyTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="sindentTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="transferAmountTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="business_click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="science_Click:"/>
+                <relationship kind="action" name="skynews_Click:"/>
+                <relationship kind="action" name="topnews_click:"/>
+                <relationship kind="action" name="world_Click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="RateAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RateAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="check_click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="regist_Click:"/>
+                <relationship kind="action" name="to_Click:"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rateAlertTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="toTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="RegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="dateofbirth_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="ident_Click:"/>
+                <relationship kind="action" name="idexpired_Click:"/>
+                <relationship kind="action" name="nation_Click:"/>
+                <relationship kind="action" name="pcontact_Click:"/>
+                <relationship kind="action" name="pcountry_Click:"/>
+                <relationship kind="action" name="pstate_Click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="rstart_Click:"/>
+                <relationship kind="action" name="sContact_Click:"/>
+                <relationship kind="action" name="sameabove_Click:"/>
+                <relationship kind="action" name="source_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="acceptBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateofbirthTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idExpiredTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idIssuerTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="identificationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idnumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="occupation" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pSameAboveBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ppostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="psubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="snameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sourceTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="userNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SMSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SMSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="send_click:"/>
+                <relationship kind="outlet" name="contentTV" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SearchRemittanceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchRemittanceViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="search_Click:"/>
+                <relationship kind="action" name="select_Click:"/>
+                <relationship kind="outlet" name="searchByTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SuccessViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SuccessViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="TranStatusViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TranStatusViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="transTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TrashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrashViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

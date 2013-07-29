@@ -31,29 +31,38 @@
        // NSArray *categoryList = [responsedict objectForKey:@"category"];
         if (dailyRateList && [dailyRateList count] > 0) {
             NSMutableArray *insertArray = [dailyRateList mutableCopy];
-            if (![[NSUserDefaults standardUserDefaults] objectForKey:kDailyRateInfo]) {
-                for (int i = 0; i < [insertArray count]; i++) {
-                    NSMutableDictionary *dict = [[insertArray objectAtIndex:i] mutableCopy];
-                    [dict setObject:[NSNumber numberWithInt:i] forKey:@"order"];
-                    [insertArray replaceObjectAtIndex:i withObject:dict];
+            NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:0];
+            for (int i = 0; i < [insertArray count]; i++) {
+                NSDictionary *dict = [insertArray objectAtIndex:i];
+                if (!([[dict objectForKey:@"ERate"] floatValue] == 0)) {
+                    [newArray addObject:dict];
                 }
+            }
+            if (![[NSUserDefaults standardUserDefaults] objectForKey:kDailyRateInfo]) {
+                for (int i = 0; i < [newArray count]; i++) {
+                    NSMutableDictionary *dict = [[newArray objectAtIndex:i] mutableCopy];
+                    [dict setObject:[NSNumber numberWithInt:i] forKey:@"order"];
+                    [newArray replaceObjectAtIndex:i withObject:dict];
+                }
+                
+                
             }
             else
             {
                 NSArray *oldList = [[NSUserDefaults standardUserDefaults] objectForKey:kDailyRateInfo];
-                for (int i = 0; i < [insertArray count]; i++) {
-                    NSMutableDictionary *dict = [[insertArray objectAtIndex:i] mutableCopy];
+                for (int i = 0; i < [newArray count]; i++) {
+                    NSMutableDictionary *dict = [[newArray objectAtIndex:i] mutableCopy];
                     NSArray *tempArray = [oldList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"CurrSym = %@",[dict objectForKey:@"CurrSym"]]];
                     if ([tempArray count] > 0) {
                         [dict setObject:[NSNumber numberWithInt:[[[tempArray objectAtIndex:0] objectForKey:@"order"] intValue]]  forKey:@"order"];
-                        [insertArray replaceObjectAtIndex:i withObject:dict];
+                        [newArray replaceObjectAtIndex:i withObject:dict];
                     }
                 
                 }
             }
             NSTimeInterval timeint = [[NSDate date] timeIntervalSince1970];
             [[NSUserDefaults standardUserDefaults] setDouble:timeint forKey:kLastestUpdate];
-            [[NSUserDefaults standardUserDefaults] setObject:insertArray forKey:kDailyRateInfo];
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:kDailyRateInfo];
             [[NSUserDefaults standardUserDefaults] synchronize];
             return YES;
         }

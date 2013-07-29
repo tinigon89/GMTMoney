@@ -429,6 +429,7 @@
 		8569AA111785857E0080FC6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8569AA101785857E0080FC6E /* SystemConfiguration.framework */; };
 		85734AB4178D0AC10094D84A /* TaskbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85734AB3178D0AC10094D84A /* TaskbarView.m */; };
 		85734AB6178D0ADF0094D84A /* TaskbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85734AB5178D0ADF0094D84A /* TaskbarView.xib */; };
+		8574934917A64A0D00C64DD2 /* btn_edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8574934817A64A0D00C64DD2 /* btn_edit2.png */; };
 		857847C71790FC20008EADAD /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847C61790FC20008EADAD /* sort.png */; };
 		857847CF1790FC4C008EADAD /* menu_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847CE1790FC4C008EADAD /* menu_refresh.png */; };
 		857847D1179111C8008EADAD /* sendMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847D0179111C8008EADAD /* sendMoney.png */; };
@@ -925,6 +926,7 @@
 		85734AB2178D0AC10094D84A /* TaskbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskbarView.h; sourceTree = "<group>"; };
 		85734AB3178D0AC10094D84A /* TaskbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskbarView.m; sourceTree = "<group>"; };
 		85734AB5178D0ADF0094D84A /* TaskbarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskbarView.xib; sourceTree = "<group>"; };
+		8574934817A64A0D00C64DD2 /* btn_edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_edit2.png; sourceTree = "<group>"; };
 		857847C61790FC20008EADAD /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
 		857847CE1790FC4C008EADAD /* menu_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_refresh.png; sourceTree = "<group>"; };
 		857847D0179111C8008EADAD /* sendMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendMoney.png; sourceTree = "<group>"; };
@@ -1638,6 +1640,7 @@
 				855472DF178685D1004768A5 /* bg_banner.png */,
 				85099CC51796A73C0026FB18 /* check2.png */,
 				855472E0178685D1004768A5 /* bg_banner2.png */,
+				8574934817A64A0D00C64DD2 /* btn_edit2.png */,
 				855472E1178685D1004768A5 /* bg_nav.png */,
 				85099CC71796A9E80026FB18 /* btn_nav_new.png */,
 				855472E2178685D1004768A5 /* bg_popup_bank_detail.png */,
@@ -2197,6 +2200,7 @@
 				85099CC61796A73D0026FB18 /* check2.png in Resources */,
 				85099CC81796A9E90026FB18 /* btn_nav_new.png in Resources */,
 				85822DEC17A15DC80025E50F /* Add-your-File.png in Resources */,
+				8574934917A64A0D00C64DD2 /* btn_edit2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

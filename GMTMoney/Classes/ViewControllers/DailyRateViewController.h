@@ -14,7 +14,9 @@
     NSMutableArray *dailyRateList;
     IBOutlet UILabel *lastestLB;
     BOOL isShowCashRate;
-    
+    BOOL isSearch;
+    NSArray *searchArray;
+    IBOutlet UISearchBar *rateSearchBar;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;

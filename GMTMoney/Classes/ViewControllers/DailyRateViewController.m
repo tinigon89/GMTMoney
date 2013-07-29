@@ -49,14 +49,20 @@
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         NSArray *sortedArray;
         sortedArray = [dailyRateList sortedArrayUsingDescriptors:sortDescriptors];
-        dailyRateList = [sortedArray mutableCopy];;
+        dailyRateList = [sortedArray mutableCopy];
+        for (NSDictionary *dict in dailyRateList) {
+            if ([[dict objectForKey:@"CurrSym"] isEqualToString:@"AUD"]) {
+                [dailyRateList removeObject:dict];
+                break;
+            }
+        }
     }
     [rateTableView reloadData];
     if ([userDefault objectForKey:kLastestUpdate]) {
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[userDefault doubleForKey:kLastestUpdate]];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MM/dd/y h:mm a"];
-        lastestLB.text = [NSString stringWithFormat:@"Lastest update: %@",[formatter stringFromDate:date]];
+        lastestLB.text = [NSString stringWithFormat:@"Last update: %@",[formatter stringFromDate:date]];
     }
     [SVProgressHUD dismiss];
 }
@@ -78,7 +84,10 @@
 }
 
 - (IBAction)sort:(id)sender {
-    rateTableView.editing = !rateTableView.editing;
+    if (!isSearch) {
+        rateTableView.editing = !rateTableView.editing;
+    }
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -88,6 +97,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (isSearch) {
+        return  [searchArray count];
+    }
     return [dailyRateList count];
 }
 
@@ -106,7 +118,13 @@
         indentify = @"DailyRateCell2";
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentify];
-    NSDictionary *dict = [dailyRateList objectAtIndex:indexPath.row];
+    NSDictionary *dict;
+    if (!isSearch) {
+        dict  = [dailyRateList objectAtIndex:indexPath.row];
+    }
+    else{
+        dict = [searchArray objectAtIndex:indexPath.row];
+    }
     UIImageView *imgView = (UIImageView*)[cell viewWithTag:1];
     UILabel *currSym = (UILabel*)[cell viewWithTag:2];
     UILabel *curText = (UILabel*)[cell viewWithTag:3];
@@ -125,6 +143,7 @@
     imageName = [NSString stringWithFormat:@"%@.png",imageName];
     imgView.image = [UIImage imageNamed:imageName];
     cell.showsReorderControl = YES;
+    
     return cell;
 }
 
@@ -183,6 +202,21 @@
     NSArray *sortedArray;
     sortedArray = [dailyRateList sortedArrayUsingDescriptors:sortDescriptors];
     dailyRateList = [sortedArray mutableCopy];;
+    [rateTableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if ([searchText isEqualToString:@""] || [[searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
+        isSearch = NO;
+        [searchBar performSelector:@selector(resignFirstResponder) withObject:searchBar afterDelay:1];
+    }
+    else
+    {
+        searchArray = [dailyRateList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"CurrSym CONTAINS[cd] %@ ", [searchText uppercaseString]]];
+        isSearch = YES;
+    }
+    rateTableView.editing = NO;
     [rateTableView reloadData];
 }
 

@@ -129,7 +129,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-	[picker dismissViewControllerAnimated:YES completion:nil];
+	[picker dismissViewControllerAnimated:NO completion:nil];
 	UIImage *image = [[UIImage alloc] init];
 	image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     [self sendMail:image];
@@ -177,10 +177,10 @@
             NSLog(@"Mail saved: you saved the email message in the drafts folder.");
             break;
         case MFMailComposeResultSent:
-            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            [Util showAlertWithString:@"Your email has been sent"];
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            [Util showAlertWithString:error.localizedDescription];
             break;
         default:
             NSLog(@"Mail not sent.");

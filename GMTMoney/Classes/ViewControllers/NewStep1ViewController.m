@@ -28,6 +28,19 @@
     [self registerForKeyboardNotifications];
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     dailyRateList = [userDefault objectForKey:kDailyRateInfo];
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order"
+                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray;
+    sortedArray = [dailyRateList sortedArrayUsingDescriptors:sortDescriptors];
+    dailyRateList = [sortedArray mutableCopy];
+    for (NSDictionary *dict in dailyRateList) {
+        if ([[dict objectForKey:@"CurrSym"] isEqualToString:@"AUD"]) {
+            [dailyRateList removeObject:dict];
+            break;
+        }
+    }
     currencyList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in dailyRateList) {
         NSString *string = [[NSString alloc] initWithFormat:@"%@ - %@",[dict objectForKey:@"CurrSym"],[dict objectForKey:@"CurText"]];
@@ -73,6 +86,19 @@
             return;
         }
         dailyRateList = [[NSUserDefaults standardUserDefaults] objectForKey:kDailyRateInfo];
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order"
+                                                     ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        NSArray *sortedArray;
+        sortedArray = [dailyRateList sortedArrayUsingDescriptors:sortDescriptors];
+        dailyRateList = [sortedArray mutableCopy];
+        for (NSDictionary *dict in dailyRateList) {
+            if ([[dict objectForKey:@"CurrSym"] isEqualToString:@"AUD"]) {
+                [dailyRateList removeObject:dict];
+                break;
+            }
+        }
         isViewDidLoad = YES;
         
     }

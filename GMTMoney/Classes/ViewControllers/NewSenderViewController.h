@@ -39,7 +39,7 @@
     int sourceIndex;
     BOOL isFinish;
     IBOutlet UIScrollView *scrollView;
-
+UIView *activeField;
 
     IBOutlet UITextField *fnameTF;
     IBOutlet UITextField *snameTF;

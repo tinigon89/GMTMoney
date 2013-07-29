@@ -142,13 +142,16 @@
     paymentType.text = @"CASH PAYMENT";
     bankInfo.hidden = YES;
     accountNo.hidden = YES;
+    BOOL isAccountDeposit = NO;
     if ([[dict objectForKey:@"Paymethod"] intValue] != 1) {
         paymentType.text = @"ACCOUNT DEPOSIT";
+        isAccountDeposit = YES;
         bankInfo.text = [NSString stringWithFormat:@"Bank: %@",[dict objectForKey:@"BankName"]];
         bankInfo.hidden = NO;
         accountNo.hidden = NO;
         accountNo.text = [NSString stringWithFormat:@"AccNo: %@",[dict objectForKey:@"ACNo"]];
     }
+
     UIImageView *redImage = (UIImageView*)[cell viewWithTag:100];
     UIImageView *greenImage = (UIImageView*)[cell viewWithTag:101];
     if ([[dict objectForKey:@"RState"] intValue] == 1) {
@@ -159,6 +162,10 @@
     }
     else
     {
+        if (!isAccountDeposit) {
+            accountNo.hidden = NO;
+            accountNo.text = [NSString stringWithFormat:@"Pincode: %@",[dict objectForKey:@"Pincode"]];
+        }
         statusLB.text = @"PROCESSED";
         UIColor *myColor = [UIColor colorWithRed:6.0f/255.0f green:117.0f/255.0f blue:22.0f/255.0f alpha:1.0f];
         statusLB.textColor = myColor;
