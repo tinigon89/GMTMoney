@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    scrollView.contentSize = CGSizeMake(320, 2500);
+    scrollView.contentSize = CGSizeMake(320, 2600);
     selectedSender = -1;
 	// Do any additional setup after loading the view, typically from a nib.
     //scrollView.contentSize = CGSizeMake(320, 660);
@@ -141,6 +141,7 @@
         CGRect frame = bottomView.frame;
         frame.origin.y -= bankDetailView.frame.size.height;
         bottomView.frame = frame;
+        scrollView.contentSize = CGSizeMake(320, 2400);
     }
     paymentAmountTF.text = [[NSUserDefaults standardUserDefaults] objectForKey:kPayAmount];
     commissionTF.text = [[NSUserDefaults standardUserDefaults] objectForKey:kLessCommision];
@@ -194,7 +195,9 @@
     NSString *bankID = @"0";
     if (paytype == 2) {
         bankID = [[NSUserDefaults standardUserDefaults] objectForKey:kBankID];
-    }
+    }    
+    
+    
     BOOL result = [ServiceManager submitStep4:regid remid:remid sid:sid benID:beneId bnkID:bankID paytype:paytype online:online];
     [SVProgressHUD dismiss];
     if (result) {

@@ -195,8 +195,14 @@
     NSString *regid = [dict objectForKey:@"RegisterID"];
     int utype = [[userInfo objectForKey:@"UType"] intValue];
     int online = 0;
+    NSString *defaultSenderID = @"";
     if (utype == 0) {
         online = 1;
+        NSArray *tempArray = [ServiceManager searchSenderList:regid searchIndex:0 searchString:@""];
+        if ([tempArray count] > 0) {
+            NSDictionary *tempDict = [tempArray objectAtIndex:0];
+            defaultSenderID = [[tempDict objectForKey:@"SendersID"] stringValue];
+        }
     }
     NSDictionary *dict2 = [dailyRateList objectAtIndex:currentIndex];
     int currID = [[dict2 objectForKey:@"CurrID"] intValue];
@@ -221,7 +227,7 @@
                 }
 
                 [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kSenderInfo];
-                [[NSUserDefaults standardUserDefaults] setObject:[[dict objectForKey:@"RegisterID"] stringValue] forKey:kSenderID];
+                [[NSUserDefaults standardUserDefaults] setObject:defaultSenderID forKey:kSenderID];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 NewStep3ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewStep3ViewController"];
                 [self.navigationController pushViewController:viewController animated:YES];
@@ -231,8 +237,12 @@
     }
     else
     {
+        
         NSString *bankID = [duplicateDict objectForKey:@"BankACID"];
         NSString *dateString = [dict objectForKey:@"IDExpiry"];
+        if (online == 0) {
+            dateString = [duplicateDict objectForKey:@"IDExpiry1"];
+        }
         dateString = [dateString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
         dateString = [dateString substringToIndex:10];
         double rtimeInterval = [dateString doubleValue];

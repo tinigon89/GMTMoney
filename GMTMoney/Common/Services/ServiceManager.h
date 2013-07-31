@@ -141,7 +141,8 @@
                         SContact:(NSString *)SContact;
 + (BOOL)submitAlertWithEmail:(NSString*)email
                       currID:(NSString *)currID
-                      status:(NSString *)status;
+                      status:(NSString *)status
+                  rate_alert:(NSString *)rate_alert;
 
 + (BOOL)createNewBeneWithRegid:(NSString *)regid
                          email:(NSString *)email

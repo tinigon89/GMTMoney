@@ -190,11 +190,11 @@ return YES;
 + (BOOL)submitAlertWithEmail:(NSString*)email
               currID:(NSString *)currID
              status:(NSString *)status
-
+                      rate_alert:(NSString *)rate_alert
 {
     //http://www.gmtmoney.com.au/iealert.aspx?uname=sha&pcode=965&mobile=&email=itresumesha@gmail.com&currID=20&smsalert=Y&emailalert=Y&status=Y
     ASIFormDataRequest * request;
-    NSString *urlString = [NSString stringWithFormat:@"http://www.gmtmoney.com.au/iealert.aspx?uname=%@&pcode=965&mobile=&email=%@&currID=%@&smsalert=N&emailalert=Y&status=%@",email,email,currID,status];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.gmtmoney.com.au/iealert.aspx?uname=%@&pcode=965&mobile=&email=%@&currID=%@&smsalert=N&emailalert=Y&status=%@&rate_alert=%@",email,email,currID,status,rate_alert];
     NSURL *url = [NSURL URLWithString:urlString];
     request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];

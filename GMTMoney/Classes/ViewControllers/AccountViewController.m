@@ -51,6 +51,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
+    
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo];
+    usernameLB.text =[NSString stringWithFormat:@"Hi,%@",[[dict objectForKey:@"UserName"] uppercaseString]];
 }
 
 -

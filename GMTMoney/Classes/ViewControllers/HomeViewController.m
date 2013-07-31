@@ -13,6 +13,8 @@
 #import "define.h"
 #import "LoginViewController.h"
 #import "AccountViewController.h"
+#import "SMSViewController.h"
+#import "FacebookViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -66,13 +68,22 @@
 
 
 - (IBAction)facebook_click:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+//    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+//    {
+//        SLComposeViewController *facebook = [SLComposeViewController
+//                                             composeViewControllerForServiceType:SLServiceTypeFacebook];
+//        NSString *postText = [NSString stringWithFormat:@"I'm using GMTMoney app. It's great app. \n\nShared Using GMTMoney App"];
+//        [facebook setInitialText:postText];
+//        [self presentViewController:facebook animated:YES completion:nil];
+//    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"FinishTransaction"])
     {
-        SLComposeViewController *facebook = [SLComposeViewController
-                                             composeViewControllerForServiceType:SLServiceTypeFacebook];
-        NSString *postText = [NSString stringWithFormat:@"I'm using GMTMoney app. It's great app. \n\nShared Using GMTMoney App"];
-        [facebook setInitialText:postText];
-        [self presentViewController:facebook animated:YES completion:nil];
+        FacebookViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FacebookViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else
+    {
+        [Util showAlertWithString:@"Finish a transaction and like us to get 10 SMS for free"];
     }
 }
 
@@ -98,6 +109,11 @@
         AccountViewController *accountView = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
         [self.navigationController pushViewController:accountView animated:YES];
     }
+}
+
+- (IBAction)sms_Click:(id)sender {
+    SMSViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SMSViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

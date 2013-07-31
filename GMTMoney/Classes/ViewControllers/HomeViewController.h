@@ -17,5 +17,6 @@
 - (IBAction)facebook_click:(id)sender;
 - (IBAction)login_Click:(id)sender;
 - (IBAction)account_Click:(id)sender;
+- (IBAction)sms_Click:(id)sender;
 
 @end

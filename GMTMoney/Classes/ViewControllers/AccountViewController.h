@@ -15,6 +15,7 @@
     BOOL viewDidLoad;
     UIActionSheet *actionsheet;
 
+    IBOutlet UILabel *usernameLB;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;

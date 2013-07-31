@@ -97,9 +97,16 @@
         [Util showAlertWithString:@"Please select currency!"];
         return;        
     }
+    if (rateAlertTF.text == nil || [rateAlertTF.text length] == 0
+        ||[[rateAlertTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                       whitespaceAndNewlineCharacterSet]] length] == 0 )
+    {
+        [Util showAlertWithString:@"Please enter rate alert!"];
+        return;
+    }
     NSDictionary *dict2 = [dailyRateList objectAtIndex:currentIndex];
     NSString * currID = [[dict2 objectForKey:@"CurrID"] stringValue];
-    BOOL result = [ServiceManager submitAlertWithEmail:emailTF.text currID:currID status:@"Y"];
+    BOOL result = [ServiceManager submitAlertWithEmail:emailTF.text currID:currID status:@"Y" rate_alert:rateAlertTF.text];
     if (result) {
         [Util showAlertWithString:@"Successful!"];
         [self.navigationController popViewControllerAnimated:YES];
