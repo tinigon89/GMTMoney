@@ -106,18 +106,51 @@
     }
     NSDictionary *dict2 = [dailyRateList objectAtIndex:currentIndex];
     NSString * currID = [[dict2 objectForKey:@"CurrID"] stringValue];
-    BOOL result = [ServiceManager submitAlertWithEmail:emailTF.text currID:currID status:@"Y" rate_alert:rateAlertTF.text];
-    if (result) {
-        [Util showAlertWithString:@"Successful!"];
-        [self.navigationController popViewControllerAnimated:YES];
+    NSString *device_token = @"";
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken]) {
+        device_token = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken];
+    }
+    NSString *device_id = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceId];
+    if ([ServiceManager checkAlertWithDevice:device_id currency_id:currID]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You already registed an alert for this currency. Do you want to replace it?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        [alert show];
     }
     else
     {
-        [Util showAlertWithString:@"Can't connect to server!"];
-    }
+        BOOL result = [ServiceManager registAlertWithDevice:device_id email:emailTF.text device_token:device_token currency_id:currID rate_alert:rateAlertTF.text];
+        if (result) {
+            [Util showAlertWithString:@"Successful!"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            [Util showAlertWithString:@"Can't connect to server!"];
+        }
+    }    
+}
 
-    
-    
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        NSDictionary *dict2 = [dailyRateList objectAtIndex:currentIndex];
+        NSString * currID = [[dict2 objectForKey:@"CurrID"] stringValue];
+        NSString *device_token = @"";
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken]) {
+            device_token = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken];
+        }
+        NSString *device_id = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceId];
+
+            BOOL result = [ServiceManager registAlertWithDevice:device_id email:emailTF.text device_token:device_token currency_id:currID rate_alert:rateAlertTF.text];
+            if (result) {
+                [Util showAlertWithString:@"Successful!"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            else
+            {
+                [Util showAlertWithString:@"Can't connect to server!"];
+            }
+        
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -128,10 +161,9 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
     if (textField == rateAlertTF) {
-        NSString *newtext = [textField.text stringByAppendingString:string];
-        if ([newtext doubleValue] == 0) {
-            return NO;
-        }
+        NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@".1234567890"] invertedSet];
+        NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+        return [string isEqualToString:filtered];
     }
     
     return YES;

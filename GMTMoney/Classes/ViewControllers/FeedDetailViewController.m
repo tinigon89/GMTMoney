@@ -43,7 +43,7 @@
 {
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
     if (!description) {
-        NSURL* nsUrl = [NSURL URLWithString:url];
+        NSURL* nsUrl = [NSURL URLWithString:[url stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         
         NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl];
         webview.delegate = self;

@@ -445,6 +445,60 @@
         
     }
     
+    if(!pSameAboveBT.selected)
+    {
+        if (pstreetTF.text == nil || [pstreetTF.text length] == 0
+            ||[[pstreetTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please enter street address in previous address!"];
+            return;
+            
+        }
+        
+        if (psubburbTF.text == nil || [psubburbTF.text length] == 0
+            ||[[psubburbTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                 whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please enter subburb in previous address!"];
+            return;
+            
+        }
+        
+        if (pstateTF.text == nil || [pstateTF.text length] == 0
+            ||[[pstateTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                               whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please select state in previous address!"];
+            return;
+            
+        }
+        
+        if (ppostcodeTF.text == nil || [ppostcodeTF.text length] == 0
+            ||[[ppostcodeTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                  whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please enter postcode in previous address!"];
+            return;
+            
+        }
+        
+        if (pCountryTF.text == nil || [pCountryTF.text length] == 0
+            ||[[pCountryTF.text stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                 whitespaceAndNewlineCharacterSet]] length] == 0 )
+        {
+            
+            [Util showAlertWithString:@"Please select country in previous address!"];
+            return;
+            
+        }
+    }
+
+    
     
     if (pContact1.text == nil || [pContact1.text length] == 0
         ||[[pContact1.text stringByTrimmingCharactersInSet:[NSCharacterSet

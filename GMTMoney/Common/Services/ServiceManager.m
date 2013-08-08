@@ -771,16 +771,105 @@ return YES;
     return NO;
 }
 
-+ (BOOL)sendSMS:(NSString *)toNumber message:(NSString *)message
++ (BOOL)registAlertWithDevice:(NSString *)device_id
+                        email:(NSString *)email
+                 device_token:(NSString *)device_token
+                  currency_id:(NSString *)currency_id
+                   rate_alert:(NSString *)rate_alert
 {
-    
+    //{"device_id":"1","email":"1","device_token":"1","device_type":"1","currency_id":"1","rate_alert":"1"}
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:device_id,@"device_id",email,@"email",device_token,@"device_token",@"1",@"device_type",currency_id,@"currency_id",rate_alert,@"rate_alert",nil];
+    NSString *post = [dict JSONRepresentation];
+    NSString *postString = [NSString stringWithFormat:@"content=%@",post];
+    NSData *postData = [postString  dataUsingEncoding:NSUTF8StringEncoding];
     ASIFormDataRequest * request;
-    NSString *urlString = [NSString stringWithFormat:kServer_Get_SMS,[Util urlencode:message],toNumber];
-    NSURL *url = [NSURL URLWithString:urlString];
+    NSURL *url = [NSURL URLWithString:@"http://www.gmtmoney.com.au/pushapi/apis.php?api=push_info"];
     request = [ASIHTTPRequest requestWithURL:url];
-    [request setRequestMethod:@"GET"];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"content-type" value:@"application/x-www-form-urlencoded"];
+    [request addRequestHeader:@"Content-Length" value:[NSString stringWithFormat:@"%d", [postData length]]];
+    [request setPostBody:[NSMutableData dataWithData:postData]];
     [request startSynchronous];
     if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        NSString *responseString = [request.responseString stringByReplacingOccurrencesOfString:@":null" withString:@":\"\""];
+        NSDictionary *responseDict = [responseString JSONValue];
+        if ([[responseDict objectForKey:@"success"] isEqualToString:@"true"])
+        {
+//            NSArray *categoryList = [responseDict objectForKey:@"offers"];
+//            if (categoryList) {
+//                NSLog(@"success");
+//                [[NSUserDefaults standardUserDefaults] setObject:categoryList forKey:kCurrentOffesInfo];
+//                [[NSUserDefaults standardUserDefaults] synchronize];
+//                return YES;
+//            }
+            return YES;
+        }
+        
+    }
+    return NO;;
+}
+
++ (BOOL)checkAlertWithDevice:(NSString *)device_id
+                  currency_id:(NSString *)currency_id
+{
+    //{"device_id":"1","email":"1","device_token":"1","device_type":"1","currency_id":"1","rate_alert":"1"}
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:device_id,@"device_id",currency_id,@"currency_id",nil];
+    NSString *post = [dict JSONRepresentation];
+    NSString *postString = [NSString stringWithFormat:@"content=%@",post];
+    NSData *postData = [postString  dataUsingEncoding:NSUTF8StringEncoding];
+    ASIFormDataRequest * request;
+    NSURL *url = [NSURL URLWithString:@"http://www.gmtmoney.com.au/pushapi/apis.php?api=check_info"];
+    request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"content-type" value:@"application/x-www-form-urlencoded"];
+    [request addRequestHeader:@"Content-Length" value:[NSString stringWithFormat:@"%d", [postData length]]];
+    [request setPostBody:[NSMutableData dataWithData:postData]];
+    [request startSynchronous];
+    if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        NSString *responseString = [request.responseString stringByReplacingOccurrencesOfString:@":null" withString:@":\"\""];
+        NSDictionary *responseDict = [responseString JSONValue];
+        if ([[responseDict objectForKey:@"success"] isEqualToString:@"true"])
+        {
+            //            NSArray *categoryList = [responseDict objectForKey:@"offers"];
+            //            if (categoryList) {
+            //                NSLog(@"success");
+            //                [[NSUserDefaults standardUserDefaults] setObject:categoryList forKey:kCurrentOffesInfo];
+            //                [[NSUserDefaults standardUserDefaults] synchronize];
+            //                return YES;
+            //            }
+            return YES;
+            
+        }
+        
+    }
+    return NO;;
+}
+
+
++ (BOOL)sendSMS:(NSString *)toNumber message:(NSString *)message
+{
+    NSString *kTwilioSID = @"AC804d07d85308200fed9e8c318ec52213";
+    NSString *token = @"d187b5d108907702f01b21c2ad5bffa2";
+    NSString *kFromNumber = @"+12016693458";
+    ASIFormDataRequest * request;
+    //NSString *urlString = [NSString stringWithFormat:@"https://%@:%@@api.twilio.com/2010-04-01/Accounts/%@/SMS/Messages", kTwilioSID, kTwilioSecret, kTwilioSID];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.twilio.com/2010-04-01/Accounts/%@/SMS/Messages", kTwilioSID];
+    //NSURL *url = [NSURL URLWithString:urlString];
+    request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setRequestMethod:@"POST"];
+    [request setUsername:kTwilioSID];
+    [request setPassword:token];
+    
+    [request addPostValue:kFromNumber forKey:@"From"];
+    [request addPostValue:toNumber forKey:@"To"];
+    [request addPostValue:message forKey:@"Body"];
+    //BOOL isComplete;
+    [request startSynchronous];
+    if ([request responseStatusCode] == 201)
     {
         NSLog(@"%@",request.responseString);
         if ([request.responseString length] == 0) {
@@ -795,6 +884,7 @@ return YES;
 //        }
         return YES;
     }
+    [Util showAlertWithString:@"Can't connect to server"];
     return NO;
     
 }

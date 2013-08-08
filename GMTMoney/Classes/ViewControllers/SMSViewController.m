@@ -46,7 +46,7 @@
 - (IBAction)send_click:(id)sender
 {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"SMS"] || [[[NSUserDefaults standardUserDefaults] objectForKey:@"SMS"] intValue] == 0) {
-        [Util showAlertWithString:@"Finish a transaction and like our facebook page to get 10 SMS for free"];
+        [Util showAlertWithString:@"Finish a transaction and share on facebook to get 10 SMS for free"];
         return;
     }
     if (toTF.text == nil || [toTF.text length] == 0
@@ -71,9 +71,13 @@
     NSString *toNumber = [NSString stringWithFormat:@"%@%@",[codeList objectAtIndex:currentIndex],toTF.text];
     if([ServiceManager sendSMS:toNumber message:contentTV.text])
     {
+        int value = [[[NSUserDefaults standardUserDefaults] objectForKey:@"SMS"] intValue];
+        value--;
+        [[NSUserDefaults standardUserDefaults] setInteger:value forKey:@"SMS"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [Util showAlertWithString:@"Your message has been sent!"];
         [self.navigationController popViewControllerAnimated:YES];
-    }    
+    }
 }
 
 - (IBAction)codeArea_Click:(id)sender {

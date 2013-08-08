@@ -60,11 +60,9 @@
 
 
 - (IBAction)home_click:(id)sender {
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"10SMS"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FinishTransaction"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        [Util showAlertWithString:@"You have finished a transaction, like us on facebook to get 10 SMS for free"];
-    }    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FinishTransaction"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [Util showAlertWithString:@"You have finished a transaction, share us on facebook to get 10 SMS for free"];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

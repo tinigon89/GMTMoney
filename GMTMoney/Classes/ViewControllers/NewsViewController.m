@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    scrollView.contentSize = CGSizeMake(320, 460);
 	// Do any additional setup after loading the view, typically from a nib.
     
 }
@@ -68,6 +68,30 @@
 - (IBAction)skynews_Click:(id)sender {
     FeedViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
     controller.index = 4;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)usnews_Click:(id)sender {
+    FeedViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    controller.index = 5;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)ggNews_Click:(id)sender {
+    FeedViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    controller.index = 6;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)bollywood_Click:(id)sender {
+    FeedViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    controller.index = 7;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)underb_Click:(id)sender {
+    FeedViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    controller.index = 8;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

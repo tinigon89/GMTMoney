@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85001F3617B125BD00B58BBB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85001F3517B125BD00B58BBB /* AdSupport.framework */; };
+		85001F3917B12A5000B58BBB /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85001F3817B12A5000B58BBB /* ContactUsViewController.m */; };
 		85099CC4179697D50026FB18 /* NewStep2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85099CC3179697D40026FB18 /* NewStep2ViewController.m */; };
 		85099CC61796A73D0026FB18 /* check2.png in Resources */ = {isa = PBXBuildFile; fileRef = 85099CC51796A73C0026FB18 /* check2.png */; };
 		85099CC81796A9E90026FB18 /* btn_nav_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 85099CC71796A9E80026FB18 /* btn_nav_new.png */; };
@@ -431,21 +433,17 @@
 		85734AB4178D0AC10094D84A /* TaskbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85734AB3178D0AC10094D84A /* TaskbarView.m */; };
 		85734AB6178D0ADF0094D84A /* TaskbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85734AB5178D0ADF0094D84A /* TaskbarView.xib */; };
 		8574934917A64A0D00C64DD2 /* btn_edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8574934817A64A0D00C64DD2 /* btn_edit2.png */; };
-		8574936517A6687100C64DD2 /* Facebook+ForceDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574935217A6687100C64DD2 /* Facebook+ForceDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936617A6687100C64DD2 /* FacebookLikeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574935417A6687100C64DD2 /* FacebookLikeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936717A6687100C64DD2 /* NSData+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574935617A6687100C64DD2 /* NSData+Extras.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936817A6687100C64DD2 /* FacebookLikeView.html in Resources */ = {isa = PBXBuildFile; fileRef = 8574935817A6687100C64DD2 /* FacebookLikeView.html */; };
-		8574936917A6687100C64DD2 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574935B17A6687100C64DD2 /* Facebook.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936A17A6687100C64DD2 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8574935D17A6687100C64DD2 /* FBDialog.bundle */; };
-		8574936B17A6687100C64DD2 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574935F17A6687100C64DD2 /* FBDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936C17A6687100C64DD2 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574936117A6687100C64DD2 /* FBLoginDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936D17A6687100C64DD2 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8574936317A6687100C64DD2 /* FBRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8574936E17A6687100C64DD2 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 8574936417A6687100C64DD2 /* README.mdown */; };
 		857847C71790FC20008EADAD /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847C61790FC20008EADAD /* sort.png */; };
 		857847CF1790FC4C008EADAD /* menu_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847CE1790FC4C008EADAD /* menu_refresh.png */; };
 		857847D1179111C8008EADAD /* sendMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 857847D0179111C8008EADAD /* sendMoney.png */; };
 		857847D41791130D008EADAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D31791130D008EADAD /* LoginViewController.m */; };
 		857847D71791821C008EADAD /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857847D61791821C008EADAD /* AccountViewController.m */; };
+		857B332417AE6C85003AB35C /* daily_Rate_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 857B332317AE6C85003AB35C /* daily_Rate_icon.png */; };
+		857B332A17AE7285003AB35C /* email_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 857B332917AE7285003AB35C /* email_icon.png */; };
+		857B332C17AE7429003AB35C /* alarm_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 857B332B17AE7429003AB35C /* alarm_icon.png */; };
+		857B332E17AE79D1003AB35C /* cash_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 857B332D17AE79D1003AB35C /* cash_location.png */; };
+		857B333017AE7CDB003AB35C /* ifsc_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 857B332F17AE7CDB003AB35C /* ifsc_icon.png */; };
+		857B333417AE83EA003AB35C /* account_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 857B333317AE83EA003AB35C /* account_icon.png */; };
 		85822DEC17A15DC80025E50F /* Add-your-File.png in Resources */ = {isa = PBXBuildFile; fileRef = 85822DEB17A15DC80025E50F /* Add-your-File.png */; };
 		858E97241798FF00001D5D1F /* NewStep3ContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E97231798FF00001D5D1F /* NewStep3ContViewController.m */; };
 		858E972717992863001D5D1F /* NewBenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E972617992863001D5D1F /* NewBenViewController.m */; };
@@ -453,12 +451,25 @@
 		858FEE33179AB30D005803BE /* NewBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858FEE32179AB30C005803BE /* NewBankViewController.m */; };
 		858FEE36179AE8C4005803BE /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858FEE35179AE8C3005803BE /* SuccessViewController.m */; };
 		85991CF0179BF56100A74A8A /* SearchRemittanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85991CEF179BF56100A74A8A /* SearchRemittanceViewController.m */; };
+		85996E4B17AD1F1D00C99172 /* LocatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85996E4A17AD1F1D00C99172 /* LocatorViewController.m */; };
+		85996E4D17AD5AA600C99172 /* btn_DailyRates_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 85996E4C17AD5AA600C99172 /* btn_DailyRates_2.png */; };
+		85996E4F17AD5B8800C99172 /* Facebook-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85996E4E17AD5B8800C99172 /* Facebook-Icon.png */; };
+		85996E5117AD5DE600C99172 /* social-facebook-box-blue-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85996E5017AD5DE600C99172 /* social-facebook-box-blue-icon.png */; };
+		85996E5517AD5F2000C99172 /* news icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85996E5417AD5F2000C99172 /* news icon.png */; };
+		85996E5717AD60A400C99172 /* SMS-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85996E5617AD60A400C99172 /* SMS-icon.png */; };
+		85996E5917AD613300C99172 /* Calculator-Metro-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85996E5817AD613300C99172 /* Calculator-Metro-icon.png */; };
 		85ABBBEF1795861D0021BFCB /* find_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ABBBEE1795861D0021BFCB /* find_trans.png */; };
 		85B6B1231793B0B0004A5003 /* TranStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6B1221793B0B0004A5003 /* TranStatusViewController.m */; };
+		85D3CFDA17A8D78D008CD3D9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D3CFD917A8D78D008CD3D9 /* FacebookSDK.framework */; };
+		85D3CFDC17A8F3A8008CD3D9 /* fb_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D3CFDB17A8F3A8008CD3D9 /* fb_share.png */; };
+		85D3CFDF17A992B8008CD3D9 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D3CFDE17A992B8008CD3D9 /* FeedCell.m */; };
 		85DC9FAF1791940100A8FF64 /* btn_transaction_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85001F3517B125BD00B58BBB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		85001F3717B12A5000B58BBB /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		85001F3817B12A5000B58BBB /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		85099CC2179697D40026FB18 /* NewStep2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep2ViewController.h; sourceTree = "<group>"; };
 		85099CC3179697D40026FB18 /* NewStep2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep2ViewController.m; sourceTree = "<group>"; };
 		85099CC51796A73C0026FB18 /* check2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check2.png; sourceTree = "<group>"; };
@@ -940,23 +951,6 @@
 		85734AB3178D0AC10094D84A /* TaskbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskbarView.m; sourceTree = "<group>"; };
 		85734AB5178D0ADF0094D84A /* TaskbarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskbarView.xib; sourceTree = "<group>"; };
 		8574934817A64A0D00C64DD2 /* btn_edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_edit2.png; sourceTree = "<group>"; };
-		8574935217A6687100C64DD2 /* Facebook+ForceDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Facebook+ForceDialog.m"; sourceTree = "<group>"; };
-		8574935317A6687100C64DD2 /* FacebookLikeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLikeView.h; sourceTree = "<group>"; };
-		8574935417A6687100C64DD2 /* FacebookLikeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLikeView.m; sourceTree = "<group>"; };
-		8574935517A6687100C64DD2 /* NSData+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extras.h"; sourceTree = "<group>"; };
-		8574935617A6687100C64DD2 /* NSData+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extras.m"; sourceTree = "<group>"; };
-		8574935817A6687100C64DD2 /* FacebookLikeView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FacebookLikeView.html; sourceTree = "<group>"; };
-		8574935A17A6687100C64DD2 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
-		8574935B17A6687100C64DD2 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
-		8574935C17A6687100C64DD2 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
-		8574935D17A6687100C64DD2 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
-		8574935E17A6687100C64DD2 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
-		8574935F17A6687100C64DD2 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
-		8574936017A6687100C64DD2 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
-		8574936117A6687100C64DD2 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
-		8574936217A6687100C64DD2 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
-		8574936317A6687100C64DD2 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
-		8574936417A6687100C64DD2 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		857847C61790FC20008EADAD /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
 		857847CE1790FC4C008EADAD /* menu_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_refresh.png; sourceTree = "<group>"; };
 		857847D0179111C8008EADAD /* sendMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendMoney.png; sourceTree = "<group>"; };
@@ -964,6 +958,12 @@
 		857847D31791130D008EADAD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		857847D51791821C008EADAD /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		857847D61791821C008EADAD /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		857B332317AE6C85003AB35C /* daily_Rate_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daily_Rate_icon.png; sourceTree = "<group>"; };
+		857B332917AE7285003AB35C /* email_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_icon.png; sourceTree = "<group>"; };
+		857B332B17AE7429003AB35C /* alarm_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_icon.png; sourceTree = "<group>"; };
+		857B332D17AE79D1003AB35C /* cash_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cash_location.png; sourceTree = "<group>"; };
+		857B332F17AE7CDB003AB35C /* ifsc_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ifsc_icon.png; sourceTree = "<group>"; };
+		857B333317AE83EA003AB35C /* account_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_icon.png; sourceTree = "<group>"; };
 		85822DEB17A15DC80025E50F /* Add-your-File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-your-File.png"; sourceTree = "<group>"; };
 		858E97221798FF00001D5D1F /* NewStep3ContViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep3ContViewController.h; sourceTree = "<group>"; };
 		858E97231798FF00001D5D1F /* NewStep3ContViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep3ContViewController.m; sourceTree = "<group>"; };
@@ -977,9 +977,21 @@
 		858FEE35179AE8C3005803BE /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		85991CEE179BF56100A74A8A /* SearchRemittanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRemittanceViewController.h; sourceTree = "<group>"; };
 		85991CEF179BF56100A74A8A /* SearchRemittanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRemittanceViewController.m; sourceTree = "<group>"; };
+		85996E4917AD1F1D00C99172 /* LocatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocatorViewController.h; sourceTree = "<group>"; };
+		85996E4A17AD1F1D00C99172 /* LocatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocatorViewController.m; sourceTree = "<group>"; };
+		85996E4C17AD5AA600C99172 /* btn_DailyRates_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_DailyRates_2.png; sourceTree = "<group>"; };
+		85996E4E17AD5B8800C99172 /* Facebook-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-Icon.png"; sourceTree = "<group>"; };
+		85996E5017AD5DE600C99172 /* social-facebook-box-blue-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-facebook-box-blue-icon.png"; sourceTree = "<group>"; };
+		85996E5417AD5F2000C99172 /* news icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news icon.png"; sourceTree = "<group>"; };
+		85996E5617AD60A400C99172 /* SMS-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SMS-icon.png"; sourceTree = "<group>"; };
+		85996E5817AD613300C99172 /* Calculator-Metro-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calculator-Metro-icon.png"; sourceTree = "<group>"; };
 		85ABBBEE1795861D0021BFCB /* find_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_trans.png; sourceTree = "<group>"; };
 		85B6B1211793B0B0004A5003 /* TranStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranStatusViewController.h; sourceTree = "<group>"; };
 		85B6B1221793B0B0004A5003 /* TranStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranStatusViewController.m; sourceTree = "<group>"; };
+		85D3CFD917A8D78D008CD3D9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = GMTMoney/Common/Library/FacebookSDK.framework; sourceTree = "<group>"; };
+		85D3CFDB17A8F3A8008CD3D9 /* fb_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_share.png; sourceTree = "<group>"; };
+		85D3CFDD17A992B8008CD3D9 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
+		85D3CFDE17A992B8008CD3D9 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
 		85DC9FAE1791940100A8FF64 /* btn_transaction_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_transaction_history.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -988,6 +1000,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85001F3617B125BD00B58BBB /* AdSupport.framework in Frameworks */,
 				85685F65178EF45E0012BC71 /* Social.framework in Frameworks */,
 				852003A9178D51E800F324F1 /* MessageUI.framework in Frameworks */,
 				8569AA111785857E0080FC6E /* SystemConfiguration.framework in Frameworks */,
@@ -999,6 +1012,7 @@
 				855FABEF178582BF00CAABCB /* UIKit.framework in Frameworks */,
 				855FABF1178582BF00CAABCB /* Foundation.framework in Frameworks */,
 				855FABF3178582BF00CAABCB /* CoreGraphics.framework in Frameworks */,
+				85D3CFDA17A8D78D008CD3D9 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1381,18 @@
 		855472F3178685D1004768A5 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				857B333317AE83EA003AB35C /* account_icon.png */,
+				857B332F17AE7CDB003AB35C /* ifsc_icon.png */,
+				857B332D17AE79D1003AB35C /* cash_location.png */,
+				857B332B17AE7429003AB35C /* alarm_icon.png */,
+				857B332917AE7285003AB35C /* email_icon.png */,
+				857B332317AE6C85003AB35C /* daily_Rate_icon.png */,
+				85996E5817AD613300C99172 /* Calculator-Metro-icon.png */,
+				85996E5617AD60A400C99172 /* SMS-icon.png */,
+				85996E5417AD5F2000C99172 /* news icon.png */,
+				85996E5017AD5DE600C99172 /* social-facebook-box-blue-icon.png */,
+				85996E4E17AD5B8800C99172 /* Facebook-Icon.png */,
+				85996E4C17AD5AA600C99172 /* btn_DailyRates_2.png */,
 				855472F4178685D1004768A5 /* bg_banner_black.png */,
 				855472F5178685D1004768A5 /* btn_cashlocations.png */,
 				855472F6178685D1004768A5 /* btn_dailyrates_home.png */,
@@ -1520,6 +1546,8 @@
 		855FABED178582BF00CAABCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85001F3517B125BD00B58BBB /* AdSupport.framework */,
+				85D3CFD917A8D78D008CD3D9 /* FacebookSDK.framework */,
 				85685F64178EF45E0012BC71 /* Social.framework */,
 				852003A8178D51E800F324F1 /* MessageUI.framework */,
 				8569AA101785857E0080FC6E /* SystemConfiguration.framework */,
@@ -1583,6 +1611,8 @@
 		855FAC161785835D00CAABCB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				85996E4917AD1F1D00C99172 /* LocatorViewController.h */,
+				85996E4A17AD1F1D00C99172 /* LocatorViewController.m */,
 				855133E817A67F4800CEBBDF /* FacebookViewController.h */,
 				855133E917A67F4800CEBBDF /* FacebookViewController.m */,
 				85991CEE179BF56100A74A8A /* SearchRemittanceViewController.h */,
@@ -1638,6 +1668,8 @@
 				85685F61178EEC210012BC71 /* MoreViewController.h */,
 				85685F62178EEC210012BC71 /* MoreViewController.m */,
 				85200395178D1F4200F324F1 /* Popover */,
+				85001F3717B12A5000B58BBB /* ContactUsViewController.h */,
+				85001F3817B12A5000B58BBB /* ContactUsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1648,6 +1680,8 @@
 				85734AB2178D0AC10094D84A /* TaskbarView.h */,
 				85734AB3178D0AC10094D84A /* TaskbarView.m */,
 				85734AB5178D0ADF0094D84A /* TaskbarView.xib */,
+				85D3CFDD17A992B8008CD3D9 /* FeedCell.h */,
+				85D3CFDE17A992B8008CD3D9 /* FeedCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1679,6 +1713,7 @@
 				855472E3178685D1004768A5 /* bg_taskbar.png */,
 				857847C61790FC20008EADAD /* sort.png */,
 				857847CE1790FC4C008EADAD /* menu_refresh.png */,
+				85D3CFDB17A8F3A8008CD3D9 /* fb_share.png */,
 				857847D0179111C8008EADAD /* sendMoney.png */,
 				85410746179283D80079BEF8 /* btn_calendar.png */,
 				855472E4178685D1004768A5 /* button task bar */,
@@ -1716,8 +1751,6 @@
 		855FAC251785835D00CAABCB /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				8574935017A6687100C64DD2 /* FacebookLikeView */,
-				8574935917A6687100C64DD2 /* FBConnect */,
 				85505E82178FC1050024FBAD /* XMLReader */,
 				855FAC261785835D00CAABCB /* ASIHTTPRequest */,
 				855FAC3B1785835D00CAABCB /* JSON */,
@@ -1812,53 +1845,6 @@
 				855FAC581785835D00CAABCB /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		8574935017A6687100C64DD2 /* FacebookLikeView */ = {
-			isa = PBXGroup;
-			children = (
-				8574935117A6687100C64DD2 /* Classes */,
-				8574935717A6687100C64DD2 /* Resources */,
-			);
-			path = FacebookLikeView;
-			sourceTree = "<group>";
-		};
-		8574935117A6687100C64DD2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				8574935217A6687100C64DD2 /* Facebook+ForceDialog.m */,
-				8574935317A6687100C64DD2 /* FacebookLikeView.h */,
-				8574935417A6687100C64DD2 /* FacebookLikeView.m */,
-				8574935517A6687100C64DD2 /* NSData+Extras.h */,
-				8574935617A6687100C64DD2 /* NSData+Extras.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		8574935717A6687100C64DD2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8574935817A6687100C64DD2 /* FacebookLikeView.html */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		8574935917A6687100C64DD2 /* FBConnect */ = {
-			isa = PBXGroup;
-			children = (
-				8574935A17A6687100C64DD2 /* Facebook.h */,
-				8574935B17A6687100C64DD2 /* Facebook.m */,
-				8574935C17A6687100C64DD2 /* FBConnect.h */,
-				8574935D17A6687100C64DD2 /* FBDialog.bundle */,
-				8574935E17A6687100C64DD2 /* FBDialog.h */,
-				8574935F17A6687100C64DD2 /* FBDialog.m */,
-				8574936017A6687100C64DD2 /* FBLoginDialog.h */,
-				8574936117A6687100C64DD2 /* FBLoginDialog.m */,
-				8574936217A6687100C64DD2 /* FBRequest.h */,
-				8574936317A6687100C64DD2 /* FBRequest.m */,
-				8574936417A6687100C64DD2 /* README.mdown */,
-			);
-			path = FBConnect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2282,9 +2268,19 @@
 				85099CC81796A9E90026FB18 /* btn_nav_new.png in Resources */,
 				85822DEC17A15DC80025E50F /* Add-your-File.png in Resources */,
 				8574934917A64A0D00C64DD2 /* btn_edit2.png in Resources */,
-				8574936817A6687100C64DD2 /* FacebookLikeView.html in Resources */,
-				8574936A17A6687100C64DD2 /* FBDialog.bundle in Resources */,
-				8574936E17A6687100C64DD2 /* README.mdown in Resources */,
+				85D3CFDC17A8F3A8008CD3D9 /* fb_share.png in Resources */,
+				85996E4D17AD5AA600C99172 /* btn_DailyRates_2.png in Resources */,
+				85996E4F17AD5B8800C99172 /* Facebook-Icon.png in Resources */,
+				85996E5117AD5DE600C99172 /* social-facebook-box-blue-icon.png in Resources */,
+				85996E5517AD5F2000C99172 /* news icon.png in Resources */,
+				85996E5717AD60A400C99172 /* SMS-icon.png in Resources */,
+				85996E5917AD613300C99172 /* Calculator-Metro-icon.png in Resources */,
+				857B332417AE6C85003AB35C /* daily_Rate_icon.png in Resources */,
+				857B332A17AE7285003AB35C /* email_icon.png in Resources */,
+				857B332C17AE7429003AB35C /* alarm_icon.png in Resources */,
+				857B332E17AE79D1003AB35C /* cash_location.png in Resources */,
+				857B333017AE7CDB003AB35C /* ifsc_icon.png in Resources */,
+				857B333417AE83EA003AB35C /* account_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2352,14 +2348,10 @@
 				858FEE33179AB30D005803BE /* NewBankViewController.m in Sources */,
 				858FEE36179AE8C4005803BE /* SuccessViewController.m in Sources */,
 				85991CF0179BF56100A74A8A /* SearchRemittanceViewController.m in Sources */,
-				8574936517A6687100C64DD2 /* Facebook+ForceDialog.m in Sources */,
-				8574936617A6687100C64DD2 /* FacebookLikeView.m in Sources */,
-				8574936717A6687100C64DD2 /* NSData+Extras.m in Sources */,
-				8574936917A6687100C64DD2 /* Facebook.m in Sources */,
-				8574936B17A6687100C64DD2 /* FBDialog.m in Sources */,
-				8574936C17A6687100C64DD2 /* FBLoginDialog.m in Sources */,
-				8574936D17A6687100C64DD2 /* FBRequest.m in Sources */,
 				855133EA17A67F4800CEBBDF /* FacebookViewController.m in Sources */,
+				85D3CFDF17A992B8008CD3D9 /* FeedCell.m in Sources */,
+				85996E4B17AD1F1D00C99172 /* LocatorViewController.m in Sources */,
+				85001F3917B12A5000B58BBB /* ContactUsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2456,6 +2448,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nguyen Trung Hieu (87LW9G7H2Q)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nguyen Trung Hieu (87LW9G7H2Q)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/GMTMoney/Common/Library\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMTMoney/GMTMoney-Prefix.pch";
 				INFOPLIST_FILE = "GMTMoney/GMTMoney-Info.plist";
@@ -2471,6 +2467,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nguyen Trung Hieu (87LW9G7H2Q)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nguyen Trung Hieu (87LW9G7H2Q)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/GMTMoney/Common/Library\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMTMoney/GMTMoney-Prefix.pch";
 				INFOPLIST_FILE = "GMTMoney/GMTMoney-Info.plist";

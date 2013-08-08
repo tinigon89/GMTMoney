@@ -15,6 +15,7 @@
 #import "AccountViewController.h"
 #import "SMSViewController.h"
 #import "FacebookViewController.h"
+#import <AdSupport/AdSupport.h>
 @interface HomeViewController ()
 
 @end
@@ -31,6 +32,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if (![userDefault boolForKey:kFirstLaunch])
+    {
+        [userDefault setObject:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString] forKey:kDeviceId];
+        [userDefault setBool:YES forKey:kFirstLaunch];
+        [userDefault synchronize];
+    }
+    
     [self.taskbarView addSubview:[AppDelegate sharedInstance].taskbarView];
     if (![[NSUserDefaults standardUserDefaults] objectForKey:kUserInfo])
     {
@@ -39,6 +48,25 @@
     else
     {
         [loginButton setImage:[UIImage imageNamed:@"btn_nav_logout.png"] forState:UIControlStateNormal];
+    }
+    if(IS_IPHONE_5)
+    {
+        if(!isLoadView)
+        {
+            isLoadView = YES;
+        
+            CGPoint center = mainView.center;
+        
+            center.y -= 121;
+        
+            CGRect frame = menuView.frame;
+        
+            frame.size.height += 30;
+        
+            menuView.frame = frame;
+        
+            menuView.center = center;
+        }
     }
 }
 
@@ -50,8 +78,7 @@
         [ServiceManager getCountryList];
         [SVProgressHUD dismiss];
         isViewDidLoad = YES;
-    }
-    
+    }    
 }
 
 - (void)showProcess
@@ -76,14 +103,14 @@
 //        [facebook setInitialText:postText];
 //        [self presentViewController:facebook animated:YES completion:nil];
 //    }
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"FinishTransaction"])
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"FinishTransaction"])
     {
         FacebookViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FacebookViewController"];
         [self.navigationController pushViewController:viewController animated:YES];
     }
     else
     {
-        [Util showAlertWithString:@"Finish a transaction and like us to get 10 SMS for free"];
+        [Util showAlertWithString:@"Finish a transaction and share on facebook to get 10 SMS for free"];
     }
 }
 

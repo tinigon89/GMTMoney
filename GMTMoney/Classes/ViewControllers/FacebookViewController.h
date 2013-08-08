@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FacebookLikeView.h"
-#import "Facebook.h"
-@interface FacebookViewController : UIViewController<UIWebViewDelegate,FacebookLikeViewDelegate,FBSessionDelegate>
+
+@interface FacebookViewController : UIViewController<UIWebViewDelegate>
 {
-    Facebook *_facebook;
     IBOutlet UIWebView *webview;
     BOOL isFinish;
-    IBOutlet FacebookLikeView *likeView;
-
+    //IBOutlet FacebookLikeView *likeView;
+    NSMutableDictionary *postParams;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
+- (IBAction)like_click:(id)sender;
 
 
 @end

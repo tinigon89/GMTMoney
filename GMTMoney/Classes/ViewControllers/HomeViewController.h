@@ -12,6 +12,9 @@
 {
     BOOL isViewDidLoad;
     IBOutlet UIButton *loginButton;
+    IBOutlet UIView *menuView;
+    IBOutlet UIView *mainView;
+    BOOL isLoadView;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)facebook_click:(id)sender;

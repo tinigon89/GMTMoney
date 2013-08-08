@@ -27,6 +27,13 @@
 + (NSArray *)searchSenderList:(NSString *)regid searchIndex:(int)searchIndex searchString:(NSString *)searchString;
 + (NSArray *)searchBeneList:(NSString *)regid searchIndex:(int)searchIndex searchString:(NSString *)searchString;
 + (BOOL)sendSMS:(NSString *)toNumber message:(NSString *)message;
++ (BOOL)registAlertWithDevice:(NSString *)device_id
+                        email:(NSString *)email
+                 device_token:(NSString *)device_token
+                  currency_id:(NSString *)currency_id
+                   rate_alert:(NSString *)rate_alert;
++ (BOOL)checkAlertWithDevice:(NSString *)device_id
+                 currency_id:(NSString *)currency_id;
 + (NSArray *)searchBankForBeneID:(NSString *)beneid;
 + (NSArray *)getBankDetail:(NSString *)bankid;
 + (BOOL)submitDuplicate:(NSString *)regid

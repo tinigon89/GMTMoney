@@ -47,6 +47,13 @@
 #define PORTRAIT_KEYBOARD_HEIGHT 216
 #define LANDSCAPE_KEYBOARD_HEIGHT  162
 #endif
+
+//#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+//#define IS_IPHONE ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone" ] )
+//#define IS_IPOD   ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPod touch" ] )
+//#define IS_IPHONE_5 ( IS_IPHONE && IS_WIDESCREEN )
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
 #define kDailyRateInfo @"DailyRateInfo"
 #define kLastestUpdate @"LastestUpdate"
 #define kUserInfo @"UserInfo"

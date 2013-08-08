@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "define.h"
 static AppDelegate *sharedInstance = nil;
 @implementation AppDelegate
 @synthesize taskbarView,navController;
@@ -21,6 +23,8 @@ static AppDelegate *sharedInstance = nil;
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"TaskbarView" owner:nil options:nil];
     self.taskbarView = [array objectAtIndex:0];
     sharedInstance = self;
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     return YES;
 }
 							
@@ -51,4 +55,42 @@ static AppDelegate *sharedInstance = nil;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *tokenStr = [deviceToken description];
+    NSString *hexStr = [[[tokenStr
+                          stringByReplacingOccurrencesOfString:@"<" withString:@""]
+                         stringByReplacingOccurrencesOfString:@">" withString:@""]
+                        stringByReplacingOccurrencesOfString:@" " withString:@""] ;
+    [userDefault setObject:hexStr forKey:kDeviceToken];
+    [userDefault setBool:NO forKey:kPostToken];
+    [userDefault synchronize];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSString *message = nil;
+    id alert = [userInfo objectForKey:@"alert"];
+    if ([alert isKindOfClass:[NSString class]]) {
+        message = alert;
+    } else if ([alert isKindOfClass:[NSDictionary class]]) {
+        message = [alert objectForKey:@"body"];
+    }
+    if (alert) {
+        [Util showAlertWithString:message];
+        //[UIApplication sharedApplication].applicationIconBadgeNumber = 1;
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc postNotificationName:@"didReceiveNotification" object:nil];
+    }
+    
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WEPopoverController.h"
 #import "WEPopoverContentViewController.h"
-@interface RateAlertViewController : UIViewController<UIWebViewDelegate,WEPopoverControllerDelegate,WEPopoverContentViewControllerDelegate,UITextFieldDelegate>
+@interface RateAlertViewController : UIViewController<UIWebViewDelegate,WEPopoverControllerDelegate,WEPopoverContentViewControllerDelegate,UITextFieldDelegate,UIAlertViewDelegate>
 {
     IBOutlet UITextField *toTF;
     WEPopoverController *popoverController;
@@ -18,6 +18,7 @@
     NSMutableArray *dailyRateList;
     IBOutlet UITextField *emailTF;
     IBOutlet UITextField *rateAlertTF;
+    IBOutlet UIButton *pushButton;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
