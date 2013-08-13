@@ -119,7 +119,15 @@
             return;
     }
     
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    if (IS_IPAD()) {
+        popoverController = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        [popoverController presentPopoverFromRect:addBT.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+    else
+    {
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+    
 }
 
 // Image Picker Delegate
@@ -140,6 +148,10 @@
 
 - (void)sendMail:(UIImage *)image
 {
+    if (IS_IPAD()) {
+        [popoverController dismissPopoverAnimated:NO];
+    }
+    
     if ([MFMailComposeViewController canSendMail])
     {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];

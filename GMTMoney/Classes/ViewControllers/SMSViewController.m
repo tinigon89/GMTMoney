@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    codeList = [[NSArray alloc] initWithObjects:@"+61",@"+91",@"+85", nil];
+    codeList = [[NSArray alloc] initWithObjects:@"+91",@"+61",@"+65",@"+1",@"+92",@"+44",@"+60",@"+66",@"+64", nil];
     
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
@@ -77,12 +77,16 @@
     for (NSDictionary *dict in allContactsPhoneNumber) {
         NSString *phone = [dict objectForKey:@"phone"];
         NSString *name = [dict objectForKey:@"name"];
-        NSString *subString = [phone substringToIndex:3];
-        if ([subString isEqualToString:@"+61"] || [subString isEqualToString:@"+91"] || [subString isEqualToString:@"+85"]) {
-            NSString *string = [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
-            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",string,@"phone", nil];
-            [tempArray addObject:dict];
+        
+        for (NSString *tempString in codeList) {
+            NSString *subString = [phone substringToIndex:[tempString length]];
+            if ([subString isEqualToString:tempString]) {
+                NSString *string = [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
+                NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:name,@"name",string,@"phone", nil];
+                [tempArray addObject:dict];
+            }
         }
+        
     }
     allContactsPhoneNumber = tempArray;
 }
@@ -301,7 +305,8 @@
     NSPredicate *sPredicate = [NSPredicate predicateWithFormat:@"phone CONTAINS[cd] %@", toNumber];
     NSArray *result = [allContactsPhoneNumber filteredArrayUsingPredicate:sPredicate];
     if ([result count]>index) {
-        toTF.text = [[[result objectAtIndex:index] objectForKey:@"phone"] substringFromIndex:3];
+        //NSLog(@"%i",[[codeList objectAtIndex:currentIndex] length]);
+        toTF.text = [[[result objectAtIndex:index] objectForKey:@"phone"] substringFromIndex:[[codeList objectAtIndex:currentIndex] length]];
     }
         [popoverController2 dismissPopoverAnimated:NO];
         popoverController2 = nil;

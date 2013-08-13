@@ -20,6 +20,10 @@
 {
     [super viewDidLoad];
     scrollView.contentSize = CGSizeMake(320, 1700);
+    if(IS_IPAD())
+    {
+        scrollView.contentSize = CGSizeMake(768, 1200);
+    }
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
     currentList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in countryList) {

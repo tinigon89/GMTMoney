@@ -14,8 +14,9 @@
     BOOL isFinish;
     BOOL viewDidLoad;
     UIActionSheet *actionsheet;
-
+    UIPopoverController *popoverController;
     IBOutlet UILabel *usernameLB;
+    IBOutlet UIButton *addBT;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;

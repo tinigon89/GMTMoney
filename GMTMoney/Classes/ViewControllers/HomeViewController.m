@@ -68,6 +68,7 @@
             menuView.center = center;
         }
     }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -21,6 +21,10 @@
     [super viewDidLoad];
     [self registerForKeyboardNotifications];
     scrollView.contentSize = CGSizeMake(320, 1300);
+    if(IS_IPAD())
+    {
+        scrollView.contentSize = CGSizeMake(768, 900);
+    }
     countryList = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryList];
     currentList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in countryList) {

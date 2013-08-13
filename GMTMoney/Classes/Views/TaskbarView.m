@@ -9,6 +9,7 @@
 #import "TaskbarView.h"
 #import "AppDelegate.h"
 #import "Util.h"
+#import "define.h"
 @implementation TaskbarView
 
 - (id)initWithFrame:(CGRect)frame
@@ -40,6 +41,9 @@
     popoverController = [[WEPopoverController alloc] initWithContentViewController:viewcontroller] ;
 
     popoverController.popoverContentSize = CGSizeMake(320, 390);
+    if (IS_IPAD()) {
+        popoverController.popoverContentSize = CGSizeMake(620, 837);
+    }
     popoverController.delegate = self;
 
     
@@ -60,6 +64,9 @@
     popoverController = [[WEPopoverController alloc] initWithContentViewController:viewcontroller] ;
     
     popoverController.popoverContentSize = CGSizeMake(320, 390);
+    if (IS_IPAD()) {
+        popoverController.popoverContentSize = CGSizeMake(662, 837);
+    }
     popoverController.delegate = self;
     
     
@@ -97,6 +104,7 @@
 }
 
 - (IBAction)more_Click:(id)sender {
+    
     if (popoverController) {
         [popoverController dismissPopoverAnimated:NO];
     }
@@ -106,6 +114,9 @@
     popoverController = [[WEPopoverController alloc] initWithContentViewController:viewcontroller] ;
     
     popoverController.popoverContentSize = CGSizeMake(320, 200);
+    if (IS_IPAD()) {
+        popoverController.popoverContentSize = CGSizeMake(768, 200);
+    }
     popoverController.delegate = self;
     
     

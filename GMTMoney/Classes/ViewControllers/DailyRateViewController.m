@@ -105,6 +105,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (IS_IPAD()) {
+        if (isShowCashRate) {
+            return 135;
+        }
+        return 84;
+    }
     if (isShowCashRate) {
         return 100;
     }

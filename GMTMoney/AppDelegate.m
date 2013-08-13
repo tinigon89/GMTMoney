@@ -21,6 +21,9 @@ static AppDelegate *sharedInstance = nil;
 {
     // Override point for customization after application launch.
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"TaskbarView" owner:nil options:nil];
+    if (IS_IPAD()) {
+        array = [[NSBundle mainBundle] loadNibNamed:@"TaskbarView_iPad" owner:nil options:nil];
+    }
     self.taskbarView = [array objectAtIndex:0];
     sharedInstance = self;
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:

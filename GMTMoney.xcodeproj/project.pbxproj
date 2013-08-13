@@ -449,6 +449,7 @@
 		858E97241798FF00001D5D1F /* NewStep3ContViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E97231798FF00001D5D1F /* NewStep3ContViewController.m */; };
 		858E972717992863001D5D1F /* NewBenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E972617992863001D5D1F /* NewBenViewController.m */; };
 		858E972A179932CC001D5D1F /* NewStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E9729179932CC001D5D1F /* NewStep4ViewController.m */; };
+		858F1C7417BA17DC00C27865 /* TaskbarView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858F1C7317BA17DC00C27865 /* TaskbarView_iPad.xib */; };
 		858FEE33179AB30D005803BE /* NewBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858FEE32179AB30C005803BE /* NewBankViewController.m */; };
 		858FEE36179AE8C4005803BE /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858FEE35179AE8C3005803BE /* SuccessViewController.m */; };
 		85991CF0179BF56100A74A8A /* SearchRemittanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85991CEF179BF56100A74A8A /* SearchRemittanceViewController.m */; };
@@ -976,6 +977,7 @@
 		858E972617992863001D5D1F /* NewBenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBenViewController.m; sourceTree = "<group>"; };
 		858E9728179932CB001D5D1F /* NewStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStep4ViewController.h; sourceTree = "<group>"; };
 		858E9729179932CC001D5D1F /* NewStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStep4ViewController.m; sourceTree = "<group>"; };
+		858F1C7317BA17DC00C27865 /* TaskbarView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskbarView_iPad.xib; sourceTree = "<group>"; };
 		858FEE31179AB30B005803BE /* NewBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBankViewController.h; sourceTree = "<group>"; };
 		858FEE32179AB30C005803BE /* NewBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBankViewController.m; sourceTree = "<group>"; };
 		858FEE34179AE8C2005803BE /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
@@ -1697,6 +1699,7 @@
 				85734AB5178D0ADF0094D84A /* TaskbarView.xib */,
 				85D3CFDD17A992B8008CD3D9 /* FeedCell.h */,
 				85D3CFDE17A992B8008CD3D9 /* FeedCell.m */,
+				858F1C7317BA17DC00C27865 /* TaskbarView_iPad.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2298,6 +2301,7 @@
 				857B333417AE83EA003AB35C /* account_icon.png in Resources */,
 				8584FB0617B494CD008F5FA6 /* my_alerts.png in Resources */,
 				85D90F0B17B4F7DC008E0447 /* alerts_button.png in Resources */,
+				858F1C7417BA17DC00C27865 /* TaskbarView_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
