@@ -63,14 +63,14 @@
 }
 
 - (IBAction)hotline_Click:(id)sender {
-    callNumber = @"1300 783 036";
+    callNumber = @"1300783036";
     NSString *message = [NSString stringWithFormat:@"Do you want to call this number:%@?",callNumber];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     [alert show];
 }
 
 - (IBAction)tel1_click:(id)sender {
-    callNumber = @"+612 86773534";
+    callNumber = @"+61286773534";
     NSString *message = [NSString stringWithFormat:@"Do you want to call this number:%@?",callNumber];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     [alert show];

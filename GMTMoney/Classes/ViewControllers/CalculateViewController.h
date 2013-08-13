@@ -11,6 +11,9 @@
 #import "WEPopoverContentViewController.h"
 @interface CalculateViewController : UIViewController<UIWebViewDelegate,WEPopoverControllerDelegate,WEPopoverContentViewControllerDelegate,UITextFieldDelegate>
 {
+    NSInteger distance;
+    BOOL keyboardIsShowing;
+    UITextField *selectedTextField;
     IBOutlet UIWebView *webview;
     BOOL isFinish;
     IBOutlet UITextField *toTF;
@@ -18,9 +21,11 @@
     IBOutlet UITextField *rateTF;
     IBOutlet UITextField *totalAmountTF;
     WEPopoverController *popoverController;
+    
     int currentIndex;
     NSMutableArray *currencyList;
     NSMutableArray *dailyRateList;
+    IBOutlet UIScrollView *scrollView;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;

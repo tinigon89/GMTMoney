@@ -10,7 +10,7 @@
 
 
 @implementation WEPopoverContentViewController
-@synthesize delegate,menuList,imageList,width,textColor;
+@synthesize delegate,menuList,imageList,width,textColor,subtitleList;
 
 #pragma mark -
 #pragma mark Initialization
@@ -74,6 +74,12 @@
 }
 */
 
+- (void)refreshMenu
+{
+    self.contentSizeForViewInPopover = CGSizeMake(width, [menuList count] * 40 - 1);
+    [self.tableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark Table view data source
@@ -97,13 +103,23 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        if (subtitleList) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        }
+        else
+        {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        
     }
     NSString *title = [menuList objectAtIndex:indexPath.row];
 
     cell.imageView.image = [UIImage imageNamed:[imageList objectAtIndex:indexPath.row]];
     // Configure the cell...
 	cell.textLabel.text = title;
+    if (subtitleList) {
+        cell.detailTextLabel.text = [subtitleList objectAtIndex:indexPath.row];
+    }
 	cell.textLabel.textColor = textColor;
     return cell;
 }

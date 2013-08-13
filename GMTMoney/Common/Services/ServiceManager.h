@@ -59,6 +59,8 @@
                          State:(NSString *)State
                       PostCode:(NSString *)PostCode
                        Country:(int)Country;
+
++ (BOOL)getAlertWithDevice:(NSString *)device_id;
 + (BOOL)submitStep1:(NSString *)regid
                curr:(int)curr
             purpose:(NSString *)purpose
@@ -70,6 +72,8 @@
             FAmount:(NSString *)FAmount
            Comments:(NSString *)Comments
              online:(int)online;
+
++ (BOOL)deleteAlert:(NSString *)alert_id;
 
 + (BOOL)submitStep2:(NSString *)regid
               remid:(NSString*)remid

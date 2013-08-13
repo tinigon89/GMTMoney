@@ -23,6 +23,19 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     dailyRateList = [userDefault objectForKey:kDailyRateInfo];
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order"
+                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray;
+    sortedArray = [dailyRateList sortedArrayUsingDescriptors:sortDescriptors];
+    dailyRateList = [sortedArray mutableCopy];
+    for (NSDictionary *dict in dailyRateList) {
+        if ([[dict objectForKey:@"CurrSym"] isEqualToString:@"AUD"]) {
+            [dailyRateList removeObject:dict];
+            break;
+        }
+    }
     currencyList = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *dict in dailyRateList) {
         [currencyList addObject:[dict objectForKey:@"CurrSym"]];
@@ -52,7 +65,7 @@
 		WEPopoverContentViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
         contentViewController.delegate = self;
         contentViewController.menuList = currencyList;
-        contentViewController.width = 70;
+        contentViewController.width = 80;
 		popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController] ;
         [contentViewController.tableView setScrollEnabled:YES];
         [contentViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -111,6 +124,7 @@
         device_token = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken];
     }
     NSString *device_id = [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceId];
+    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     if ([ServiceManager checkAlertWithDevice:device_id currency_id:currID]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You already registed an alert for this currency. Do you want to replace it?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         [alert show];
@@ -119,14 +133,18 @@
     {
         BOOL result = [ServiceManager registAlertWithDevice:device_id email:emailTF.text device_token:device_token currency_id:currID rate_alert:rateAlertTF.text];
         if (result) {
+            [SVProgressHUD dismiss];
             [Util showAlertWithString:@"Successful!"];
             [self.navigationController popViewControllerAnimated:YES];
         }
         else
         {
+            [SVProgressHUD dismiss];
             [Util showAlertWithString:@"Can't connect to server!"];
         }
-    }    
+    }
+    
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -142,15 +160,17 @@
 
             BOOL result = [ServiceManager registAlertWithDevice:device_id email:emailTF.text device_token:device_token currency_id:currID rate_alert:rateAlertTF.text];
             if (result) {
+                [SVProgressHUD dismiss];
                 [Util showAlertWithString:@"Successful!"];
                 [self.navigationController popViewControllerAnimated:YES];
             }
             else
             {
+                [SVProgressHUD dismiss];
                 [Util showAlertWithString:@"Can't connect to server!"];
-            }
-        
+            }        
     }
+    [SVProgressHUD dismiss];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -191,6 +211,11 @@
     toTF.text = [currencyList objectAtIndex:index] ;
     [popoverController dismissPopoverAnimated:YES];
     popoverController = nil;
+}
+
+- (void)showProcess
+{
+    [SVProgressHUD showWithStatus:@"Loading"];
 }
 
 @end

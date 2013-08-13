@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //scrollView.contentSize = CGSizeMake(320, 320);
 	// Do any additional setup after loading the view, typically from a nib.
     
     NSString* url = @"https://instantcashworldwide.ae/InstantcashworldwideOffload/agentsearch_en.aspx";
@@ -35,6 +35,9 @@
     for (NSDictionary *dict in dailyRateList) {
         [currencyList addObject:[dict objectForKey:@"CurrSym"]];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 
@@ -131,6 +134,85 @@
         [self calculate];
     }
     
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    int height = PORTRAIT_KEYBOARD_HEIGHT;
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        height = LANDSCAPE_KEYBOARD_HEIGHT;
+    }
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        screenHeight = screenRect.size.width;
+    }
+    NSLog(@"%f - %f - %f - %f : %f - %f",textField.frame.origin.y,textField.superview.frame.origin.y,screenHeight,textField.frame.size.height,textField.frame.origin.y + textField.superview.frame.origin.y + textField.frame.size.height,screenHeight - height);
+    if (textField.frame.origin.y + textField.superview.frame.origin.y + textField.frame.size.height+self.navigationController.navigationBar.frame.size.height > screenHeight - height) {
+        
+        selectedTextField = textField;
+        float currentDistance = textField.frame.origin.y + textField.superview.frame.origin.y + textField.frame.size.height + self.navigationController.navigationBar.frame.size.height - (screenHeight - height) + 25;
+        distance += currentDistance;
+        if (keyboardIsShowing) {
+            UIView *parentView = selectedTextField.superview;
+            CGRect frame = parentView.frame;
+            frame.origin.y -= currentDistance;
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationBeginsFromCurrentState:YES];
+            [UIView setAnimationDuration:0.3f];
+            parentView.frame = frame;
+            [UIView commitAnimations];
+        }
+    }
+}
+
+
+- (void)keyboardWillShow:(NSNotification *)note
+{
+    CGRect keyboardBounds;
+    NSValue *aValue = [note.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey];
+    
+    [aValue getValue:&keyboardBounds];
+    if (!keyboardIsShowing)
+    {
+        keyboardIsShowing = YES;
+        UIView *parentView = selectedTextField.superview;
+        CGRect frame = parentView.frame;
+        frame.origin.y -= distance;
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDuration:0.3f];
+        parentView.frame = frame;
+        [UIView commitAnimations];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)note
+{
+    CGRect keyboardBounds;
+    NSValue *aValue = [note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
+    [aValue getValue: &keyboardBounds];
+    
+    if (keyboardIsShowing)
+    {
+        keyboardIsShowing = NO;
+        UIView *parentView = selectedTextField.superview;
+        CGRect frame = parentView.frame;
+        frame.origin.y += distance;
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDuration:0.3f];
+        parentView.frame = frame;
+        [UIView commitAnimations];
+    }
+    if (distance > 0) {
+        distance = 0;
+    }
+}
+
+- (void)dismissKeyboard {
+    [self.view endEditing:TRUE];
 }
 
 - (void)calculate

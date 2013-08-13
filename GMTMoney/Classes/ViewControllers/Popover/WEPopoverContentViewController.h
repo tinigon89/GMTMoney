@@ -17,9 +17,11 @@
 
 @property (nonatomic, assign) id <WEPopoverContentViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSArray *menuList;
+@property (nonatomic, retain) NSArray *subtitleList;
 @property (nonatomic, retain) NSArray *imageList;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic) float width;
+- (void)refreshMenu;
 @end
 
 @protocol WEPopoverContentViewControllerDelegate <NSObject>

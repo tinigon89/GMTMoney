@@ -95,10 +95,5 @@
 #define kUser_Sex @"sex"
 #define kUser_Postcode @"postcode"
 
-#if defined(KISSFM)
-#define IS_KISSVERSION() (true)
-#else
-#define IS_KISSVERSION() (false)
-#endif
 
 

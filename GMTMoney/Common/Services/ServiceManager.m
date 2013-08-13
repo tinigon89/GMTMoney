@@ -849,6 +849,70 @@ return YES;
     return NO;;
 }
 
++ (BOOL)getAlertWithDevice:(NSString *)device_id
+{
+    //{"device_id":"1","email":"1","device_token":"1","device_type":"1","currency_id":"1","rate_alert":"1"}
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:device_id,@"device_id",nil];
+    NSString *post = [dict JSONRepresentation];
+    NSString *postString = [NSString stringWithFormat:@"content=%@",post];
+    NSData *postData = [postString  dataUsingEncoding:NSUTF8StringEncoding];
+    ASIFormDataRequest * request;
+    NSURL *url = [NSURL URLWithString:@"http://www.gmtmoney.com.au/pushapi/apis.php?api=get_alerts"];
+    request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"content-type" value:@"application/x-www-form-urlencoded"];
+    [request addRequestHeader:@"Content-Length" value:[NSString stringWithFormat:@"%d", [postData length]]];
+    [request setPostBody:[NSMutableData dataWithData:postData]];
+    [request startSynchronous];
+    if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        NSString *responseString = [request.responseString stringByReplacingOccurrencesOfString:@":null" withString:@":\"\""];
+        NSDictionary *responseDict = [responseString JSONValue];
+        if (responseDict && [responseDict objectForKey:@"alerts"])
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:[responseDict objectForKey:@"alerts"] forKey:kAlarmInfo];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            return YES;
+        }
+        
+    }
+    [Util showAlertWithString:@"Can't connect to server"];
+    return NO;;
+}
+
++ (BOOL)deleteAlert:(NSString *)alert_id
+{
+    //{"device_id":"1","email":"1","device_token":"1","device_type":"1","currency_id":"1","rate_alert":"1"}
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:alert_id,@"alert_id",nil];
+    NSString *post = [dict JSONRepresentation];
+    NSString *postString = [NSString stringWithFormat:@"content=%@",post];
+    NSData *postData = [postString  dataUsingEncoding:NSUTF8StringEncoding];
+    ASIFormDataRequest * request;
+    NSURL *url = [NSURL URLWithString:@"http://www.gmtmoney.com.au/pushapi/apis.php?api=delete_alert"];
+    request = [ASIHTTPRequest requestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request addRequestHeader:@"content-type" value:@"application/x-www-form-urlencoded"];
+    [request addRequestHeader:@"Content-Length" value:[NSString stringWithFormat:@"%d", [postData length]]];
+    [request setPostBody:[NSMutableData dataWithData:postData]];
+    [request startSynchronous];
+    if ([request responseStatusCode] == 200)
+    {
+        NSLog(@"%@",request.responseString);
+        NSString *responseString = [request.responseString stringByReplacingOccurrencesOfString:@":null" withString:@":\"\""];
+        NSDictionary *responseDict = [responseString JSONValue];
+        if ([[responseDict objectForKey:@"success"] isEqualToString:@"true"])
+        {
+            return YES;
+            
+        }        
+    }
+    [Util showAlertWithString:@"Can't connect to server"];
+    return NO;;
+}
+
+
+
 
 + (BOOL)sendSMS:(NSString *)toNumber message:(NSString *)message
 {
@@ -869,6 +933,8 @@ return YES;
     [request addPostValue:message forKey:@"Body"];
     //BOOL isComplete;
     [request startSynchronous];
+    //NSLog(@"%i",[request responseStatusCode]);
+   // NSLog(@"%@",[request responseString]);
     if ([request responseStatusCode] == 201)
     {
         NSLog(@"%@",request.responseString);

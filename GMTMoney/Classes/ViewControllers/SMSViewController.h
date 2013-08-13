@@ -12,6 +12,7 @@
 @interface SMSViewController : UIViewController<UITextFieldDelegate,UITextViewDelegate,WEPopoverControllerDelegate,WEPopoverContentViewControllerDelegate>
 {
     WEPopoverController *popoverController;
+    WEPopoverController *popoverController2;
     int currentIndex;
     IBOutlet UILabel *smsLabel;
     IBOutlet UITextView *contentTV;
@@ -19,6 +20,7 @@
     IBOutlet UILabel *titleLB;
     IBOutlet UIButton *codeAreaBT;
     NSArray *codeList;
+    NSMutableArray *allContactsPhoneNumber;
 }
 @property (strong, nonatomic) IBOutlet UIView *taskbarView;
 - (IBAction)home_click:(id)sender;
