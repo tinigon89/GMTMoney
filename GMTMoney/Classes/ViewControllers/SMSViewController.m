@@ -52,7 +52,7 @@
     NSUInteger index = 0;
     allContactsPhoneNumber = [[NSMutableArray alloc] init];
     
-    for(index = 0; index<=([arrayOfPeople count]-1); index++){
+    for(index = 0; index<[arrayOfPeople count]; index++){
         
         ABRecordRef currentPerson =
         (__bridge ABRecordRef)[arrayOfPeople objectAtIndex:index];

@@ -197,7 +197,7 @@
         bankID = [[NSUserDefaults standardUserDefaults] objectForKey:kBankID];
     }    
     
-    
+    [self performSelectorInBackground:@selector(showProcess) withObject:nil];
     BOOL result = [ServiceManager submitStep4:regid remid:remid sid:sid benID:beneId bnkID:bankID paytype:paytype online:online];
     [SVProgressHUD dismiss];
     if (result) {
