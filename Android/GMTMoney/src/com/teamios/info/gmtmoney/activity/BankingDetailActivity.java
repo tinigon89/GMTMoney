@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 public class BankingDetailActivity extends Activity {
 
@@ -15,29 +16,8 @@ public class BankingDetailActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.bank_detail);
 		
-		Button btn_bank_detail = (Button) findViewById(R.id.btn_bank_detail);
-		btn_bank_detail.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				finish();
-			}
-		});
-		
-		Button btn_contact_us = (Button) findViewById(R.id.btn_contact_us);
-		btn_contact_us.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				finish();
-			}
-		});
-		
-		Button btn_refer_friends = (Button) findViewById(R.id.btn_refer_friends);
-		btn_refer_friends.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				finish();
-			}
-		});
-		
-		Button btn_more = (Button) findViewById(R.id.btn_more);
-		btn_more.setOnClickListener(new View.OnClickListener() {
+		RelativeLayout more_view_outside = (RelativeLayout) findViewById(R.id.view_outside);
+		more_view_outside.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				finish();
 			}

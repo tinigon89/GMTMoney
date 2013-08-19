@@ -3,6 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@android:color/transparent" >
+    
+    <RelativeLayout
+        android:id="@+id/view_outside"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
