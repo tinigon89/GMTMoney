@@ -7576,6 +7576,505 @@ Please email us the copy of bank deposit slip to </string>
         <image name="social-facebook-box-blue-icon.png" width="128" height="128"/>
         <image name="uncheck.png" width="128" height="128"/>
     </resources>
+    <classes>
+        <class className="AccountViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="sendMail_Click:"/>
+                <relationship kind="action" name="status_Click:"/>
+                <relationship kind="outlet" name="addBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="usernameLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="AlertListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlertListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="refresh_Click:"/>
+                <relationship kind="action" name="sort:"/>
+                <relationship kind="action" name="unsubscribe_click:"/>
+                <relationship kind="outlet" name="lastestLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rateSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="rateTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="CalculateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="sendmoney_Click:"/>
+                <relationship kind="action" name="to_Click:"/>
+                <relationship kind="outlet" name="amountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="toTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CashLocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CashLocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ContactUsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactUsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="emailButton_Click:"/>
+                <relationship kind="action" name="hotline_Click:"/>
+                <relationship kind="action" name="tel1_click:"/>
+                <relationship kind="action" name="tel2_click:"/>
+            </relationships>
+        </class>
+        <class className="DailyRateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyRateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="refresh_Click:"/>
+                <relationship kind="action" name="sort:"/>
+                <relationship kind="outlet" name="lastestLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rateSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="rateTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="FacebookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="like_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FeedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedCell.h"/>
+            <relationships>
+                <relationship kind="action" name="select_Click:"/>
+            </relationships>
+        </class>
+        <class className="FeedDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="feedTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="topTitleLB" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ForgotViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ForgotViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="account_Click:"/>
+                <relationship kind="action" name="facebook_click:"/>
+                <relationship kind="action" name="login_Click:"/>
+                <relationship kind="action" name="sms_Click:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="menuView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="LocatorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocatorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="forgot_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="login_Click:"/>
+                <relationship kind="action" name="register_Click:"/>
+                <relationship kind="outlet" name="passwordTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="userIDTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="help_Click:"/>
+                <relationship kind="action" name="news_Click:"/>
+                <relationship kind="action" name="visit_Click:"/>
+            </relationships>
+        </class>
+        <class className="NewBankViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewBankViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="accountNumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankCodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rcityTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="routingNumberTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="swiftCodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewBenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewBenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="ident_Click:"/>
+                <relationship kind="action" name="pcontact_Click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="rstart_Click:"/>
+                <relationship kind="action" name="sContact_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="acceptBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="identificationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idnumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rcityTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="snameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewSenderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewSenderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="dateofbirth_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="ident_Click:"/>
+                <relationship kind="action" name="idexpired_Click:"/>
+                <relationship kind="action" name="nation_Click:"/>
+                <relationship kind="action" name="pcontact_Click:"/>
+                <relationship kind="action" name="pcountry_Click:"/>
+                <relationship kind="action" name="pstate_Click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="rstart_Click:"/>
+                <relationship kind="action" name="sContact_Click:"/>
+                <relationship kind="action" name="sameabove_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="acceptBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateofbirthTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idExpiredTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idIssuerTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="identificationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idnumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="occupation" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pSameAboveBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ppostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="psubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="snameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep1ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep1ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fcurrency_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="segment_Click:"/>
+                <relationship kind="outlet" name="bankNameTF" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commentTV" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="exchangeRate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fCurrencyTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="foreignAmount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="foreignAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lessCommission" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="paymentAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="purpostTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="subTitle2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subTitleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="transferAmount" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewStep2ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep2ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="search_Click:"/>
+                <relationship kind="action" name="select_Click:"/>
+                <relationship kind="outlet" name="searchByTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep3ContViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep3ContViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep3ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep3ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="search_Click:"/>
+                <relationship kind="action" name="select_Click:"/>
+                <relationship kind="outlet" name="searchByTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NewStep4ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStep4ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="BCode1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="BCode2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="BCode3TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="FAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="accountHolderTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="accountNumberTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bCNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bEmailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bFullNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bIndentTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bPContact" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bSContactTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bankDetailView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="bankNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bottomView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="btnAccept" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="commentTV" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="commissionTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dobTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="exchangeRateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="paymentAmountTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sBAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sEmailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sPAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sPContact" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sRAddressTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sSContactTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scompanyTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="sindentTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="transferAmountTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="bollywood_Click:"/>
+                <relationship kind="action" name="business_click:"/>
+                <relationship kind="action" name="ggNews_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="science_Click:"/>
+                <relationship kind="action" name="skynews_Click:"/>
+                <relationship kind="action" name="topnews_click:"/>
+                <relationship kind="action" name="underb_Click:"/>
+                <relationship kind="action" name="usnews_Click:"/>
+                <relationship kind="action" name="world_Click:"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="RateAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RateAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="check_click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="regist_Click:"/>
+                <relationship kind="action" name="to_Click:"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pushButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rateAlertTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="toTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="RegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accept_Click:"/>
+                <relationship kind="action" name="dateofbirth_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="ident_Click:"/>
+                <relationship kind="action" name="idexpired_Click:"/>
+                <relationship kind="action" name="nation_Click:"/>
+                <relationship kind="action" name="pcontact_Click:"/>
+                <relationship kind="action" name="pcountry_Click:"/>
+                <relationship kind="action" name="pstate_Click:"/>
+                <relationship kind="action" name="rcontry_Click:"/>
+                <relationship kind="action" name="rstart_Click:"/>
+                <relationship kind="action" name="sContact_Click:"/>
+                <relationship kind="action" name="sameabove_Click:"/>
+                <relationship kind="action" name="source_Click:"/>
+                <relationship kind="action" name="submit_Click:"/>
+                <relationship kind="outlet" name="acceptBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateofbirthTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fnameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idExpiredTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idIssuerTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="identificationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="idnumTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nationTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="occupation" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pSameAboveBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ppostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="psubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rCountryTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rpostcodeTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstateTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rstreetTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rsubburbTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact1TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sContact2TF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="snameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sourceTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="userNameTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SMSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SMSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="codeArea_Click:"/>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="send_click:"/>
+                <relationship kind="outlet" name="codeAreaBT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentTV" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="smsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toTF" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SearchRemittanceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchRemittanceViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="action" name="next_Click:"/>
+                <relationship kind="action" name="search_Click:"/>
+                <relationship kind="action" name="select_Click:"/>
+                <relationship kind="outlet" name="searchByTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTF" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SuccessViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SuccessViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="TranStatusViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TranStatusViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLB" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="transTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TrashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrashViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home_click:"/>
+                <relationship kind="outlet" name="taskbarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
