@@ -8,7 +8,6 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
 
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
@@ -28,6 +27,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.teamios.info.gmtmoney.activity.WebViewScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
             android:name="com.teamios.info.gmtmoney.activity.BankingDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman"/>
@@ -39,6 +42,12 @@
             android:name="com.teamios.info.gmtmoney.activity.MoreActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.DailyRatesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"
+        	android:configChanges="keyboardHidden"
+        	android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

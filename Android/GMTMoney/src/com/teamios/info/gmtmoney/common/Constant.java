@@ -1,6 +1,8 @@
 package com.teamios.info.gmtmoney.common;
 
 public class Constant {
+	// Time out when connect wrong ip
+	public static final int CONST_TIME_OUT = 60000;
 	public static final String kServer_Get_DailyRates 				= "http://www.gmtmoney.com.au/dr.aspx";
 	public static final String kServer_Get_Login 					= "http://www.gmtmoney.com.au/ilogin.aspx?uname=%s&upass=%s";
 	public static final String kServer_Get_Forgot 					= "http://www.gmtmoney.com.au/iforget.aspx?email=%s";

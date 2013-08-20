@@ -2,55 +2,80 @@ package com.teamios.info.gmtmoney.activity;
 
 import com.teamios.info.gmtmoney.R;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
 
-		Button home_btn_bank_detail = (Button) findViewById(R.id.home_btn_bank_detail);
-		home_btn_bank_detail.setOnClickListener(new View.OnClickListener() {
+		initNavButton();
+		Button home_btn_daily = (Button) findViewById(R.id.home_btn_daily);
+		home_btn_daily.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent i = new Intent(getBaseContext(), BankingDetailActivity.class);
+				Intent i = new Intent(getBaseContext(), DailyRatesActivity.class);
 				startActivity(i);
 			}
 		});
 		
-		Button home_btn_contact_us = (Button) findViewById(R.id.home_btn_contact_us);
-		home_btn_contact_us.setOnClickListener(new View.OnClickListener() {
+		Button home_btn_cash = (Button) findViewById(R.id.home_btn_cash);
+		home_btn_cash.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent i = new Intent(getBaseContext(), ContactUsActivity.class);
+				Intent i = new Intent(getBaseContext(), WebViewScreenActivity.class);
+				i.putExtra("name", "home_btn_cash");
 				startActivity(i);
 			}
 		});
 		
-		Button home_btn_more = (Button) findViewById(R.id.home_btn_more);
-		home_btn_more.setOnClickListener(new View.OnClickListener() {
+		Button home_btn_ifsc = (Button) findViewById(R.id.home_btn_ifsc);
+		home_btn_ifsc.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent i = new Intent(getBaseContext(), MoreActivity.class);
+				Intent i = new Intent(getBaseContext(), WebViewScreenActivity.class);
+				i.putExtra("name", "home_btn_ifsc");
 				startActivity(i);
 			}
 		});
 		
-		Button home_btn_refer_friends = (Button) findViewById(R.id.home_btn_refer_friends);
-		home_btn_refer_friends.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-				emailIntent.setType("message/rfc822");
-				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "GMT MONEY");
-				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("<br><br><br><b>Sent from my " + android.os.Build.MODEL + "</b>"));
-				startActivity(Intent.createChooser(emailIntent, "Email to Friend"));
-			}
-		});
+		new LoadDataBackgroundDailyAsyncTask().execute("");
 		
+	}
+	
+	private class LoadDataBackgroundDailyAsyncTask extends AsyncTask<String, Integer, String> {
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			openProcessLoading(false);
+		}
+
+		@Override
+		protected String doInBackground(String... aurl) {
+			try {
+				listDailyRates = null;
+				listDailyRates = getListDailyRatesInfo();
+				publishProgress(1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			if(progress[0] == 1) {
+				
+			}
+		}
+
+		@Override
+		protected void onPostExecute(String unused) {
+			closeProcessLoading();
+		}
 	}
 }

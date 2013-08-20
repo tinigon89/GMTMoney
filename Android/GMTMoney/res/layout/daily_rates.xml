@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#bcd8ff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/daily_rates_nav_bar1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/daily_rates_btn_home"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/nav_btn_nav_home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="7dip"
+            android:paddingTop="7dip"
+            android:text="Daily Rates"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/daily_rates_btn_edit"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/daily_rates_btn_refesh"
+            android:background="@drawable/nav_btn_edit" />
+
+        <Button
+            android:id="@+id/daily_rates_btn_refesh"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/menu_refresh" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/daily_rates_nav_bar2"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/daily_rates_nav_bar1"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/daily_rates_image"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/banner" />
+
+        <LinearLayout
+            android:id="@+id/daily_rates_nav_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/au" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="1 AUD ="
+                android:textColor="@android:color/white"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/daily_rates_lastupdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/daily_rates_nav_text1"
+            android:layout_centerHorizontal="true"
+            android:text="Last update: 08/20/2013 9:09 PM"
+            android:textColor="#e6ff7b"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/daily_rates_group_button"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/daily_rates_nav_bar2"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/daily_rates_editText_view"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" 
+            android:background="@drawable/daily_rates_bg_search">
+
+            <EditText
+                android:id="@+id/daily_rates_editText1"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_centerInParent="true" 
+                android:layout_marginLeft="70dp">
+            </EditText>
+            
+            <Button 
+                android:id="@+id/daily_rates_search_clear"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/daily_rates_listview1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/daily_rates_editText_view" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/daily_rates_nav_bar3"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_bank_detail"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_banking_detail" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_contact_us"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_contact_us" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_refer_friends"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_refer_a_friend" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_more"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/nav_btn_more" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
