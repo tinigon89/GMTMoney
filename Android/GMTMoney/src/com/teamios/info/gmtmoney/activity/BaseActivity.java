@@ -15,6 +15,8 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -25,31 +27,6 @@ public class BaseActivity extends Activity{
 	protected ProgressDialog progressDialog;
 	protected Dialog dialog;
 	protected static List<DailyRates> listDailyRates = null;
-	
-//	public void openProcessLoading(final Boolean isCloseScreen) {
-//		try {
-//			if (dialog == null) {
-//				dialog = new Dialog(this, R.style.Theme_MyDialogTran);
-//		        dialog.setContentView(R.layout.progress_dialog);
-//		        dialog.setCancelable(isCloseScreen);
-//			}
-//	        dialog.show();
-//		} catch (Exception e) {
-//			Log.e("Close dialog process", this.toString());
-//		}
-//	}
-//	
-//	public void closeProcessLoading() {
-//		new Thread() {
-//			@Override
-//			public void run() {
-//				super.run();
-//				if (dialog != null) {
-//					dialog.dismiss();
-//				}
-//			}
-//		}.start();
-//	}
 	
 	public void openProcessLoading(final Boolean isCloseScreen) {
 		try {
@@ -89,6 +66,20 @@ public class BaseActivity extends Activity{
 			throws IllegalStateException, ClientProtocolException, IOException, JSONException {
 		DailyRatesService server = new DailyRatesService();
 		return server.getDailyRatesInfo();
+	}
+	
+	protected void saveSharedPreferences(String key, String value) {
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences.Editor editer = sharedPreferences.edit();
+		editer.putString(key, value);
+		editer.commit();
+	}
+	
+	protected String getSharedPreferences(String key) {
+		String suid = null;
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		suid = sharedPreferences.getString(key, "");
+		return suid;
 	}
 	
 	public void initNavButton(){

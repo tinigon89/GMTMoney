@@ -43,6 +43,22 @@ public class HomeActivity extends BaseActivity {
 			}
 		});
 		
+		Button home_btn_login = (Button) findViewById(R.id.home_btn_login);
+		home_btn_login.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent i = new Intent(getBaseContext(), LoginActivity.class);
+				startActivity(i);
+			}
+		});
+		
+		Button home_btn_cal = (Button) findViewById(R.id.home_btn_cal);
+		home_btn_cal.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent i = new Intent(getBaseContext(), CalculatorActivity.class);
+				startActivity(i);
+			}
+		});
+		
 		new LoadDataBackgroundDailyAsyncTask().execute("");
 		
 	}

@@ -48,6 +48,14 @@
             android:theme="@style/Theme.MyScreenTranNorman"
         	android:configChanges="keyboardHidden"
         	android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.CalculatorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
     </application>
 
 </manifest>

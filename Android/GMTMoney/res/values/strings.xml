@@ -4,5 +4,6 @@
     <string name="app_name">GMTMoney</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="register"><u><b>Register</b></u></string>
 
 </resources>
