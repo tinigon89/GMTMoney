@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#bcd8ff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/register_btn_home"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/btn_nav_back" />
+
+        <TextView
+            android:id="@+id/register_bar1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="7dip"
+            android:paddingTop="7dip"
+            android:text="Register"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar2"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/home_nav_bar1"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:src="@drawable/banner" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/home_group_button"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/home_nav_bar2"
+        android:layout_marginBottom="48dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Login Details"
+                android:textColor="#124a9c"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="User Name"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_login_username"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Password"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_login_password"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Re-enter"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_login_repassword"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Personal Details"
+                android:textColor="#124a9c"
+                android:textStyle="bold" 
+                android:visibility="visible"/>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="First Name"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_firstname"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+               	android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Sur Name"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_surname"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="13dp"
+                    android:text="Business \nName"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_businessname"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Day of Birth"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_birthday"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+                
+                <Button
+                    android:id="@+id/register_personal_birthday_btn"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/register_personal_birthday"
+                    android:background="@drawable/btn_calendar"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Nationality"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              	android:id="@+id/register_personal_nationality"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Identification"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              android:id="@+id/register_personal_identification"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="13dp"
+                    android:text="ID#"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_idno"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="ID Expiry"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_idexpiry"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+                
+                <Button
+                    android:id="@+id/register_personal_idexpiry_btn"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/register_personal_idexpiry"
+                    android:background="@drawable/btn_calendar"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="13dp"
+                    android:text="ID Issuer"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_idissuer"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="13dp"
+                    android:text="Occupation"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_personal_occupation"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+			<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Residential / Business Address"
+                android:textColor="#124a9c"
+                android:textStyle="bold" 
+                android:visibility="visible"/>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Street"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_business_street"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>	
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Suburb"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_business_suburb"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="State"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              android:id="@+id/register_business_state"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Post Code"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_business_postcode"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Country"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              android:id="@+id/register_business_country"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Previous address if less than 3 years"
+                android:textColor="#124a9c"
+                android:textStyle="bold" 
+                android:visibility="visible"/>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Or same as above?"
+                    android:textColor="@color/Black" />
+
+                <CheckBox
+                    android:id="@+id/register_business_checkbox_same"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/textView1"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Street"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_business_street_pre"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>	
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Suburb"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_business_suburb_pre"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="State"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              android:id="@+id/register_business_state_pre"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Post Code"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_business_postcode_pre"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Country"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              android:id="@+id/register_business_country_pre"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Contact Details"
+                android:textColor="#124a9c"
+                android:textStyle="bold"
+                android:visibility="visible" />
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Primary \nContact"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	              android:id="@+id/register_contact_primary_select"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/register_contact_primary"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Second \nContact"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	               android:id="@+id/register_contact_second_select"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/register_contact_second"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" 
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Email"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/register_contact_email"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </RelativeLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="How did you here about us?"
+                android:textColor="#124a9c"
+                android:textStyle="bold"
+                android:visibility="visible" />
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Source"
+                    android:textColor="@color/Black" />
+                
+                <AutoCompleteTextView
+	               android:id="@+id/register_source"
+	               android:layout_width="220dp"
+	               android:layout_height="42dp"
+	               android:layout_alignParentRight="true"
+	               android:layout_centerVertical="true"
+	               android:layout_marginRight="10dp"
+	               android:ems="10"
+	               android:background="@drawable/combobox"/>
+            </RelativeLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Terms and conditions"
+                android:textColor="#124a9c"
+                android:textStyle="bold"
+                android:visibility="visible" />
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp"
+                    android:lines="8"
+    				android:gravity="top|left"
+    				android:inputType="textMultiLine"
+                    android:ems="10" 
+                    android:text="terms and conditions">
+                </EditText>
+
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/lineName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <CheckBox
+                    android:id="@+id/register_accept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="I certify that..." 
+                    android:textColor="@color/Black"/>
+
+            </RelativeLayout>
+            
+            <Button
+                android:id="@+id/register_btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_submit" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar3"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_bank_detail"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_banking_detail" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_contact_us"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_contact_us" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_refer_friends"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_refer_a_friend" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_more"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/nav_btn_more" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

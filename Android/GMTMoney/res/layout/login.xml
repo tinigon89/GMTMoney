@@ -77,7 +77,8 @@
             android:layout_height="wrap_content"
             android:ems="10" 
             android:layout_marginLeft="20dp" 
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:inputType="text">
         </EditText>
 
         <TextView
@@ -97,10 +98,12 @@
             android:layout_height="wrap_content"
             android:ems="10" 
             android:layout_marginLeft="20dp" 
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:inputType="textPassword">
         </EditText>
 
         <Button
+            android:id="@+id/login_btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -121,6 +124,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/login_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register"
@@ -141,9 +145,10 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/login_forgot1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User ID"
+                android:text="@string/userid"
                 android:textColor="#124a9c"/>
             
             <TextView
@@ -154,9 +159,10 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/login_forgot2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:textColor="#124a9c"/>
             <TextView
                 android:layout_width="wrap_content"

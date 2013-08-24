@@ -118,7 +118,8 @@ public class CalculatorActivity extends BaseActivity {
 		calculator_send_money_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if(getSharedPreferences("isLogin").equals("true")){
-					//
+					Intent i = new Intent(getBaseContext(), AccountActivity.class);
+					startActivity(i);
 				} else {
 					Intent i = new Intent(getBaseContext(), LoginActivity.class);
 					startActivity(i);

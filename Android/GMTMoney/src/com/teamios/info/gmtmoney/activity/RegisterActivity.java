@@ -1,0 +1,300 @@
+package com.teamios.info.gmtmoney.activity;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+
+import com.teamios.info.gmtmoney.R;
+import com.teamios.info.gmtmoney.service.LoginService;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class RegisterActivity extends BaseActivity {
+	private EditText register_login_username, register_login_password,
+			register_login_repassword, register_personal_firstname,
+			register_personal_surname, register_personal_businessname,
+			register_personal_birthday, register_personal_idno,
+			register_personal_idexpiry, register_personal_idissuer,
+			register_personal_occupation, register_business_street,
+			register_business_suburb, register_business_postcode,
+			register_business_street_pre, register_business_suburb_pre,
+			register_business_postcode_pre, register_contact_primary,
+			register_contact_second, register_contact_email;
+
+	private AutoCompleteTextView register_personal_nationality,
+			register_personal_identification, register_business_state,
+			register_business_country, register_business_country_pre,
+			register_business_state_pre, register_contact_primary_select,
+			register_contact_second_select, register_source;
+
+	private CheckBox register_business_checkbox_same, register_accept;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.register);
+
+		initNavButton();
+		Button register_btn_home = (Button) findViewById(R.id.register_btn_home);
+		register_btn_home.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				finish();
+			}
+		});
+
+		initFields();
+
+		Button register_btn_submit = (Button) findViewById(R.id.register_btn_submit);
+		register_btn_submit.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				checkValidateFields();
+			}
+		});
+	}
+
+	private void initFields() {
+		register_login_username = (EditText) findViewById(R.id.register_login_username);
+		register_login_password = (EditText) findViewById(R.id.register_login_password);
+		register_login_repassword = (EditText) findViewById(R.id.register_login_repassword);
+		register_personal_firstname = (EditText) findViewById(R.id.register_personal_firstname);
+		register_personal_surname = (EditText) findViewById(R.id.register_personal_surname);
+		register_personal_businessname = (EditText) findViewById(R.id.register_personal_businessname);
+		register_personal_birthday = (EditText) findViewById(R.id.register_personal_birthday);
+		register_personal_idno = (EditText) findViewById(R.id.register_personal_idno);
+		register_personal_idexpiry = (EditText) findViewById(R.id.register_personal_idexpiry);
+		register_personal_idissuer = (EditText) findViewById(R.id.register_personal_idissuer);
+		register_personal_occupation = (EditText) findViewById(R.id.register_personal_occupation);
+		register_business_street = (EditText) findViewById(R.id.register_business_street);
+		register_business_suburb = (EditText) findViewById(R.id.register_business_suburb);
+		register_business_postcode = (EditText) findViewById(R.id.register_business_postcode);
+		register_business_street_pre = (EditText) findViewById(R.id.register_business_street_pre);
+		register_business_suburb_pre = (EditText) findViewById(R.id.register_business_suburb_pre);
+		register_business_postcode_pre = (EditText) findViewById(R.id.register_business_postcode_pre);
+		register_contact_primary = (EditText) findViewById(R.id.register_contact_primary);
+		register_contact_second = (EditText) findViewById(R.id.register_contact_second);
+		register_contact_email = (EditText) findViewById(R.id.register_contact_email);
+
+		register_personal_nationality = (AutoCompleteTextView) findViewById(R.id.register_personal_nationality);
+		register_personal_identification = (AutoCompleteTextView) findViewById(R.id.register_personal_identification);
+		register_business_state = (AutoCompleteTextView) findViewById(R.id.register_business_state);
+		register_business_country = (AutoCompleteTextView) findViewById(R.id.register_business_country);
+		register_business_country_pre = (AutoCompleteTextView) findViewById(R.id.register_business_country_pre);
+		register_business_state_pre = (AutoCompleteTextView) findViewById(R.id.register_business_state_pre);
+		register_contact_primary_select = (AutoCompleteTextView) findViewById(R.id.register_contact_primary_select);
+		register_contact_second_select = (AutoCompleteTextView) findViewById(R.id.register_contact_second_select);
+		register_source = (AutoCompleteTextView) findViewById(R.id.register_source);
+
+		register_business_checkbox_same = (CheckBox) findViewById(R.id.register_business_checkbox_same);
+		register_accept = (CheckBox) findViewById(R.id.register_accept);
+	}
+
+	private void checkValidateFields() {
+		if (register_login_username.getText().toString().equals("")) {
+			showDialog("Please enter your userid.");
+		} else if (register_login_password.getText().toString().equals("")) {
+			showDialog("Please enter your password.");
+		} else if (!register_login_password.getText().toString()
+				.equals(register_login_repassword.getText().toString())
+				|| register_login_repassword.getText().toString().equals("")) {
+			showDialog("Confirm password not match!");
+		} else if (register_personal_firstname.getText().toString().equals("")) {
+			showDialog("Please enter your first name!");
+		} else if (register_personal_surname.getText().toString().equals("")) {
+			showDialog("Please enter your last name!");
+		} else if (register_personal_birthday.getText().toString().equals("")) {
+			showDialog("Please select date of birth!");
+		} else if (register_personal_identification.getText().toString()
+				.equals("")) {
+			showDialog("Please select identification!");
+		} else if (register_personal_idno.getText().toString().equals("")) {
+			showDialog("Please enter your identification number!");
+		} else if (register_personal_idexpiry.getText().toString().equals("")) {
+			showDialog("Please select id expiry!");
+		} else if (register_personal_idissuer.getText().toString().equals("")) {
+			showDialog("Please enter ID issuer!");
+		} else if (register_personal_occupation.getText().toString().equals("")) {
+			showDialog("Please enter your occupation!");
+		} else if (register_business_street.getText().toString().equals("")) {
+			showDialog("Please enter street address!");
+		} else if (register_business_suburb.getText().toString().equals("")) {
+			showDialog("Please enter subburb!");
+		} else if (register_business_state.getText().toString().equals("")) {
+			showDialog("Please select state!");
+		} else if (register_business_postcode.getText().toString().equals("")) {
+			showDialog("Please enter postcode!");
+		} else if (register_business_country.getText().toString().equals("")) {
+			showDialog("Please select country!");
+		} else if (!register_business_checkbox_same.isChecked()) {
+			if (register_business_street_pre.getText().toString().equals("")) {
+				showDialog("Please enter street address in previous address!");
+			} else if (register_business_suburb_pre.getText().toString()
+					.equals("")) {
+				showDialog("Please enter subburb in previous address!");
+			} else if (register_business_state_pre.getText().toString()
+					.equals("")) {
+				showDialog("Please select state in previous address!");
+			} else if (register_business_postcode_pre.getText().toString()
+					.equals("")) {
+				showDialog("Please enter postcode in previous address!");
+			} else if (register_business_country_pre.getText().toString()
+					.equals("")) {
+				showDialog("Please select country in previous address!");
+			} else if (register_contact_primary_select.getText().toString()
+					.equals("")) {
+				showDialog("Please select primary contact type!");
+			} else if (register_contact_primary.getText().toString().equals("")) {
+				showDialog("Please enter primary contact info!");
+			} else if (register_contact_email.getText().toString().equals("")) {
+				showDialog("Please enter email!");
+			} else if (!register_accept.isChecked()) {
+				showDialog("Please must accept our terms and conditions!");
+			} else {
+				processRegister(register_contact_email.getText().toString(),
+						register_login_username.getText().toString(),
+						register_login_password.getText().toString(),
+						register_personal_firstname.getText().toString(),
+						register_personal_surname.getText().toString(),
+						register_personal_businessname.getText().toString(),
+						register_personal_birthday.getText().toString(),
+						register_personal_nationality.getText().toString(),
+						register_personal_identification.getText().toString(),
+						register_personal_idno.getText().toString(),
+						register_personal_idexpiry.getText().toString(),
+						register_personal_idissuer.getText().toString(),
+						register_personal_occupation.getText().toString(),
+						register_business_street.getText().toString(),
+						register_business_suburb.getText().toString(),
+						register_business_state.getText().toString(),
+						register_business_postcode.getText().toString(),
+						register_business_country.getText().toString(), "1",
+						register_business_street_pre.getText().toString(),
+						register_business_suburb_pre.getText().toString(),
+						register_business_state_pre.getText().toString(),
+						register_business_postcode_pre.getText().toString(),
+						register_business_country_pre.getText().toString(),
+						register_contact_primary.getText().toString(),
+						register_contact_second.getText().toString(),
+						register_source.getText().toString(),
+						register_contact_primary_select.getText().toString(),
+						register_contact_second_select.getText().toString());
+			}
+		} else if (register_contact_primary_select.getText().toString()
+				.equals("")) {
+			showDialog("Please select primary contact type!");
+		} else if (register_contact_primary.getText().toString().equals("")) {
+			showDialog("Please enter primary contact info!");
+		} else if (register_contact_email.getText().toString().equals("")) {
+			showDialog("Please enter email!");
+		} else if (!register_accept.isChecked()) {
+			showDialog("Please must accept our terms and conditions!");
+		} else {
+			processRegister(register_contact_email.getText().toString(),
+					register_login_username.getText().toString(),
+					register_login_password.getText().toString(),
+					register_personal_firstname.getText().toString(),
+					register_personal_surname.getText().toString(),
+					register_personal_businessname.getText().toString(),
+					register_personal_birthday.getText().toString(),
+					register_personal_nationality.getText().toString(),
+					register_personal_identification.getText().toString(),
+					register_personal_idno.getText().toString(),
+					register_personal_idexpiry.getText().toString(),
+					register_personal_idissuer.getText().toString(),
+					register_personal_occupation.getText().toString(),
+					register_business_street.getText().toString(),
+					register_business_suburb.getText().toString(),
+					register_business_state.getText().toString(),
+					register_business_postcode.getText().toString(),
+					register_business_country.getText().toString(), "1",
+					register_business_street_pre.getText().toString(),
+					register_business_suburb_pre.getText().toString(),
+					register_business_state_pre.getText().toString(),
+					register_business_postcode_pre.getText().toString(),
+					register_business_country_pre.getText().toString(),
+					register_contact_primary.getText().toString(),
+					register_contact_second.getText().toString(),
+					register_source.getText().toString(),
+					register_contact_primary_select.getText().toString(),
+					register_contact_second_select.getText().toString());
+		}
+	}
+
+	private void processRegister(String Email, String UserName,
+			String Password, String FName, String SurName, String BisName,
+			String DBirth, String NationID, String IdentyID, String IdCode,
+			String IDExpiry, String IDIssuer, String Occup, String RStreet,
+			String RSub, String RState, String RPost, String RCountryID,
+			String PStatus, String PStreet, String PSub, String PState,
+			String PPost, String PCountryID, String PContact, String SContact,
+			String SourceD, String PCDet, String SCDet) {
+		
+		new RegisterAsyncTask().execute(Email, UserName, Password, FName,
+						SurName, BisName, DBirth, NationID, IdentyID, IdCode,
+						IDExpiry, IDIssuer, Occup, RStreet, RSub, RState, RPost,
+						RCountryID, PStatus, PStreet, PSub, PState, PPost,
+						PCountryID, PContact, SContact, SourceD, PCDet, SCDet);
+	}
+
+	private void showDialogSuccess(String msg) {
+		AlertDialog.Builder builder1 = new AlertDialog.Builder(
+				RegisterActivity.this);
+		builder1.setMessage(msg)
+				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						finish();
+					}
+				}).show();
+	}
+
+	private class RegisterAsyncTask extends AsyncTask<String, Integer, String> {
+		private String value = "";
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			openProcessLoading(false);
+		}
+
+		@Override
+		protected String doInBackground(String... aurl) {
+			try {
+				LoginService loginService = new LoginService();
+				value = loginService.register(aurl[0], aurl[1], aurl[2], aurl[3],
+						aurl[4], aurl[5], aurl[6], aurl[7], aurl[8], aurl[9],
+						aurl[10], aurl[11], aurl[12], aurl[13], aurl[14], aurl[15], aurl[16],
+						aurl[17], aurl[18], aurl[19], aurl[20], aurl[21], aurl[22],
+						aurl[23], aurl[24], aurl[25], aurl[26], aurl[27], aurl[28]);
+				publishProgress(1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			if (progress[0] == 1) {
+
+			}
+		}
+
+		@Override
+		protected void onPostExecute(String unused) {
+			closeProcessLoading();
+			if (value.equals("OK")) {
+				showDialogSuccess("Successful! Please check your email for more info to verify your account!");
+			} else {
+				showDialog(value);
+			}
+		}
+	}
+}

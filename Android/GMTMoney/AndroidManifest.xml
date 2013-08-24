@@ -56,6 +56,22 @@
             android:name="com.teamios.info.gmtmoney.activity.CalculatorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.ForgotActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.NewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman"/>
     </application>
 
 </manifest>

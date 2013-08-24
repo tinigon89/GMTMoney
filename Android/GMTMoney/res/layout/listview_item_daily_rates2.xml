@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="125dip"
+    android:layout_marginTop="1dp"
+    android:background="@drawable/daily_rate_bg_cell"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/daily_rates_item_img"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/btn_song_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="5dp" >
+
+        <TextView
+            android:id="@+id/daily_rates_item_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/daily_rates_item_title"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="Info"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/daily_rates_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="Title"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btn_song_info">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/daily_rates_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="Account Deposit"
+                android:textSize="15dp" 
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_below="@+id/daily_rates_title1"
+                android:id="@+id/daily_rates_value1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="2.9517"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold" 
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/daily_rates_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="Cash Payment"
+                android:textSize="15dp" 
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_below="@+id/daily_rates_title2"
+                android:id="@+id/daily_rates_value2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="2.9017"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold" 
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -2,6 +2,7 @@ package com.teamios.info.gmtmoney.activity;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONException;
@@ -9,8 +10,10 @@ import org.json.JSONException;
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.DailyRatesService;
 import com.teamios.info.gmtmoney.service.info.DailyRates;
+import com.teamios.info.gmtmoney.service.info.UserLoginInfo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -27,6 +30,14 @@ public class BaseActivity extends Activity{
 	protected ProgressDialog progressDialog;
 	protected Dialog dialog;
 	protected static List<DailyRates> listDailyRates = null;
+	public final Pattern EMAIL_ADDRESS_PATTERN = Pattern
+			.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@"
+					+ "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\."
+					+ "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")+");
+	
+	public boolean checkEmail(String email) {
+		return EMAIL_ADDRESS_PATTERN.matcher(email).matches();
+	}
 	
 	public void openProcessLoading(final Boolean isCloseScreen) {
 		try {
@@ -80,6 +91,17 @@ public class BaseActivity extends Activity{
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		suid = sharedPreferences.getString(key, "");
 		return suid;
+	}
+	
+	public void showDialog(String msg) {
+		AlertDialog.Builder builder1 = new AlertDialog.Builder( BaseActivity.this);
+		builder1.setMessage(msg)
+				.setPositiveButton("OK",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+							}
+						}).show();
 	}
 	
 	public void initNavButton(){

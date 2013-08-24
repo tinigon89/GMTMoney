@@ -5,5 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="register"><u><b>Register</b></u></string>
-
+	<string name="userid"><u><b>User ID</b></u></string>
+	<string name="password"><u><b>Password</b></u></string>
 </resources>
