@@ -1,20 +1,16 @@
 package com.teamios.info.gmtmoney.activity;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.NewsFeedParser;
+import com.teamios.info.gmtmoney.service.TransactionHistoryService;
 import com.teamios.info.gmtmoney.service.info.RSSFeed;
+import com.teamios.info.gmtmoney.service.info.TransactionHistoryInfo;
 
-import android.R.drawable;
-import android.R.raw;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +26,7 @@ public class NewsActivity extends BaseActivity {
 	private List<HashMap<String, String>> fillMaps;
 	private NewsFeedParser mNewsFeeder;
 	private List<RSSFeed> mRssFeedList;
+	private List<TransactionHistoryInfo> listItems;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,53 +39,53 @@ public class NewsActivity extends BaseActivity {
 
 		String[] from = null;
 		int[] to = null;
-		
+
 		final Button news_rates_btn_home = (Button) findViewById(R.id.news_rates_btn_home);
 		news_rates_btn_home.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				finish();
 			}
 		});
-		
+
 		TextView news_rates_title = (TextView) findViewById(R.id.news_rates_title);
 
-		if(name.equals("news")){
+		if (name.equals("news")) {
 			HashMap<String, String> map1 = new HashMap<String, String>();
-			map1.put("daily_rates_item_info","Top News");
+			map1.put("daily_rates_item_info", "Top News");
 			fillMaps.add(map1);
-			
+
 			HashMap<String, String> map2 = new HashMap<String, String>();
-			map2.put("daily_rates_item_info","Business");
+			map2.put("daily_rates_item_info", "Business");
 			fillMaps.add(map2);
-			
+
 			HashMap<String, String> map3 = new HashMap<String, String>();
-			map3.put("daily_rates_item_info","Science");
+			map3.put("daily_rates_item_info", "Science");
 			fillMaps.add(map3);
-			
+
 			HashMap<String, String> map4 = new HashMap<String, String>();
-			map4.put("daily_rates_item_info","World");
+			map4.put("daily_rates_item_info", "World");
 			fillMaps.add(map4);
-			
+
 			HashMap<String, String> map5 = new HashMap<String, String>();
-			map5.put("daily_rates_item_info","Skynews");
+			map5.put("daily_rates_item_info", "Skynews");
 			fillMaps.add(map5);
-			
+
 			HashMap<String, String> map6 = new HashMap<String, String>();
-			map6.put("daily_rates_item_info","US News");
+			map6.put("daily_rates_item_info", "US News");
 			fillMaps.add(map6);
-			
+
 			HashMap<String, String> map7 = new HashMap<String, String>();
-			map7.put("daily_rates_item_info","Google News");
+			map7.put("daily_rates_item_info", "Google News");
 			fillMaps.add(map7);
-			
+
 			HashMap<String, String> map8 = new HashMap<String, String>();
-			map8.put("daily_rates_item_info","Bollywood News");
+			map8.put("daily_rates_item_info", "Bollywood News");
 			fillMaps.add(map8);
-			
+
 			HashMap<String, String> map9 = new HashMap<String, String>();
-			map9.put("daily_rates_item_info","Under Bollywood");
+			map9.put("daily_rates_item_info", "Under Bollywood");
 			fillMaps.add(map9);
-			
+
 			from = new String[] { "daily_rates_item_info" };
 			to = new int[] { R.id.daily_rates_item_info };
 			adapter = new SimpleAdapter(this, fillMaps,
@@ -98,76 +95,103 @@ public class NewsActivity extends BaseActivity {
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View arg1,
 						int position, long arg3) {
-					TextView title = (TextView) arg1.findViewById(R.id.daily_rates_item_info);
+					TextView title = (TextView) arg1
+							.findViewById(R.id.daily_rates_item_info);
 					Intent i = new Intent(getBaseContext(), NewsActivity.class);
 					i.putExtra("name", "news_feed");
 					if (position == 0) {
-						i.putExtra("url", "http://in.mobile.reuters.com/reuters/rss/TOPIN.xml");
+						i.putExtra("url",
+								"http://in.mobile.reuters.com/reuters/rss/TOPIN.xml");
 						i.putExtra("title", title.getText().toString());
-					} 
+					}
 					if (position == 1) {
-						i.putExtra("url", "http://in.mobile.reuters.com/reuters/rss/BUSIN.xml");
+						i.putExtra("url",
+								"http://in.mobile.reuters.com/reuters/rss/BUSIN.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 2) {
-						i.putExtra("url", "http://in.mobile.reuters.com/reuters/rss/SCIIN.xml");
+						i.putExtra("url",
+								"http://in.mobile.reuters.com/reuters/rss/SCIIN.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 3) {
-						i.putExtra("url", "http://in.mobile.reuters.com/reuters/rss/WORIN.xml");
+						i.putExtra("url",
+								"http://in.mobile.reuters.com/reuters/rss/WORIN.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 4) {
-						i.putExtra("url", "http://www.skynews.com.au/rss/feeds/skynews_business.xml");
+						i.putExtra("url",
+								"http://www.skynews.com.au/rss/feeds/skynews_business.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 5) {
-						i.putExtra("url", "http://mobile.reuters.com/reuters/rss/USN.xml");
+						i.putExtra("url",
+								"http://mobile.reuters.com/reuters/rss/USN.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 6) {
-						i.putExtra("url", "http://mobile.reuters.com/reuters/rss/USN.xml");
+						i.putExtra("url",
+								"http://mobile.reuters.com/reuters/rss/USN.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 7) {
-						i.putExtra("url", "http://entertainment.oneindia.in/rss/entertainment-bollywood-fb.xml");
+						i.putExtra("url",
+								"http://entertainment.oneindia.in/rss/entertainment-bollywood-fb.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					if (position == 8) {
-						i.putExtra("url", "http://www.nowrunning.com/cgi-bin/rss/video.xml");
+						i.putExtra("url",
+								"http://www.nowrunning.com/cgi-bin/rss/video.xml");
 						i.putExtra("title", title.getText().toString());
 					}
 					startActivity(i);
 				}
 			});
 		}
-		
-		if(name.equals("news_feed")){
+
+		if (name.equals("news_feed")) {
 			String url = getIntent().getExtras().getString("url");
 			String title = getIntent().getExtras().getString("title");
 			news_rates_title.setText(title);
 			news_rates_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
-			from = new String[] { "rss_title_view", "rss_content_view", "rss_link" };
-			to = new int[] { R.id.rss_title_view, R.id.rss_content_view, R.id.rss_link };
-			adapter = new SimpleAdapter(this, fillMaps, R.layout.listview_item_new2, from, to);
+			from = new String[] { "rss_title_view", "rss_content_view",
+					"rss_link" };
+			to = new int[] { R.id.rss_title_view, R.id.rss_content_view,
+					R.id.rss_link };
+			adapter = new SimpleAdapter(this, fillMaps,
+					R.layout.listview_item_new2, from, to);
 			lv.setAdapter(adapter);
 			lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View arg1,
 						int position, long arg3) {
-					TextView title = (TextView) arg1.findViewById(R.id.rss_title_view);
+					TextView title = (TextView) arg1
+							.findViewById(R.id.rss_title_view);
 					TextView link = (TextView) arg1.findViewById(R.id.rss_link);
-					Intent i = new Intent(getBaseContext(), WebViewScreenActivity.class);
+					Intent i = new Intent(getBaseContext(),
+							WebViewScreenActivity.class);
 					i.putExtra("name", "news");
 					i.putExtra("url", link.getText().toString());
 					i.putExtra("title", title.getText().toString());
 					startActivity(i);
 				}
 			});
-			
+
 			new GetRssNewsAsyncTask().execute(url);
 		}
-		
+
+		if (name.equals("transaction_history")) {
+			news_rates_title.setText("Transaction History");
+			news_rates_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
+			from = new String[] { "transaction_item_left1", "transaction_item_right2", "transaction_item_right3", "daily_rates_value1","daily_rates_value2","daily_rates_value3" ,"transaction_item_right4","transaction_item_right5"};
+			to = new int[] { R.id.transaction_item_left1, R.id.transaction_item_right2, R.id.transaction_item_right3 , R.id.daily_rates_value1, R.id.daily_rates_value2, R.id.daily_rates_value3 , R.id.transaction_item_right4, R.id.transaction_item_right5};
+			adapter = new SimpleAdapter(this, fillMaps,
+					R.layout.listview_item_transaction, from, to);
+			lv.setAdapter(adapter);
+
+			new GetTransactionHistoryAsyncTask().execute(getSharedPreferences("RegisterID"));
+		}
+
 		initNavButton();
 	}
 
@@ -193,8 +217,55 @@ public class NewsActivity extends BaseActivity {
 				for (int i = 0; i < mRssFeedList.size(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
 					map.put("rss_title_view", mRssFeedList.get(i).getTitle());
-					map.put("rss_content_view", mRssFeedList.get(i).getDescription());
+					map.put("rss_content_view", mRssFeedList.get(i)
+							.getDescription());
 					map.put("rss_link", mRssFeedList.get(i).getLink());
+					fillMaps.add(map);
+					adapter.notifyDataSetChanged();
+				}
+			}
+		}
+
+		@Override
+		protected void onPostExecute(String unused) {
+			closeProcessLoading();
+		}
+	}
+
+	private class GetTransactionHistoryAsyncTask extends
+			AsyncTask<String, Integer, String> {
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			openProcessLoading(false);
+		}
+
+		@Override
+		protected String doInBackground(String... aurl) {
+			try {
+				TransactionHistoryService transactionHistoryService = new TransactionHistoryService();
+				listItems = null;
+				listItems = transactionHistoryService.getTransactionHistory(aurl[0]);
+				publishProgress(1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			if (progress[0] == 1) {
+				for (int i = 0; i < listItems.size(); i++) {
+					HashMap<String, String> map = new HashMap<String, String>();
+					map.put("transaction_item_left1", "OTT" + listItems.get(i).getRemitId());
+					map.put("transaction_item_right2", listItems.get(i).getFName1() + " " + listItems.get(i).getSurName1());
+					map.put("transaction_item_right3", listItems.get(i).getFirstN() + " " + listItems.get(i).getSurN());
+					map.put("daily_rates_value1", listItems.get(i).getPayAmt() + "000 AUD");
+					map.put("daily_rates_value2", listItems.get(i).getExRate());
+					map.put("daily_rates_value3", listItems.get(i).getForAmt() + " " + listItems.get(i).getCurrSym());
+					map.put("transaction_item_right4", listItems.get(i).getBankName());
+					map.put("transaction_item_right5", listItems.get(i).getACNo());
 					fillMaps.add(map);
 					adapter.notifyDataSetChanged();
 				}

@@ -163,8 +163,8 @@
                 android:paddingTop="7dip"
                 android:text="Personal Details"
                 android:textColor="#124a9c"
-                android:textStyle="bold" 
-                android:visibility="visible"/>
+                android:textStyle="bold"
+                android:visibility="visible" />
 
             <RelativeLayout
                 android:id="@+id/lineName"
@@ -172,8 +172,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -198,8 +198,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-               	android:visibility="visible" >
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -224,8 +224,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -269,16 +269,16 @@
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:inputType="text" />
-                
+
                 <Button
                     android:id="@+id/register_personal_birthday_btn"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignRight="@+id/register_personal_birthday"
-                    android:background="@drawable/btn_calendar"/>
+                    android:background="@drawable/btn_calendar" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -294,18 +294,28 @@
                     android:layout_marginTop="13dp"
                     android:text="Nationality"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              	android:id="@+id/register_personal_nationality"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_personal_nationality"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_personal_nationality_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -321,26 +331,36 @@
                     android:layout_marginTop="13dp"
                     android:text="Identification"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              android:id="@+id/register_personal_identification"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_personal_identification"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_personal_identification_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -366,8 +386,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -384,24 +404,24 @@
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:inputType="text" />
-                
+
                 <Button
                     android:id="@+id/register_personal_idexpiry_btn"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignRight="@+id/register_personal_idexpiry"
-                    android:background="@drawable/btn_calendar"/>
+                    android:background="@drawable/btn_calendar" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -420,15 +440,15 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -447,8 +467,8 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
-			<TextView
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -457,8 +477,8 @@
                 android:paddingTop="7dip"
                 android:text="Residential / Business Address"
                 android:textColor="#124a9c"
-                android:textStyle="bold" 
-                android:visibility="visible"/>
+                android:textStyle="bold"
+                android:visibility="visible" />
 
             <RelativeLayout
                 android:id="@+id/lineName"
@@ -466,8 +486,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -484,16 +504,16 @@
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:inputType="text" />
-            </RelativeLayout>	
-            
+            </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -511,7 +531,7 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -527,26 +547,36 @@
                     android:layout_marginTop="13dp"
                     android:text="State"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              android:id="@+id/register_business_state"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_business_state"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_business_state_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -564,7 +594,7 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -580,18 +610,28 @@
                     android:layout_marginTop="13dp"
                     android:text="Country"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              android:id="@+id/register_business_country"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_business_country"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_business_country_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -601,9 +641,9 @@
                 android:paddingTop="7dip"
                 android:text="Previous address if less than 3 years"
                 android:textColor="#124a9c"
-                android:textStyle="bold" 
-                android:visibility="visible"/>
-            
+                android:textStyle="bold"
+                android:visibility="visible" />
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -626,7 +666,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@+id/textView1"/>
+                    android:layout_toRightOf="@+id/textView1" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -635,8 +675,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -653,16 +693,16 @@
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:inputType="text" />
-            </RelativeLayout>	
-            
+            </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -680,7 +720,7 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -696,26 +736,36 @@
                     android:layout_marginTop="13dp"
                     android:text="State"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              android:id="@+id/register_business_state_pre"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_business_state_pre"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_business_state_pre_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -733,7 +783,7 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -749,18 +799,28 @@
                     android:layout_marginTop="13dp"
                     android:text="Country"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              android:id="@+id/register_business_country_pre"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_business_country_pre"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_business_country_pre_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -772,7 +832,7 @@
                 android:textColor="#124a9c"
                 android:textStyle="bold"
                 android:visibility="visible" />
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -787,26 +847,36 @@
                     android:layout_marginTop="13dp"
                     android:text="Primary \nContact"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	              android:id="@+id/register_contact_primary_select"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_contact_primary_select"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_contact_primary_select_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <EditText
                     android:id="@+id/register_contact_primary"
@@ -817,7 +887,7 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -832,26 +902,36 @@
                     android:layout_marginTop="13dp"
                     android:text="Second \nContact"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	               android:id="@+id/register_contact_second_select"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_contact_second_select"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_contact_second_select_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <EditText
                     android:id="@+id/register_contact_second"
@@ -862,15 +942,15 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:orientation="horizontal" 
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:visibility="visible" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -888,7 +968,7 @@
                     android:ems="10"
                     android:inputType="text" />
             </RelativeLayout>
-            
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -900,7 +980,7 @@
                 android:textColor="#124a9c"
                 android:textStyle="bold"
                 android:visibility="visible" />
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -915,18 +995,28 @@
                     android:layout_marginTop="13dp"
                     android:text="Source"
                     android:textColor="@color/Black" />
-                
+
                 <AutoCompleteTextView
-	               android:id="@+id/register_source"
-	               android:layout_width="220dp"
-	               android:layout_height="42dp"
-	               android:layout_alignParentRight="true"
-	               android:layout_centerVertical="true"
-	               android:layout_marginRight="10dp"
-	               android:ems="10"
-	               android:background="@drawable/combobox"/>
+                    android:id="@+id/register_source"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/combobox"
+                    android:ems="10"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/register_source_btn"
+                    android:layout_width="220dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
-            
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -938,7 +1028,7 @@
                 android:textColor="#124a9c"
                 android:textStyle="bold"
                 android:visibility="visible" />
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
@@ -947,27 +1037,26 @@
                 android:orientation="horizontal"
                 android:visibility="visible" >
 
-                <EditText
-                    android:id="@+id/editText1"
+                <ScrollView
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="10dp"
-                    android:lines="8"
-    				android:gravity="top|left"
-    				android:inputType="textMultiLine"
-                    android:ems="10" 
-                    android:text="terms and conditions">
-                </EditText>
+                    android:layout_height="300dp" >
 
+                    <TextView
+                        android:id="@+id/register_term_and_condition"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:maxLength="9000"
+                        android:textColor="@color/Black" />
+                </ScrollView>
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/lineName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:visibility="visible" >
 
@@ -977,18 +1066,16 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:text="I certify that..." 
-                    android:textColor="@color/Black"/>
-
+                    android:textColor="@color/Black" />
             </RelativeLayout>
-            
+
             <Button
                 android:id="@+id/register_btn_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/btn_submit" />
         </LinearLayout>
     </ScrollView>
@@ -1059,5 +1146,11 @@
             </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
+
+    <DatePicker
+        android:id="@+id/register_personal_birthday_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
 </RelativeLayout>

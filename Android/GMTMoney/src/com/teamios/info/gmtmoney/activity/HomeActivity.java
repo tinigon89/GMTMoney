@@ -60,6 +60,15 @@ public class HomeActivity extends BaseActivity {
 				startActivity(i);
 			}
 		});
+		
+		Button home_btn_rate_alert = (Button) findViewById(R.id.home_btn_rate_alert);
+		home_btn_rate_alert.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent i = new Intent(getBaseContext(),
+						RateAlertsActivity.class);
+				startActivity(i);
+			}
+		});
 
 		home_btn_login = (Button) findViewById(R.id.home_btn_login);
 		home_btn_login.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +157,8 @@ public class HomeActivity extends BaseActivity {
 			try {
 				listDailyRates = null;
 				listDailyRates = getListDailyRatesInfo();
+				countryList = null;
+				countryList = getCountryList();
 				publishProgress(1);
 			} catch (Exception e) {
 				e.printStackTrace();

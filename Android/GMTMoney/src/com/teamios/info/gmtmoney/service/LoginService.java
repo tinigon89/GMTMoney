@@ -35,12 +35,15 @@ public class LoginService {
 			JSONObject jsonLogin = array.getJSONObject(0);
 			userInfo.setUserName(jsonLogin.getString("UserName").toString());
 			userInfo.setUPassword(jsonLogin.getString("UPassword").toString());
+			userInfo.setRegisterID(jsonLogin.getString("RegisterID").toString());
 			isLogin = true;
 
 			SharedPreferences sharedPreferences = PreferenceManager
 					.getDefaultSharedPreferences(context);
 			SharedPreferences.Editor editer = sharedPreferences.edit();
 			editer.putString("username", jsonLogin.getString("UserName")
+					.toString());
+			editer.putString("RegisterID", jsonLogin.getString("RegisterID")
 					.toString());
 			editer.commit();
 		} catch (JSONException e) {

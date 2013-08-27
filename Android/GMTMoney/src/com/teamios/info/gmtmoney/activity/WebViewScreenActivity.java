@@ -44,6 +44,13 @@ public class WebViewScreenActivity extends BaseActivity {
 			webview.getSettings().setSupportZoom(true);
 			webview.setWebViewClient(new WebViewClient());
 			webview_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
+		}  else if (name.equals("account_track")) {
+			website = "http://www.instantcashworldwide.com/include/transtatus.asp";
+			webview_bar1_title.setText("Track your case");
+			webview.getSettings().setBuiltInZoomControls(true);
+			webview.getSettings().setSupportZoom(true);
+			webview.setWebViewClient(new WebViewClient());
+			webview_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
 		} 
 		webview.loadUrl(website);
 		

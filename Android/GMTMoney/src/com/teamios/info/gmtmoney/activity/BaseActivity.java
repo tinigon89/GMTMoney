@@ -8,7 +8,9 @@ import org.apache.http.client.ClientProtocolException;
 import org.json.JSONException;
 
 import com.teamios.info.gmtmoney.R;
+import com.teamios.info.gmtmoney.service.CountryListService;
 import com.teamios.info.gmtmoney.service.DailyRatesService;
+import com.teamios.info.gmtmoney.service.info.CountryList;
 import com.teamios.info.gmtmoney.service.info.DailyRates;
 import com.teamios.info.gmtmoney.service.info.UserLoginInfo;
 
@@ -30,6 +32,7 @@ public class BaseActivity extends Activity{
 	protected ProgressDialog progressDialog;
 	protected Dialog dialog;
 	protected static List<DailyRates> listDailyRates = null;
+	protected static List<CountryList> countryList = null;
 	public final Pattern EMAIL_ADDRESS_PATTERN = Pattern
 			.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@"
 					+ "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\."
@@ -77,6 +80,12 @@ public class BaseActivity extends Activity{
 			throws IllegalStateException, ClientProtocolException, IOException, JSONException {
 		DailyRatesService server = new DailyRatesService();
 		return server.getDailyRatesInfo();
+	}
+	
+	protected List<CountryList> getCountryList()
+			throws IllegalStateException, ClientProtocolException, IOException, JSONException {
+		CountryListService server = new CountryListService();
+		return server.getCountryListInfo();
 	}
 	
 	protected void saveSharedPreferences(String key, String value) {

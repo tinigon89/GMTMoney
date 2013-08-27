@@ -1,5 +1,6 @@
 package com.teamios.info.gmtmoney.service;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -15,6 +16,9 @@ import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
@@ -111,6 +115,24 @@ public class HttpService {
 		}
 		Log.i("HttpService", url);
 		return httpClient.execute(httpPost, resonseHandler);
+	}
+	
+	public InputStream postDataFile(String url, ArrayList<BasicNameValuePair> postDatas) throws IllegalStateException, ClientProtocolException, IOException {
+		HttpPost httpPost = new HttpPost(url);
+		if (postDatas != null) {
+			MultipartEntity entity = new MultipartEntity();
+			for (BasicNameValuePair post : postDatas) {
+				String splitName[] = post.getValue().split("\\."); 
+				if (splitName.length >= 2) {
+					entity.addPart(post.getName(), new FileBody(new File(post.getValue())));
+				} else {
+					entity.addPart(post.getName(), new StringBody(post.getValue()));
+				}
+			}
+			httpPost.setEntity(entity);
+		}
+		Log.i("HttpService", url);
+		return httpClient.execute(httpPost).getEntity().getContent();
 	}
 
 	/**
