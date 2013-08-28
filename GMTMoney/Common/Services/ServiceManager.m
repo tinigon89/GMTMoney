@@ -681,6 +681,7 @@ return YES;
 {
     ASIFormDataRequest * request;
     NSString *urlString = [NSString stringWithFormat:kServer_Get_Search_Remitance,regid,searchIndex,[Util urlencode:searchString]];
+    NSLog(@"urlString %@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];

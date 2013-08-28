@@ -89,6 +89,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.FindRemittanceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
+        
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >

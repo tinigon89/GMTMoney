@@ -1,6 +1,7 @@
 package com.teamios.info.gmtmoney.service;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.client.ClientProtocolException;
@@ -8,6 +9,9 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.util.Log;
+
 import com.teamios.info.gmtmoney.common.Constant;
 import com.teamios.info.gmtmoney.service.info.CountryList;
 import com.teamios.info.gmtmoney.service.info.DailyRates;
@@ -17,6 +21,13 @@ public class TransactionHistoryService {
 	
 	public List<TransactionHistoryInfo> getTransactionHistory(String RegisterID) throws IllegalStateException, ClientProtocolException, IOException,JSONException {
 		String json = getStringJson(String.format(Constant.kServer_Get_Trans_History, RegisterID), null);
+		return parseJson(json);
+	}
+	
+	public List<TransactionHistoryInfo> searchRemittance(String RegisterID, String index, String data) throws IllegalStateException, ClientProtocolException, IOException,JSONException {
+		data = URLEncoder.encode(data, "utf-8");
+		String json = getStringJson(String.format(Constant.kServer_Get_Search_Remitance, RegisterID, index, data), null);
+		Log.d("result", json);
 		return parseJson(json);
 	}
 	
@@ -39,7 +50,11 @@ public class TransactionHistoryService {
 			item.setForAmt(String.valueOf(jsonUnit.get("ForAmt")));
 			item.setBankName(String.valueOf(jsonUnit.get("BankName")));
 			item.setACNo(String.valueOf(jsonUnit.get("ACNo")));
-			item.setCurrSym(String.valueOf(jsonUnit.get("CurrSym")));
+			if(!jsonUnit.isNull("CurrSym")){
+				item.setCurrSym(String.valueOf(jsonUnit.get("CurrSym")));
+			} else {
+				item.setCurrSym(String.valueOf(jsonUnit.get("CurrMainID")));
+			}
 			listItems.add(item);
 		}
 		return listItems;

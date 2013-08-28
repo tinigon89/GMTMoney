@@ -2,16 +2,22 @@ package com.teamios.info.gmtmoney.service;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.http.client.ClientProtocolException;
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.content.Context;
 import android.util.Log;
 
 import com.teamios.info.gmtmoney.common.Constant;
+import com.teamios.info.gmtmoney.service.info.AlertInfo;
+import com.teamios.info.gmtmoney.service.info.CountryList;
 
 public class RateAlertsService {
 	
@@ -32,20 +38,33 @@ public class RateAlertsService {
 		return val;
 	}
 	
-	public boolean getAlertInfo(Context context, String device_id) throws IllegalStateException, ClientProtocolException, IOException, JSONException {
+	public List<AlertInfo> getAlertInfo(Context context, String device_id) throws IllegalStateException, ClientProtocolException, IOException, JSONException {
 		Map<String, String> paramMapChild = new HashMap<String, String>();
 		paramMapChild.put("device_id", device_id);
 		
 		String data = convertJsonGetAlert(paramMapChild);
 		Log.d("json", data);
 		data = URLEncoder.encode(data, "utf-8");
-		String result = getStringJson(String.format(Constant.kServer_Get_Alert, data));
-		Log.d("getAlertInfo result", result);
-		boolean val = false;
-		if(result.indexOf("true") != -1){
-			val = true;
+		String json = getStringJson(String.format(Constant.kServer_Get_Alert, data));
+		Log.d("json", json);
+		return parseJson(json);
+	}
+	
+	private List<AlertInfo> parseJson(String json) throws IllegalStateException, ClientProtocolException, IOException, JSONException {
+		List<AlertInfo> listItems = new ArrayList<AlertInfo>();
+		JSONObject jsonRoot = new JSONObject(json);
+		JSONArray array = jsonRoot.getJSONArray("alerts");
+		for (int i = 0; i < array.length(); i++) {
+			JSONObject jsonUnit = array.getJSONObject(i);
+			AlertInfo item = new AlertInfo();
+			item.setEmail(String.valueOf(jsonUnit.get("email")));
+			item.setDevice_token(String.valueOf(jsonUnit.get("device_token")));
+			item.setCurrency_id(String.valueOf(jsonUnit.get("currency_id")));
+			item.setRate_alert(String.valueOf(jsonUnit.get("rate_alert")));
+			item.setDate_added(String.valueOf(jsonUnit.get("date_added")));
+			listItems.add(item);
 		}
-		return val;
+		return listItems;
 	}
 	
 	public boolean deleteAlertInfo(Context context, String device_id) throws IllegalStateException, ClientProtocolException, IOException, JSONException {

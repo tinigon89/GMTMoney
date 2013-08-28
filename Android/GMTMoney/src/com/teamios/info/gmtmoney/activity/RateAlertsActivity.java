@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-
 import com.google.android.gcm.GCMRegistrar;
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.RateAlertsService;
+import com.teamios.info.gmtmoney.service.TransactionHistoryService;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -41,17 +41,18 @@ public class RateAlertsActivity extends BaseActivity {
 			.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@"
 					+ "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\."
 					+ "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")+");
-	
-	private EditText rate_alert_email,rate_alert_pair_from,rate_alerts_rate;
+
+	private EditText rate_alert_email, rate_alert_pair_from, rate_alerts_rate;
 	private AutoCompleteTextView rate_alert_pair_with;
 	private CheckBox rate_alert_checkbox_notification;
-	private Button rate_alert_me,rate_alert_me_notify,rate_alert_pair_with_btn;
+	private Button rate_alert_me, rate_alert_me_notify,
+			rate_alert_pair_with_btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.rate_alert);
-		
+
 		rate_alert_email = (EditText) findViewById(R.id.rate_alert_email);
 		rate_alert_pair_from = (EditText) findViewById(R.id.rate_alert_pair_from);
 		rate_alerts_rate = (EditText) findViewById(R.id.rate_alerts_rate);
@@ -64,9 +65,9 @@ public class RateAlertsActivity extends BaseActivity {
 		rate_alert_pair_from.setFocusableInTouchMode(false);
 		rate_alert_pair_with.setFocusable(false);
 		rate_alert_pair_with.setFocusableInTouchMode(false);
-		
+
 		initCurrencyWith();
-		
+
 		initNavButton();
 		Button rate_alerts_btn_home = (Button) findViewById(R.id.rate_alerts_btn_home);
 		rate_alerts_btn_home.setOnClickListener(new View.OnClickListener() {
@@ -74,41 +75,42 @@ public class RateAlertsActivity extends BaseActivity {
 				finish();
 			}
 		});
-		
+
 		Button rate_alert_me = (Button) findViewById(R.id.rate_alert_me);
 		rate_alert_me.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				validateFields();
 			}
 		});
-		
+
 		Button rate_alert_me_notify = (Button) findViewById(R.id.rate_alert_me_notify);
 		rate_alert_me_notify.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				finish();
+				new getAlertsListAsyncTask().execute("");
 			}
 		});
-		
-		if(getSharedPreferences("device_id").equals("")){
+
+		if (getSharedPreferences("device_id").equals("")) {
 			saveSharedPreferences("device_id", deviceId(this));
 		}
-		
+
 		registPushNotification();
 
 	}
-	
-	private void initCurrencyWith(){
+
+	private void initCurrencyWith() {
 		ArrayList<String> item = new ArrayList<String>();
-		for(int i=0; i< listDailyRates.size(); i++){
+		for (int i = 0; i < listDailyRates.size(); i++) {
 			item.add(listDailyRates.get(i).getCurrSym());
 		}
-		rate_alert_pair_with.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item));
+		rate_alert_pair_with.setAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_dropdown_item_1line, item));
 		rate_alert_pair_with_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				rate_alert_pair_with.showDropDown();
 			}
 		});
-		
+
 		rate_alert_pair_with.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -126,33 +128,36 @@ public class RateAlertsActivity extends BaseActivity {
 			@Override
 			public void afterTextChanged(Editable arg0) {
 				// TODO Auto-generated method stub
-				for(int i=0; i< listDailyRates.size(); i++){
-					if(listDailyRates.get(i).getCurrSym().equals(rate_alert_pair_with.getText().toString())){
+				for (int i = 0; i < listDailyRates.size(); i++) {
+					if (listDailyRates.get(i).getCurrSym()
+							.equals(rate_alert_pair_with.getText().toString())) {
 						currencyId = listDailyRates.get(i).getCurrID();
 					}
 				}
 			}
 		});
 	}
-	
-	private void validateFields(){
-		if(!checkEmail(rate_alert_email.getText().toString())){
+
+	private void validateFields() {
+		if (!checkEmail(rate_alert_email.getText().toString())) {
 			showDialog("Email invalid");
-		} else if(rate_alert_pair_with.getText().toString().equals("")){
+		} else if (rate_alert_pair_with.getText().toString().equals("")) {
 			showDialog("Please select currency!");
-		} else if(rate_alerts_rate.getText().toString().equals("")){
+		} else if (rate_alerts_rate.getText().toString().equals("")) {
 			showDialog("Please enter rate alert!");
 		} else {
-			//showDialog("Successful!");
-			if(rate_alert_checkbox_notification.isChecked()){
+			// showDialog("Successful!");
+			if (rate_alert_checkbox_notification.isChecked()) {
 				tokenString = "45hkjh54gkjkjh4";
 			} else {
 				tokenString = "";
 			}
-			new RateAlertAsyncTask().execute(rate_alert_email.getText().toString(),currencyId,tokenString,rate_alerts_rate.getText().toString());
+			new RateAlertAsyncTask().execute(rate_alert_email.getText()
+					.toString(), currencyId, tokenString, rate_alerts_rate
+					.getText().toString());
 		}
 	}
-	
+
 	public synchronized static String deviceId(Context context) {
 		if (uniqueID == null) {
 			SharedPreferences sharedPrefs = context.getSharedPreferences(
@@ -167,7 +172,7 @@ public class RateAlertsActivity extends BaseActivity {
 		}
 		return uniqueID;
 	}
-	
+
 	private void registPushNotification() {
 		// Make sure the device has the proper dependencies.
 		GCMRegistrar.checkDevice(this);
@@ -214,7 +219,7 @@ public class RateAlertsActivity extends BaseActivity {
 			}
 		}
 	}
-	
+
 	/**
 	 * Receiving push messages
 	 * */
@@ -247,7 +252,43 @@ public class RateAlertsActivity extends BaseActivity {
 		super.onDestroy();
 	}
 
-	private class RateAlertAsyncTask extends
+	private class RateAlertAsyncTask extends AsyncTask<String, Integer, String> {
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			openProcessLoading(false);
+		}
+
+		@Override
+		protected String doInBackground(String... aurl) {
+			try {
+				RateAlertsService rateAlertsService = new RateAlertsService();
+				rateAlertsService.registerAler(getBaseContext(),
+						getSharedPreferences("device_id"), aurl[0], aurl[2],
+						"0", aurl[1], aurl[3]);
+				// rateAlertsService.checkAlertInfo(getBaseContext(),getSharedPreferences("device_id"),currencyId);
+				publishProgress(1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			if (progress[0] == 1) {
+
+			}
+		}
+
+		@Override
+		protected void onPostExecute(String unused) {
+			closeProcessLoading();
+			finish();
+		}
+	}
+
+	private class getAlertsListAsyncTask extends
 			AsyncTask<String, Integer, String> {
 
 		@Override
@@ -260,8 +301,8 @@ public class RateAlertsActivity extends BaseActivity {
 		protected String doInBackground(String... aurl) {
 			try {
 				RateAlertsService rateAlertsService = new RateAlertsService();
-				rateAlertsService.registerAler(getBaseContext(),getSharedPreferences("device_id"),aurl[0],aurl[2],"0",aurl[1],aurl[3]);
-				//rateAlertsService.checkAlertInfo(getBaseContext(),getSharedPreferences("device_id"),currencyId);
+				alertInfo = null;
+				alertInfo = rateAlertsService.getAlertInfo(getBaseContext(), getSharedPreferences("device_id"));
 				publishProgress(1);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -271,14 +312,20 @@ public class RateAlertsActivity extends BaseActivity {
 
 		protected void onProgressUpdate(Integer... progress) {
 			if (progress[0] == 1) {
-				
+
 			}
 		}
 
 		@Override
 		protected void onPostExecute(String unused) {
 			closeProcessLoading();
-			finish();
+			if (alertInfo != null || alertInfo.size() > 0) {
+				Intent i = new Intent(getBaseContext(), NewsActivity.class);
+				i.putExtra("name", "alerts");
+				startActivity(i);
+			} else {
+				showDialog("No Sullt");
+			}
 		}
 	}
 }

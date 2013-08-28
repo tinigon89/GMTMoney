@@ -191,10 +191,73 @@ public class NewsActivity extends BaseActivity {
 
 			new GetTransactionHistoryAsyncTask().execute(getSharedPreferences("RegisterID"));
 		}
+		
+		if (name.equals("find_remittance")) {
+			news_rates_title.setText("Transaction List");
+			news_rates_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
+			from = new String[] { "transaction_item_left1", "transaction_item_right2", "transaction_item_right3", "daily_rates_value1","daily_rates_value2","daily_rates_value3" ,"transaction_item_right4","transaction_item_right5"};
+			to = new int[] { R.id.transaction_item_left1, R.id.transaction_item_right2, R.id.transaction_item_right3 , R.id.daily_rates_value1, R.id.daily_rates_value2, R.id.daily_rates_value3 , R.id.transaction_item_right4, R.id.transaction_item_right5};
+			adapter = new SimpleAdapter(this, fillMaps, R.layout.listview_item_transaction2, from, to);
+			lv.setAdapter(adapter);
+
+			for (int i = 0; i < listResultSearchRemittance.size(); i++) {
+				HashMap<String, String> map = new HashMap<String, String>();
+				map.put("transaction_item_left1", "OTT" + listResultSearchRemittance.get(i).getRemitId());
+				map.put("transaction_item_right2", listResultSearchRemittance.get(i).getFName1() + " " + listResultSearchRemittance.get(i).getSurName1());
+				map.put("transaction_item_right3", listResultSearchRemittance.get(i).getFirstN() + " " + listResultSearchRemittance.get(i).getSurN());
+				map.put("daily_rates_value1", listResultSearchRemittance.get(i).getPayAmt() + "000 AUD");
+				map.put("daily_rates_value2", listResultSearchRemittance.get(i).getExRate());
+				map.put("daily_rates_value3", listResultSearchRemittance.get(i).getForAmt() + "000 " + getCurrSymByCurrMainID(listResultSearchRemittance.get(i).getCurrSym()));
+				map.put("transaction_item_right4", listResultSearchRemittance.get(i).getBankName());
+				map.put("transaction_item_right5", listResultSearchRemittance.get(i).getACNo());
+				fillMaps.add(map);
+				adapter.notifyDataSetChanged();
+			}
+		}
+		
+		if (name.equals("alerts")) {
+			news_rates_title.setText("Alerts");
+			news_rates_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
+			from = new String[] { "alert_info_currency", "alert_info_email", "alert_info_rate", "alert_info_date","alert_info_type"};
+			to = new int[] { R.id.alert_info_currency, R.id.alert_info_email, R.id.alert_info_rate , R.id.alert_info_date, R.id.alert_info_type};
+			adapter = new SimpleAdapter(this, fillMaps, R.layout.listview_item_alert, from, to);
+			lv.setAdapter(adapter);
+
+			for (int i = 0; i < alertInfo.size(); i++) {
+				HashMap<String, String> map = new HashMap<String, String>();
+				map.put("alert_info_currency", "AUD/" + getCurrSymByCurrMainID(alertInfo.get(i).getCurrency_id()));
+				map.put("alert_info_email", alertInfo.get(i).getEmail());
+				map.put("alert_info_rate", alertInfo.get(i).getRate_alert());
+				map.put("alert_info_date", alertInfo.get(i).getDate_added());
+				map.put("alert_info_type", getTypeAlerts(alertInfo.get(i).getDevice_token()));
+				fillMaps.add(map);
+				adapter.notifyDataSetChanged();
+			}
+		}
 
 		initNavButton();
 	}
-
+	
+	private String getCurrSymByCurrMainID(String currMainID){
+		String val = "";
+		for (int i = 0; i < listDailyRates.size(); i++) {
+			if(listDailyRates.get(i).getCurrID().equals(currMainID)){
+				val = listDailyRates.get(i).getCurrSym();
+			}
+		}
+		return val;
+	}
+	
+	private String getTypeAlerts(String token){
+		String val = "";
+		if(token.equals("")) {
+			val = "Email";
+		} else {
+			val = "Email & Push";
+		}
+		return val;
+	}
+	
 	private class GetRssNewsAsyncTask extends
 			AsyncTask<String, Integer, String> {
 

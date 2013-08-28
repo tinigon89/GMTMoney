@@ -82,7 +82,8 @@ public class AccountActivity extends BaseActivity {
 		Button account_btn_find_trans = (Button) findViewById(R.id.account_btn_find_trans);
 		account_btn_find_trans.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				finish();
+				Intent i = new Intent(getBaseContext(), FindRemittanceActivity.class);
+				startActivity(i);
 			}
 		});
 		
