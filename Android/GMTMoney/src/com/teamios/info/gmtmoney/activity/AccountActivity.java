@@ -66,7 +66,8 @@ public class AccountActivity extends BaseActivity {
 		Button account_btn_sendmoney = (Button) findViewById(R.id.account_btn_sendmoney);
 		account_btn_sendmoney.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				finish();
+				Intent i = new Intent(getBaseContext(), Step1Activity.class);
+				startActivity(i);
 			}
 		});
 		

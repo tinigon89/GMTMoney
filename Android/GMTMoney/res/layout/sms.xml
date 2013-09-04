@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#bcd8ff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/sms_btn_home"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/nav_btn_nav_back" />
+
+        <TextView
+            android:id="@+id/webview_bar1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="7dip"
+            android:paddingTop="7dip"
+            android:text="0 of 160"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sms_btn_send"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/nav_send" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/home_group_button"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/home_nav_bar1"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/sms_number_to_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/smsto" />
+
+            <EditText
+                android:id="@+id/sms_plus60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="+60" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/sms_number_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:ems="10" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/sms_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="12" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/sms_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="SMS: 1"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar3"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_bank_detail"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_banking_detail" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_contact_us"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_contact_us" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_refer_friends"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_refer_a_friend" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_more"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/nav_btn_more" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

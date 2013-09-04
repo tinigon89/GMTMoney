@@ -108,6 +108,24 @@ public class HomeActivity extends BaseActivity {
 				startActivity(i);
 			}
 		});
+		
+		Button home_btn_facebook = (Button) findViewById(R.id.home_btn_facebook);
+		home_btn_facebook.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent i = new Intent(getBaseContext(),
+						FacebookActivity.class);
+				startActivity(i);
+			}
+		});
+		
+		Button home_btn_sms = (Button) findViewById(R.id.home_btn_sms);
+		home_btn_sms.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent i = new Intent(getBaseContext(),
+						SmsActivity.class);
+				startActivity(i);
+			}
+		});
 
 		Button home_btn_account = (Button) findViewById(R.id.home_btn_account);
 		home_btn_account.setOnClickListener(new View.OnClickListener() {

@@ -45,6 +45,8 @@ public class LoginService {
 					.toString());
 			editer.putString("RegisterID", jsonLogin.getString("RegisterID")
 					.toString());
+			editer.putString("UType", jsonLogin.getString("UType")
+					.toString());
 			editer.commit();
 		} catch (JSONException e) {
 			isLogin = false;

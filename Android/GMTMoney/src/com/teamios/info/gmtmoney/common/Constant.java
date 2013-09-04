@@ -23,4 +23,5 @@ public class Constant {
 	public static final String kServer_Check_Alert 					= "http://www.gmtmoney.com.au/pushapi/apis.php?api=check_info2&data=%s";
 	public static final String kServer_Get_Alert 					= "http://www.gmtmoney.com.au/pushapi/apis.php?api=get_alerts2&data=%s";
 	public static final String kServer_Delete_Alert 				= "http://www.gmtmoney.com.au/pushapi/apis.php?api=delete_alert2&data=%s";
+	public static final String kServer_Step1 						= "http://www.gmtmoney.com.au/istep1.aspx?regid=%s&curr=%s&purpose=%s&paycurr=%s&PayMethod=%s&PayAmount=%s&Commision=%s&TranAmount=%s&ExRate=%s&FAmount=%s&Comments=%s&online=%s";
 }

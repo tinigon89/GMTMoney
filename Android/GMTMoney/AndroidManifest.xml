@@ -14,16 +14,17 @@
     </uses-permission>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <permission
         android:name="com.teamios.info.gmtmoney.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.teamios.info.gmtmoney.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    
     <uses-permission android:name="android.permission.CAMERA" />
-	<uses-feature android:name="android.hardware.camera" />
-	<uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -88,12 +89,23 @@
             android:name="com.teamios.info.gmtmoney.activity.RateAlertsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
-        
         <activity
             android:name="com.teamios.info.gmtmoney.activity.FindRemittanceActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
-        
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.FacebookActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.SmsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.Step1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
+
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >

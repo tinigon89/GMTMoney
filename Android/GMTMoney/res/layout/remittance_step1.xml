@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#bcd8ff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/step1_btn_home"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/nav_btn_nav_back" />
+
+        <TextView
+            android:id="@+id/login_bar1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="7dip"
+            android:paddingTop="7dip"
+            android:text="Remittance"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar2"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/home_nav_bar1"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:src="@drawable/banner" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/home_group_button"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/home_nav_bar2"
+        android:layout_marginBottom="48dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Step 1: Select currency Amount"
+                android:textColor="#094779"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="What is the purpose of this remittance?"
+                android:textColor="#555555"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/step1_purpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:inputType="text"
+                android:visibility="visible" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="What foreign currency do you want to send?"
+                android:textColor="#555555"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:visibility="visible" >
+
+                <RelativeLayout
+                    android:layout_width="250dp"
+                    android:layout_height="42dp"
+                    android:gravity="center_horizontal" >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/step1_by_select"
+                        android:layout_width="250dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/combobox"
+                        android:paddingLeft="10dp" 
+                        android:textSize="15dp"
+                        android:text="DKK - DENMARK KRONER"/>
+
+                    <Button
+                        android:id="@+id/step1_by_select_btn"
+                        android:layout_width="250dp"
+                        android:layout_height="42dp"
+                        android:background="@android:color/transparent" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Currency you will pay for us: AUD"
+                android:textColor="#555555"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Pay out method for beneficiary"
+                android:textColor="#555555"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:visibility="visible" >
+
+                <Button
+                    android:id="@+id/step1_case_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/step1_case_on" />
+
+                <Button
+                    android:id="@+id/step1_account_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/step1_account" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="Payment Amount"
+                    android:textColor="#555555"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal" >
+
+                    <EditText
+                        android:id="@+id/step1_payment_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/step1_payment_amount1"
+                        android:ems="10"
+                        android:inputType="number" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/step1_payment_amount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="AUD"
+                        android:textColor="#555555"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="Less Commission"
+                    android:textColor="#555555"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal" >
+
+                    <EditText
+                        android:id="@+id/step1_less_com"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/step1_payment_amount1"
+                        android:ems="10"
+                        android:inputType="text" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/step1_payment_amount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="AUD"
+                        android:textColor="#555555"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="Transfer Amount"
+                    android:textColor="#555555"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal" >
+
+                    <EditText
+                        android:id="@+id/step1_transfer_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/step1_payment_amount1"
+                        android:ems="10"
+                        android:inputType="text" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/step1_payment_amount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="AUD"
+                        android:textColor="#555555"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="Exchange Rate"
+                    android:textColor="#555555"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal" >
+
+                    <EditText
+                        android:id="@+id/step1_rate_exchange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/step1_payment_amount1"
+                        android:ems="10"
+                        android:inputType="text" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/step1_payment_amount1"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text=""
+                        android:textColor="#555555"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="Foreign Amount"
+                    android:textColor="#555555"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal" >
+
+                    <EditText
+                        android:id="@+id/step1_foreign_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/step1_foreign_amount1"
+                        android:ems="10"
+                        android:inputType="text" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/step1_foreign_amount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="AED"
+                        android:textColor="#555555"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Extra Comments"
+                android:textColor="#555555"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/step1_extra_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="5" >
+            </EditText>
+
+            <Button
+                android:id="@+id/step1_next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/step1_next" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar3"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_bank_detail"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_banking_detail" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_contact_us"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_contact_us" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_refer_friends"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_refer_a_friend" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_more"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/nav_btn_more" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
