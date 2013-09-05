@@ -313,16 +313,24 @@ public class Step1Activity extends BaseActivity {
 			closeProcessLoading();
 			if (getSharedPreferences("UType").equals("0")) {
 				if(tab.equals("1")){
-					showDialog("Cash->step3->step4");
+					//showDialog("Cash->step3->step4");
+					saveSharedPreferences("PayMethod", "1");
 				} else if(tab.equals("2")){
-					showDialog("Account->Step3->Step3continue->step4");
+					//showDialog("Account->Step3->Step3continue->step4");
+					saveSharedPreferences("PayMethod", "2");
 				}
+				Intent i = new Intent(getBaseContext(), Step3Activity.class);
+				startActivity(i);
 			} else {
 				if(tab.equals("1")){
-					showDialog("Cash->step2->step3->step4");
+					//showDialog("Cash->step2->step3->step4");
+					saveSharedPreferences("PayMethod", "1");
 				} else if(tab.equals("2")){
-					showDialog("Account->step2->Step3->Step3continue->step4");
+					saveSharedPreferences("PayMethod", "2");
+					//showDialog("Account->step2->Step3->Step3continue->step4");
 				}
+				Intent i = new Intent(getBaseContext(), Step2Activity.class);
+				startActivity(i);
 			}
 		}
 	}
