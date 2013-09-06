@@ -192,6 +192,12 @@ public class Step1Activity extends BaseActivity {
 							step1_foreign_amount.getText().toString(),
 							step1_extra_comment.getText().toString(),
 							String.valueOf(online));
+					saveSharedPreferences("step4_transfer_payment", step1_payment_amount.getText().toString());
+					saveSharedPreferences("step4_transfer_commission", step1_less_com.getText().toString());
+					saveSharedPreferences("step4_transfer_transfer", step1_transfer_amount.getText().toString());
+					saveSharedPreferences("step4_transfer_exchange", step1_rate_exchange.getText().toString());
+					saveSharedPreferences("step4_transfer_foreign", step1_foreign_amount.getText().toString());
+					saveSharedPreferences("step4_transfer_comments", step1_extra_comment.getText().toString());
 				}
 			}
 		});

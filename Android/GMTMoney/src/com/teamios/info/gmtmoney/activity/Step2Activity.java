@@ -39,7 +39,6 @@ public class Step2Activity extends BaseActivity {
 	private ListView lv = null;
 	private SimpleAdapter adapter = null;
 	private List<HashMap<String, String>> fillMaps;
-	private List<SenderInfo> listSenderInfo = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +67,7 @@ public class Step2Activity extends BaseActivity {
 						.findViewById(R.id.step2_item_img);
 				step2_item_img.setVisibility(View.VISIBLE);
 				isSelectItem = true;
+				saveSharedPreferences("step2_position", String.valueOf(position));
 			}
 		});
 
@@ -150,11 +150,11 @@ public class Step2Activity extends BaseActivity {
 		step2_next_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if(isSelectItem){
-					saveSharedPreferences("RegisterID","8");
-					saveSharedPreferences("remid","5185");
-					saveSharedPreferences("senderid","1595");
-					saveSharedPreferences("PayMethod","2");
-					saveSharedPreferences("online","0");
+//					saveSharedPreferences("RegisterID","8");
+//					saveSharedPreferences("remid","5185");
+//					saveSharedPreferences("senderid","1595");
+//					saveSharedPreferences("PayMethod","2");
+//					saveSharedPreferences("online","0");
 					
 					new submitAsyncTask().execute(
 							getSharedPreferences("RegisterID"),

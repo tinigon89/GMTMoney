@@ -41,7 +41,6 @@ public class Step3Activity extends BaseActivity {
 	private ListView lv = null;
 	private SimpleAdapter adapter = null;
 	private List<HashMap<String, String>> fillMaps;
-	private List<BeneficiaryInfo> listBeneficiaryInfo = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +69,7 @@ public class Step3Activity extends BaseActivity {
 						.findViewById(R.id.step2_item_img);
 				step3_item_img.setVisibility(View.VISIBLE);
 				isSelectItem = true;
+				saveSharedPreferences("step3_position", String.valueOf(position));
 			}
 		});
 
@@ -264,9 +264,8 @@ public class Step3Activity extends BaseActivity {
 			closeProcessLoading();
 			try {
 				if(getSharedPreferences("PayMethod").equals("1")){
-					//Intent i = new Intent(getBaseContext(), Step3Activity.class);
-					//startActivity(i);
-					//showDialog("goto step 4");
+					Intent i = new Intent(getBaseContext(), Step4Activity.class);
+					startActivity(i);
 				} else {
 					Intent i = new Intent(getBaseContext(), Step3ContActivity.class);
 					startActivity(i);

@@ -68,6 +68,7 @@ public class Step3ContActivity extends BaseActivity {
 						.findViewById(R.id.step2_item_img);
 				step3_cont_item_img.setVisibility(View.VISIBLE);
 				isSelectItem = true;
+				saveSharedPreferences("step3cont_position", String.valueOf(position));
 			}
 		});
 
@@ -91,8 +92,8 @@ public class Step3ContActivity extends BaseActivity {
 		step3_cont_next_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if(isSelectItem){
-					//Intent i = new Intent(getBaseContext(), NewBankActivity.class);
-					//startActivity(i);
+					Intent i = new Intent(getBaseContext(), Step4Activity.class);
+					startActivity(i);
 				} else {
 					showDialog("Please select a bank account.");
 				}
