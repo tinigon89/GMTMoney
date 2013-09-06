@@ -33,6 +33,26 @@ public class RemittanceService {
 		Log.d("submit result", json);
 		return json;
 	}
+	
+	public String submitStep2(String regid, String remid, String senderid,
+			String PayMethod, String online) throws IllegalStateException,
+			ClientProtocolException, IOException {
+		String url = String.format(Constant.kServer_Step2, regid, remid,
+				senderid, PayMethod, online);
+		String json = getJson(url);
+		Log.d("submit result", json);
+		return json;
+	}
+	
+	public String submitStep3(String regid, String remid, String beneId,
+			String PayMethod, String online) throws IllegalStateException,
+			ClientProtocolException, IOException {
+		String url = String.format(Constant.kServer_Step3, regid, remid,
+				beneId, PayMethod, online);
+		String json = getJson(url);
+		Log.d("submit result", json);
+		return json;
+	}
 
 	private String getJson(String url) throws IllegalStateException,
 			ClientProtocolException, IOException {

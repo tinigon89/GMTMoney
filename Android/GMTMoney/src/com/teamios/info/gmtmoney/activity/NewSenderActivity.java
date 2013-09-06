@@ -477,9 +477,9 @@ public class NewSenderActivity extends BaseActivity {
 		@Override
 		protected void onPostExecute(String unused) {
 			closeProcessLoading();
-			if (value.equals("OK")) {
-				finish();
+			if ((value).trim().equals("Ok")) {
 				showDialogSuccess("Successful!");
+				finish();
 			} else {
 				showDialog(value);
 			}

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.teamios.info.gmtmoney.R;
+import com.teamios.info.gmtmoney.service.RemittanceService;
 import com.teamios.info.gmtmoney.service.SenderService;
 import com.teamios.info.gmtmoney.service.info.SenderInfo;
 
@@ -26,6 +27,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 public class Step2Activity extends BaseActivity {
 
@@ -60,8 +62,12 @@ public class Step2Activity extends BaseActivity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
-				ImageView step2_item_img = (ImageView) arg1.findViewById(R.id.step2_item_img);
+				TextView idSender = (TextView) arg1.findViewById(R.id.step2_item_right);
+				saveSharedPreferences("senderid", idSender.getText().toString());
+				ImageView step2_item_img = (ImageView) arg1
+						.findViewById(R.id.step2_item_img);
 				step2_item_img.setVisibility(View.VISIBLE);
+				isSelectItem = true;
 			}
 		});
 
@@ -72,7 +78,7 @@ public class Step2Activity extends BaseActivity {
 				finish();
 			}
 		});
-		
+
 		Button step2_btn_new = (Button) findViewById(R.id.step2_btn_new);
 		step2_btn_new.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
@@ -139,12 +145,26 @@ public class Step2Activity extends BaseActivity {
 								.getText().toString());
 			}
 		});
-		
+
 		Button step2_next_btn = (Button) findViewById(R.id.step2_next_btn);
 		step2_next_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent i = new Intent(getBaseContext(), Step3Activity.class);
-				startActivity(i);
+				if(isSelectItem){
+					saveSharedPreferences("RegisterID","8");
+					saveSharedPreferences("remid","5185");
+					saveSharedPreferences("senderid","1595");
+					saveSharedPreferences("PayMethod","2");
+					saveSharedPreferences("online","0");
+					
+					new submitAsyncTask().execute(
+							getSharedPreferences("RegisterID"),
+							getSharedPreferences("remid"),
+							getSharedPreferences("senderid"),
+							getSharedPreferences("PayMethod"),
+							getSharedPreferences("online"));
+				} else {
+					showDialog("Please select a sender.");
+				}
 			}
 		});
 	}
@@ -211,6 +231,43 @@ public class Step2Activity extends BaseActivity {
 				e.printStackTrace();
 				// showDialog("No Sullt");
 			}
+		}
+	}
+
+	private class submitAsyncTask extends AsyncTask<String, Integer, String> {
+
+		private String result;
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			openProcessLoading(false);
+		}
+
+		@Override
+		protected String doInBackground(String... aurl) {
+			try {
+				RemittanceService remittanceService = new RemittanceService();
+				remittanceService.submitStep2(aurl[0], aurl[1], aurl[2],
+						aurl[3], aurl[4]);
+				publishProgress(1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			if (progress[0] == 1) {
+
+			}
+		}
+
+		@Override
+		protected void onPostExecute(String unused) {
+			closeProcessLoading();
+			Intent i = new Intent(getBaseContext(), Step3Activity.class);
+			startActivity(i);
 		}
 	}
 }

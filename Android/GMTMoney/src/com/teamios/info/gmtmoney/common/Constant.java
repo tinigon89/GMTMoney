@@ -25,4 +25,8 @@ public class Constant {
 	public static final String kServer_Delete_Alert 				= "http://www.gmtmoney.com.au/pushapi/apis.php?api=delete_alert2&data=%s";
 	public static final String kServer_Step1 						= "http://www.gmtmoney.com.au/istep1.aspx?regid=%s&curr=%s&purpose=%s&paycurr=%s&PayMethod=%s&PayAmount=%s&Commision=%s&TranAmount=%s&ExRate=%s&FAmount=%s&Comments=%s&online=%s";
 	public static final String kServer_Create_NewSender 			= "http://gmtmoney.com.au/isendernew.aspx?RegID=%s&Email=%s&FName=%s&SurName=%s&BisName=%s&DBirth=%s&NationID=%s&IdentyID=%s&IdCode=%s&IDExpiry=%s&IDIssuer=%s&Occup=%s&RStreet=%s&RSub=%s&RState=%s&RPost=%s&RCountryID=%s&PStatus=%s&PStreet=%s&PSub=%s&PState=%s&PPost=%s&PCountryID=%s&PContact=%s&SContact=%s&PCDet=%s&SCDet=%s";
+	public static final String kServer_Create_NewBeneficiary 		= "http://gmtmoney.com.au/ibeneadd.aspx?RegID=%s&Email=%s&FName=%s&SurName=%s&BisName=%s&IDType=%s&IdCode=%s&Add1=%s&Add2=%s&City=%s&State=%s&Rpost=%s&RCountryID=%s&PCont=%s&SCont=%s&PCDet=%s&SCDet=%s";
+	public static final String kServer_Create_NewBank 				= "http://gmtmoney.com.au/ibankadd.aspx?RegID=%s&ACHolderName=%s&ACNo=%s&BankName=%s&BankCode=%s&SwiftCode=%s&RoutNo=%s&Add1=%s&Add2=%s&City=%s&State=%s&PostCode=%s&Country=%s&BeneID=%s";
+	public static final String kServer_Step2		 				= "http://www.gmtmoney.com.au/istep2.aspx?regid=%s&remid=%s&sid=%s&paytype=%s&online=%s";
+	public static final String kServer_Step3		 				= "http://www.gmtmoney.com.au/istep3.aspx?regid=%s&remid=%s&benID=%s&paytype=%s&online=%s";
 }

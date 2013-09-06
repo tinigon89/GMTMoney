@@ -117,6 +117,18 @@
             android:name="com.teamios.info.gmtmoney.activity.NewSenderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.NewBeneficiaryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.Step3ContActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
+        <activity
+            android:name="com.teamios.info.gmtmoney.activity.NewBankActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyScreenTranNorman" />
 
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"

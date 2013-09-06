@@ -293,7 +293,7 @@ public class Step1Activity extends BaseActivity {
 				result = remittanceService.submitStep1(aurl[0], aurl[1],
 						aurl[2], aurl[3], aurl[4], aurl[5], aurl[6], aurl[7],
 						aurl[8], aurl[9], aurl[10], aurl[11]);
-				Log.d(aurl[11]);
+				saveSharedPreferences("remid", result);
 				tab = aurl[4];
 				publishProgress(1);
 			} catch (Exception e) {
@@ -319,6 +319,7 @@ public class Step1Activity extends BaseActivity {
 					//showDialog("Account->Step3->Step3continue->step4");
 					saveSharedPreferences("PayMethod", "2");
 				}
+				saveSharedPreferences("online", "1");
 				Intent i = new Intent(getBaseContext(), Step3Activity.class);
 				startActivity(i);
 			} else {
@@ -329,6 +330,7 @@ public class Step1Activity extends BaseActivity {
 					saveSharedPreferences("PayMethod", "2");
 					//showDialog("Account->step2->Step3->Step3continue->step4");
 				}
+				saveSharedPreferences("online", "0");
 				Intent i = new Intent(getBaseContext(), Step2Activity.class);
 				startActivity(i);
 			}

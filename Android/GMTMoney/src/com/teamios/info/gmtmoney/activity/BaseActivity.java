@@ -11,6 +11,7 @@ import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.CountryListService;
 import com.teamios.info.gmtmoney.service.DailyRatesService;
 import com.teamios.info.gmtmoney.service.info.AlertInfo;
+import com.teamios.info.gmtmoney.service.info.BankInfo;
 import com.teamios.info.gmtmoney.service.info.CountryList;
 import com.teamios.info.gmtmoney.service.info.DailyRates;
 import com.teamios.info.gmtmoney.service.info.TransactionHistoryInfo;
@@ -37,6 +38,7 @@ public class BaseActivity extends Activity{
 	protected static List<CountryList> countryList = null;
 	protected static List<AlertInfo> alertInfo = null;
 	protected static List<TransactionHistoryInfo> listResultSearchRemittance = null;
+	protected static List<BankInfo> listBankInfo = null;
 	public final Pattern EMAIL_ADDRESS_PATTERN = Pattern
 			.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@"
 					+ "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\."

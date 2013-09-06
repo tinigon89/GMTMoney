@@ -253,6 +253,7 @@ return YES;
     //http://www.gmtmoney.com.au/istep2.aspx?regid=2&remid=100&sid=11&paytype=1
     ASIFormDataRequest * request;
     NSString *urlString = [NSString stringWithFormat:@"http://www.gmtmoney.com.au/istep2.aspx?regid=%@&remid=%@&sid=%@&paytype=%i&online=%i",regid,remid,sid,paytype,online];
+    NSLog(@"%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
