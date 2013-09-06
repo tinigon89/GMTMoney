@@ -45,7 +45,14 @@ public class SenderService {
 			item.setRegisterID(String.valueOf(jsonUnit.get("RegisterID")));
 			item.setFName(String.valueOf(jsonUnit.get("FName")));
 			item.setSurName(String.valueOf(jsonUnit.get("SurName")));
+			item.setBisName(String.valueOf(jsonUnit.get("BisName")));
+			item.setDBirth(String.valueOf(jsonUnit.get("DBirth")));
+			item.setNationID(String.valueOf(jsonUnit.get("NationID")));
 			item.setIdentyID(String.valueOf(jsonUnit.get("IdentyID")));
+			item.setIdCode(String.valueOf(jsonUnit.get("IdCode")));
+			item.setPContact(String.valueOf(jsonUnit.get("PContact")));
+			item.setSContact(String.valueOf(jsonUnit.get("SContact")));
+			item.setEmail(String.valueOf(jsonUnit.get("Email")));
 			item.setIDExpiry(String.valueOf(jsonUnit.get("IDExpiry")));
 			item.setIDIssuer(String.valueOf(jsonUnit.get("IDIssuer")));
 			item.setRStreet(String.valueOf(jsonUnit.get("RStreet")));

@@ -6,28 +6,13 @@ import java.util.List;
 
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.BankService;
-import com.teamios.info.gmtmoney.service.BeneficiaryService;
-import com.teamios.info.gmtmoney.service.RemittanceService;
-import com.teamios.info.gmtmoney.service.SenderService;
-import com.teamios.info.gmtmoney.service.info.BankInfo;
-import com.teamios.info.gmtmoney.service.info.BeneficiaryInfo;
-import com.teamios.info.gmtmoney.service.info.SenderInfo;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -85,6 +70,7 @@ public class Step3ContActivity extends BaseActivity {
 			public void onClick(View view) {
 				Intent i = new Intent(getBaseContext(), NewBankActivity.class);
 				startActivity(i);
+				finish();
 			}
 		});
 

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#bcd8ff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/success_btn_home"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/nav_btn_nav_home" />
+
+        <TextView
+            android:id="@+id/forgot_bar1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="7dip"
+            android:paddingTop="7dip"
+            android:text="Success"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar2"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/home_nav_bar1"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:src="@drawable/banner" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/home_group_button"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/home_nav_bar2"
+        android:layout_marginBottom="48dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="Your Remittance Accepted it is under processing:"
+                android:textColor="#ff0004"
+                android:textStyle="bold" 
+                android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Please check your email for payment instructions.\nOr you can check the progress of your transaction under Search-Remittance History.\n\nCash transactions will receive pin number on their mobile and email after funds deposited in our account\n\nPlease email us the copy of bank deposit slip to"
+                android:textColor="@android:color/black"
+                android:textStyle="italic|bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="7dip"
+                android:text="online@gmtmoney.com.au"
+                android:textColor="#000bff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="7dip"
+                android:text="Our account details are"
+                android:textColor="#930000"
+                android:textStyle="bold" 
+                android:textSize="18sp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="7dip"
+                android:text="Account Name: GMT MONEY TRANSFER &amp;\nEXCHANGE \nBSB: 032179 \nAccount No: 268344 \nBank: Westpac Australia"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:textSize="15sp"
+                android:gravity="center"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/home_nav_bar3"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_nav"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_bank_detail"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_banking_detail" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_contact_us"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_contact_us" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_refer_friends"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/nav_btn_refer_a_friend" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/home_btn_more"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/nav_btn_more" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

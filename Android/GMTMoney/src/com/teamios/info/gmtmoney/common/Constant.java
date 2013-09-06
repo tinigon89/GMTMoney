@@ -29,4 +29,5 @@ public class Constant {
 	public static final String kServer_Create_NewBank 				= "http://gmtmoney.com.au/ibankadd.aspx?RegID=%s&ACHolderName=%s&ACNo=%s&BankName=%s&BankCode=%s&SwiftCode=%s&RoutNo=%s&Add1=%s&Add2=%s&City=%s&State=%s&PostCode=%s&Country=%s&BeneID=%s";
 	public static final String kServer_Step2		 				= "http://www.gmtmoney.com.au/istep2.aspx?regid=%s&remid=%s&sid=%s&paytype=%s&online=%s";
 	public static final String kServer_Step3		 				= "http://www.gmtmoney.com.au/istep3.aspx?regid=%s&remid=%s&benID=%s&paytype=%s&online=%s";
+	public static final String kServer_Step4		 				= "http://www.gmtmoney.com.au/iconfirmpage.aspx?regid=%s&remid=%s&sid=%s&paytype=%s&benid=%s&bnkID=%s&online=%s";
 }

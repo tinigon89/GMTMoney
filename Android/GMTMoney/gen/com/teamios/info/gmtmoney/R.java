@@ -755,6 +755,7 @@ containing a value of this type.
         public static final int step4_transfer_foreign=0x7f04015a;
         public static final int step4_transfer_payment=0x7f040156;
         public static final int step4_transfer_transfer=0x7f040158;
+        public static final int success_btn_home=0x7f040165;
         public static final int textView1=0x7f0400c4;
         public static final int topToBottom=0x7f040003;
         public static final int transaction_item_bottom_right=0x7f040075;
@@ -771,8 +772,8 @@ containing a value of this type.
         public static final int transaction_item_right_status=0x7f04006a;
         public static final int view_outside=0x7f040018;
         public static final int webview_bar1_title=0x7f040020;
-        public static final int webview_btn_home=0x7f040165;
-        public static final int webview_webview=0x7f040166;
+        public static final int webview_btn_home=0x7f040166;
+        public static final int webview_webview=0x7f040167;
     }
     public static final class layout {
         public static final int account_screen=0x7f030000;
@@ -808,7 +809,8 @@ containing a value of this type.
         public static final int remittance_step3_cont=0x7f03001e;
         public static final int remittance_step4=0x7f03001f;
         public static final int sms=0x7f030020;
-        public static final int webviewscreen=0x7f030021;
+        public static final int success=0x7f030021;
+        public static final int webviewscreen=0x7f030022;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;

@@ -12,6 +12,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +43,8 @@ public class NewBankActivity extends BaseActivity {
 		Button new_bank_btn_home = (Button) findViewById(R.id.new_bank_btn_home);
 		new_bank_btn_home.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
+				Intent i = new Intent(getBaseContext(), Step3ContActivity.class);
+				startActivity(i);
 				finish();
 			}
 		});
@@ -194,6 +197,8 @@ public class NewBankActivity extends BaseActivity {
 			closeProcessLoading();
 			if ((value).trim().equals("OK")) {
 				showDialogSuccess("Successful!");
+				Intent i = new Intent(getBaseContext(), Step3ContActivity.class);
+				startActivity(i);
 				finish();
 			} else {
 				showDialog(value);
