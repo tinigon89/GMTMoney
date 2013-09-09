@@ -17,7 +17,6 @@ import android.util.Log;
 
 import com.teamios.info.gmtmoney.common.Constant;
 import com.teamios.info.gmtmoney.service.info.AlertInfo;
-import com.teamios.info.gmtmoney.service.info.CountryList;
 
 public class RateAlertsService {
 	

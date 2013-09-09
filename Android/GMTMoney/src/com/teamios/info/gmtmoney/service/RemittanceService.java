@@ -6,17 +6,9 @@ import java.util.ArrayList;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.teamios.info.gmtmoney.common.Constant;
-import com.teamios.info.gmtmoney.service.info.UserLoginInfo;
 
 public class RemittanceService {
 	public String submitStep1(String regid, String curr, String purpose,

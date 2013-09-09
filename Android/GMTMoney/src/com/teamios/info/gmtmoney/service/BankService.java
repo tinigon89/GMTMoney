@@ -10,15 +10,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
 
 import com.teamios.info.gmtmoney.common.Constant;
 import com.teamios.info.gmtmoney.service.info.BankInfo;
-import com.teamios.info.gmtmoney.service.info.BeneficiaryInfo;
-import com.teamios.info.gmtmoney.service.info.CountryList;
-import com.teamios.info.gmtmoney.service.info.DailyRates;
-import com.teamios.info.gmtmoney.service.info.SenderInfo;
-import com.teamios.info.gmtmoney.service.info.TransactionHistoryInfo;
 
 public class BankService {
 

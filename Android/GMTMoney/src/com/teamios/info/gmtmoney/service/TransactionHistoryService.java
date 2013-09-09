@@ -13,8 +13,6 @@ import org.json.JSONObject;
 import android.util.Log;
 
 import com.teamios.info.gmtmoney.common.Constant;
-import com.teamios.info.gmtmoney.service.info.CountryList;
-import com.teamios.info.gmtmoney.service.info.DailyRates;
 import com.teamios.info.gmtmoney.service.info.TransactionHistoryInfo;
 
 public class TransactionHistoryService {

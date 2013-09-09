@@ -1,17 +1,14 @@
 package com.teamios.info.gmtmoney.activity;
 
 import com.teamios.info.gmtmoney.R;
-import com.teamios.info.gmtmoney.service.RemittanceService;
 import com.teamios.info.gmtmoney.service.SendSMSService;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;

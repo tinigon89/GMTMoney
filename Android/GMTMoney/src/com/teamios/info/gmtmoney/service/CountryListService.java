@@ -10,7 +10,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.teamios.info.gmtmoney.common.Constant;
 import com.teamios.info.gmtmoney.service.info.CountryList;
-import com.teamios.info.gmtmoney.service.info.DailyRates;
 
 public class CountryListService {
 	

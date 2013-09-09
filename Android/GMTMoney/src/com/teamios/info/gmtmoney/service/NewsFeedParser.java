@@ -62,7 +62,6 @@ public class NewsFeedParser {
     
     public List<RSSFeed> parse() {
         try {
-            int count = 0;
             factory = XmlPullParserFactory.newInstance();
             parser = factory.newPullParser();
             urlStream = downloadUrl(urlString);
