@@ -4,6 +4,8 @@ import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.RemittanceService;
 import com.teamios.info.gmtmoney.service.SendSMSService;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -135,7 +137,17 @@ public class SmsActivity extends BaseActivity {
 		@Override
 		protected void onPostExecute(String unused) {
 			closeProcessLoading();
-			finish();
+			showDialogFinish("Your message has been sent!");
 		}
+	}
+	
+	public void showDialogFinish(String msg) {
+		AlertDialog.Builder builder1 = new AlertDialog.Builder(
+				SmsActivity.this);
+		builder1.setMessage(msg)
+				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+					}
+				}).show();
 	}
 }
