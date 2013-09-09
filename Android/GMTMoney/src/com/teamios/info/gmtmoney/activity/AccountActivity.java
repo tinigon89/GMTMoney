@@ -1,7 +1,6 @@
 package com.teamios.info.gmtmoney.activity;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -13,13 +12,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Images.ImageColumns;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -147,7 +143,6 @@ public class AccountActivity extends BaseActivity {
 	        if (resultCode == RESULT_OK) {
 	            if (data != null) {
 	                // our BitmapDrawable for the thumbnail
-	                BitmapDrawable bmpDrawable = null;
 	                // try to retrieve the image using the data from the intent
 	                Cursor cursor = getContentResolver().query(data.getData(),
 	                        null, null, null, null);
@@ -167,8 +162,6 @@ public class AccountActivity extends BaseActivity {
 	                    sendMail(bitmap);
 	                } else {
 
-	                    bmpDrawable = new BitmapDrawable(getResources(), data
-	                            .getData().getPath());
 	                    //img_logo.setImageDrawable(bmpDrawable);
 	                }
 
@@ -197,9 +190,6 @@ public class AccountActivity extends BaseActivity {
 	                Toast.makeText(getApplicationContext(),
 	                        "No extras to retrieve!", Toast.LENGTH_SHORT)
 	                        .show();
-
-	                BitmapDrawable thumbnail = new BitmapDrawable(
-	                        getResources(), data.getData().getPath());
 
 	                // update the image view with the newly created drawable
 	                //img_logo.setImageDrawable(thumbnail);

@@ -24,6 +24,10 @@ public class FacebookActivity extends BaseActivity {
 		Button facebook_btn = (Button) findViewById(R.id.facebook_btn);
 		facebook_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
+				if(getSharedPreferences("remaing_sms").equals("")){
+					saveSharedPreferences("remaing_sms","0");
+				}
+				saveSharedPreferences("remaing_sms",String.valueOf(Integer.parseInt(getSharedPreferences("remaing_sms")) + 10));
 				finish();
 			}
 		});

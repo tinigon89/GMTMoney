@@ -78,6 +78,10 @@ public class Step3ContActivity extends BaseActivity {
 		step3_cont_next_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if(isSelectItem){
+					if(isSessionExpired){
+						showDialogGoHome("Your session has expired!");
+						return;
+					}
 					Intent i = new Intent(getBaseContext(), Step4Activity.class);
 					startActivity(i);
 				} else {

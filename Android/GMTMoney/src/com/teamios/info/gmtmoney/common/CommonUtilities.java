@@ -5,7 +5,7 @@ import android.content.Intent;
 
 public final class CommonUtilities {
     // Google project id
-    public static final String SENDER_ID = "265198410008"; 
+    public static final String SENDER_ID = "647658266794"; 
 
     public static final String DISPLAY_MESSAGE_ACTION =
             "com.androidhive.pushnotifications.DISPLAY_MESSAGE";

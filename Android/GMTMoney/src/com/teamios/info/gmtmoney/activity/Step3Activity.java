@@ -7,20 +7,14 @@ import java.util.List;
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.BeneficiaryService;
 import com.teamios.info.gmtmoney.service.RemittanceService;
-import com.teamios.info.gmtmoney.service.SenderService;
-import com.teamios.info.gmtmoney.service.info.BeneficiaryInfo;
-import com.teamios.info.gmtmoney.service.info.SenderInfo;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -47,6 +41,7 @@ public class Step3Activity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.remittance_step3);
 
+		checkSessionExpired();
 		lv = (ListView) findViewById(R.id.step3_listview1);
 		fillMaps = new ArrayList<HashMap<String, String>>();
 
@@ -152,6 +147,10 @@ public class Step3Activity extends BaseActivity {
 		step3_next_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if(isSelectItem){
+					if(isSessionExpired){
+						showDialogGoHome("Your session has expired!");
+						return;
+					}
 					new submitAsyncTask().execute(
 							getSharedPreferences("RegisterID"),
 							getSharedPreferences("remid"),
@@ -231,8 +230,6 @@ public class Step3Activity extends BaseActivity {
 	}
 
 	private class submitAsyncTask extends AsyncTask<String, Integer, String> {
-
-		private String result;
 
 		@Override
 		protected void onPreExecute() {

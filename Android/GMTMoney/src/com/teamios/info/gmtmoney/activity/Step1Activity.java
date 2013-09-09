@@ -1,11 +1,12 @@
 package com.teamios.info.gmtmoney.activity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
-import com.google.analytics.tracking.android.Log;
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.RemittanceService;
-import com.teamios.info.gmtmoney.service.TransactionHistoryService;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -178,6 +179,15 @@ public class Step1Activity extends BaseActivity {
 					}
 					if (getSharedPreferences("UType").equals("0")) {
 						online = 1;
+						try {
+							if(!checkIDExpiry(getSharedPreferences("UIDExpiry"))){
+								showDialog("Your ID has expired please update your new ID!");
+								return;
+							}
+						} catch (ParseException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 					new submitAsyncTask().execute(
 							getSharedPreferences("RegisterID"), 
@@ -279,6 +289,16 @@ public class Step1Activity extends BaseActivity {
 			}
 		}
 		return val;
+	}
+	
+	public boolean checkIDExpiry(String mdate) throws ParseException {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = formatter.parse(mdate);
+		long milliSeconds = date.getTime();
+	    if(milliSeconds >= System.currentTimeMillis()){
+	    	return true;
+	    }
+	    return false;
 	}
 
 	private class submitAsyncTask extends AsyncTask<String, Integer, String> {

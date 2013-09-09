@@ -1,12 +1,9 @@
 package com.teamios.info.gmtmoney.activity;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.BeneficiaryService;
-import com.teamios.info.gmtmoney.service.LoginService;
-import com.teamios.info.gmtmoney.service.SenderService;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -20,10 +17,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class NewBeneficiaryActivity extends BaseActivity {
 	private EditText new_beneficiary_personal_firstname,
@@ -31,30 +26,18 @@ public class NewBeneficiaryActivity extends BaseActivity {
 			new_beneficiary_personal_companyname,
 			new_beneficiary_personal_birthday, new_beneficiary_personal_idno,
 			new_beneficiary_personal_idexpiry,
-			new_beneficiary_personal_idissuer,
-			new_beneficiary_personal_occupation,
 			new_beneficiary_business_street, new_beneficiary_business_suburb,
 			new_beneficiary_business_postcode,
-			new_beneficiary_business_street_pre,
-			new_beneficiary_business_suburb_pre,
-			new_beneficiary_business_postcode_pre,
 			new_beneficiary_contact_primary, new_beneficiary_contact_second,
 			new_beneficiary_contact_email, new_beneficiary_business_state,
 			new_beneficiary_business_city;
 
-	private AutoCompleteTextView new_beneficiary_personal_nationality,
-			new_beneficiary_personal_identification,
+	private AutoCompleteTextView new_beneficiary_personal_identification,
 			new_beneficiary_business_country,
-			new_beneficiary_business_country_pre,
-			new_beneficiary_business_state_pre,
 			new_beneficiary_contact_primary_select,
 			new_beneficiary_contact_second_select;
 
-	private CheckBox new_beneficiary_business_checkbox_same;
-
 	private DatePicker new_beneficiary_personal_birthday_picker;
-	private Button new_beneficiary_personal_birthday_btn,
-			new_beneficiary_personal_idexpiry_btn;
 
 	private int year;
 	private int month;
@@ -105,30 +88,6 @@ public class NewBeneficiaryActivity extends BaseActivity {
 		new_beneficiary_business_country = (AutoCompleteTextView) findViewById(R.id.new_beneficiary_business_country);
 		new_beneficiary_contact_primary_select = (AutoCompleteTextView) findViewById(R.id.new_beneficiary_contact_primary_select);
 		new_beneficiary_contact_second_select = (AutoCompleteTextView) findViewById(R.id.new_beneficiary_contact_second_select);
-	}
-
-	private void setDatePicker() {
-		new_beneficiary_personal_birthday.setFocusable(false);
-		new_beneficiary_personal_birthday.setFocusableInTouchMode(false);
-
-		new_beneficiary_personal_idexpiry.setFocusable(false);
-		new_beneficiary_personal_idexpiry.setFocusableInTouchMode(false);
-
-		new_beneficiary_personal_birthday_btn
-				.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View view) {
-						showDialog(999);
-					}
-				});
-
-		new_beneficiary_personal_idexpiry_btn
-				.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View view) {
-						showDialog(1000);
-					}
-				});
-
-		setCurrentDateOnView();
 	}
 
 	private void setUpAutocompleteData() {
@@ -312,19 +271,6 @@ public class NewBeneficiaryActivity extends BaseActivity {
 			}
 		}
 		return val;
-	}
-
-	private void setCurrentDateOnView() {
-
-		new_beneficiary_personal_birthday_picker = (DatePicker) findViewById(R.id.new_beneficiary_personal_birthday_picker);
-
-		final Calendar c = Calendar.getInstance();
-		year = c.get(Calendar.YEAR);
-		month = c.get(Calendar.MONTH);
-		day = c.get(Calendar.DAY_OF_MONTH);
-
-		// set current date into datepicker
-		new_beneficiary_personal_birthday_picker.init(year, month, day, null);
 	}
 
 	private class RegisterAsyncTask extends AsyncTask<String, Integer, String> {

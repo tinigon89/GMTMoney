@@ -50,6 +50,7 @@ public class TransactionHistoryService {
 			item.setForAmt(String.valueOf(jsonUnit.get("ForAmt")));
 			item.setBankName(String.valueOf(jsonUnit.get("BankName")));
 			item.setACNo(String.valueOf(jsonUnit.get("ACNo")));
+			item.setRDate(String.valueOf(jsonUnit.get("RDate")));
 			if(!jsonUnit.isNull("CurrSym")){
 				item.setCurrSym(String.valueOf(jsonUnit.get("CurrSym")));
 			} else {

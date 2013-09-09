@@ -14,6 +14,8 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -21,6 +23,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class RegisterActivity extends BaseActivity {
 	private EditText register_login_username, register_login_password,
@@ -50,6 +53,13 @@ public class RegisterActivity extends BaseActivity {
 	private int year;
 	private int month;
 	private int day;
+	
+	private int idPosidentification;
+	private int idPosstate;
+	private int idPosstate_pre;
+	private int idPoscontact_primary;
+	private int idPoscontact_second;
+	private int idPossource;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -200,6 +210,15 @@ public class RegisterActivity extends BaseActivity {
 						register_personal_identification.showDropDown();
 					}
 				});
+		register_personal_identification.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				idPosidentification = arg2;
+			}
+	    });
 
 		String[] stateList = { "NSW", "ACT", "VIC", "QLD", "SA", "WA", "NT",
 				"TAS", "OTHER", "N/A" };
@@ -214,6 +233,15 @@ public class RegisterActivity extends BaseActivity {
 						register_business_state.showDropDown();
 					}
 				});
+		register_business_state.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				idPosstate = arg2;
+			}
+	    });
 
 		register_business_state_pre.setFocusable(false);
 		register_business_state_pre.setFocusableInTouchMode(false);
@@ -226,6 +254,15 @@ public class RegisterActivity extends BaseActivity {
 						register_business_state_pre.showDropDown();
 					}
 				});
+		register_business_state_pre.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				idPosstate_pre = arg2;
+			}
+	    });
 
 		String[] contactList = { "HOME PHONE", "WORK PHONE", "MOBILE", "FAX" };
 		register_contact_primary_select.setFocusable(false);
@@ -241,6 +278,15 @@ public class RegisterActivity extends BaseActivity {
 						register_contact_primary_select.showDropDown();
 					}
 				});
+		register_contact_primary_select.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				idPoscontact_primary = arg2;
+			}
+	    });
 
 		register_contact_second_select.setFocusable(false);
 		register_contact_second_select.setFocusableInTouchMode(false);
@@ -255,6 +301,15 @@ public class RegisterActivity extends BaseActivity {
 						register_contact_second_select.showDropDown();
 					}
 				});
+		register_contact_second_select.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				idPoscontact_second = arg2;
+			}
+	    });
 
 		String[] sourceList = { "Website", "Newspaper/Magazine", "Poster",
 				"Printed/Web Article", "Direct Post", "Pamphlet",
@@ -270,6 +325,15 @@ public class RegisterActivity extends BaseActivity {
 				register_source.showDropDown();
 			}
 		});
+		register_source.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				idPossource = arg2;
+			}
+	    });
 	}
 
 	private void checkValidateFields() {
@@ -333,34 +397,37 @@ public class RegisterActivity extends BaseActivity {
 			} else if (!register_accept.isChecked()) {
 				showDialog("Please must accept our terms and conditions!");
 			} else {
+				InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+				imm.hideSoftInputFromWindow(register_contact_email.getWindowToken(),
+						0);
 				processRegister(register_contact_email.getText().toString(),
 						register_login_username.getText().toString(),
 						register_login_password.getText().toString(),
 						register_personal_firstname.getText().toString(),
 						register_personal_surname.getText().toString(),
 						register_personal_businessname.getText().toString(),
-						register_personal_birthday.getText().toString(),
-						register_personal_nationality.getText().toString(),
-						register_personal_identification.getText().toString(),
+						(register_personal_birthday.getText().toString()).trim(),
+						getCountryID(register_personal_nationality.getText().toString()),
+						String.valueOf(idPosidentification),
 						register_personal_idno.getText().toString(),
-						register_personal_idexpiry.getText().toString(),
+						(register_personal_idexpiry.getText().toString()).trim(),
 						register_personal_idissuer.getText().toString(),
 						register_personal_occupation.getText().toString(),
 						register_business_street.getText().toString(),
 						register_business_suburb.getText().toString(),
-						register_business_state.getText().toString(),
+						String.valueOf(idPosstate),
 						register_business_postcode.getText().toString(),
-						register_business_country.getText().toString(), "1",
+						getCountryID(register_business_country.getText().toString()), "1",
 						register_business_street_pre.getText().toString(),
 						register_business_suburb_pre.getText().toString(),
-						register_business_state_pre.getText().toString(),
+						String.valueOf(idPosstate_pre),
 						register_business_postcode_pre.getText().toString(),
-						register_business_country_pre.getText().toString(),
+						getCountryID(register_business_country_pre.getText().toString()),
 						register_contact_primary.getText().toString(),
 						register_contact_second.getText().toString(),
-						register_source.getText().toString(),
-						register_contact_primary_select.getText().toString(),
-						register_contact_second_select.getText().toString());
+						String.valueOf(idPossource),
+						String.valueOf(idPoscontact_primary),
+						String.valueOf(idPoscontact_second));
 			}
 		} else if (register_contact_primary_select.getText().toString()
 				.equals("")) {
@@ -372,34 +439,37 @@ public class RegisterActivity extends BaseActivity {
 		} else if (!register_accept.isChecked()) {
 			showDialog("Please must accept our terms and conditions!");
 		} else {
+			InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(register_contact_email.getWindowToken(),
+					0);
 			processRegister(register_contact_email.getText().toString(),
 					register_login_username.getText().toString(),
 					register_login_password.getText().toString(),
 					register_personal_firstname.getText().toString(),
 					register_personal_surname.getText().toString(),
 					register_personal_businessname.getText().toString(),
-					register_personal_birthday.getText().toString(),
-					register_personal_nationality.getText().toString(),
-					register_personal_identification.getText().toString(),
+					(register_personal_birthday.getText().toString()).trim(),
+					getCountryID(register_personal_nationality.getText().toString()),
+					String.valueOf(idPosidentification),
 					register_personal_idno.getText().toString(),
-					register_personal_idexpiry.getText().toString(),
+					(register_personal_idexpiry.getText().toString()).trim(),
 					register_personal_idissuer.getText().toString(),
 					register_personal_occupation.getText().toString(),
 					register_business_street.getText().toString(),
 					register_business_suburb.getText().toString(),
-					register_business_state.getText().toString(),
+					String.valueOf(idPosstate),
 					register_business_postcode.getText().toString(),
-					register_business_country.getText().toString(), "1",
-					register_business_street_pre.getText().toString(),
-					register_business_suburb_pre.getText().toString(),
-					register_business_state_pre.getText().toString(),
-					register_business_postcode_pre.getText().toString(),
-					register_business_country_pre.getText().toString(),
+					getCountryID(register_business_country.getText().toString()), "1",
+					register_business_street.getText().toString(),
+					register_business_suburb.getText().toString(),
+					String.valueOf(idPosstate),
+					register_business_postcode.getText().toString(),
+					getCountryID(register_business_country.getText().toString()),
 					register_contact_primary.getText().toString(),
 					register_contact_second.getText().toString(),
-					register_source.getText().toString(),
-					register_contact_primary_select.getText().toString(),
-					register_contact_second_select.getText().toString());
+					String.valueOf(idPossource),
+					String.valueOf(idPoscontact_primary),
+					String.valueOf(idPoscontact_second));
 		}
 	}
 
@@ -478,12 +548,23 @@ public class RegisterActivity extends BaseActivity {
 		@Override
 		protected void onPostExecute(String unused) {
 			closeProcessLoading();
-			if (value.equals("OK")) {
+			if ((value).trim().equals("Ok")) {
 				showDialogSuccess("Successful! Please check your email for more info to verify your account!");
 			} else {
 				showDialog(value);
 			}
 		}
+	}
+	
+	private String getCountryID(String text) {
+		String val = "";
+		for (int i = 0; i < countryList.size(); i++) {
+			if ((text).trim().equals(
+					(countryList.get(i).getCountryName()).trim())) {
+				val = countryList.get(i).getCountryID();
+			}
+		}
+		return val;
 	}
 
 	@Override

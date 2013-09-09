@@ -47,6 +47,8 @@ public class LoginService {
 					.toString());
 			editer.putString("UType", jsonLogin.getString("UType")
 					.toString());
+			editer.putString("UIDExpiry", jsonLogin.getString("IDExpiry")
+					.toString());
 			editer.commit();
 		} catch (JSONException e) {
 			isLogin = false;
@@ -71,6 +73,16 @@ public class LoginService {
 			String PCountryID, String PContact, String SContact,
 			String SourceD, String PCDet, String SCDet)
 			throws IllegalStateException, ClientProtocolException, IOException {
+		Email = URLEncoder.encode(Email, "utf-8");
+		Password = URLEncoder.encode(Password, "utf-8");
+		FName = URLEncoder.encode(FName, "utf-8");
+		SurName = URLEncoder.encode(SurName, "utf-8");
+		BisName = URLEncoder.encode(BisName, "utf-8");
+		Occup = URLEncoder.encode(Occup, "utf-8");
+		RStreet = URLEncoder.encode(RStreet, "utf-8");
+		RSub = URLEncoder.encode(RSub, "utf-8");
+		PStreet = URLEncoder.encode(PStreet, "utf-8");
+		PSub = URLEncoder.encode(PSub, "utf-8");
 		String url = String.format(Constant.kServer_Register, Email, UserName,
 				Password, FName, SurName, BisName, DBirth, NationID, IdentyID,
 				IdCode, IDExpiry, IDIssuer, Occup, RStreet, RSub, RState,

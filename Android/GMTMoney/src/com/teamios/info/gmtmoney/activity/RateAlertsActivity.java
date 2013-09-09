@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 import com.google.android.gcm.GCMRegistrar;
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.RateAlertsService;
-import com.teamios.info.gmtmoney.service.TransactionHistoryService;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -45,8 +44,7 @@ public class RateAlertsActivity extends BaseActivity {
 	private EditText rate_alert_email, rate_alert_pair_from, rate_alerts_rate;
 	private AutoCompleteTextView rate_alert_pair_with;
 	private CheckBox rate_alert_checkbox_notification;
-	private Button rate_alert_me, rate_alert_me_notify,
-			rate_alert_pair_with_btn;
+	private Button rate_alert_pair_with_btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +56,7 @@ public class RateAlertsActivity extends BaseActivity {
 		rate_alerts_rate = (EditText) findViewById(R.id.rate_alerts_rate);
 		rate_alert_pair_with = (AutoCompleteTextView) findViewById(R.id.rate_alert_pair_with);
 		rate_alert_checkbox_notification = (CheckBox) findViewById(R.id.rate_alert_checkbox_notification);
-		rate_alert_me = (Button) findViewById(R.id.rate_alert_me);
 		rate_alert_pair_with_btn = (Button) findViewById(R.id.rate_alert_pair_with_btn);
-		rate_alert_me_notify = (Button) findViewById(R.id.rate_alert_me_notify);
 		rate_alert_pair_from.setFocusable(false);
 		rate_alert_pair_from.setFocusableInTouchMode(false);
 		rate_alert_pair_with.setFocusable(false);
@@ -197,7 +193,6 @@ public class RateAlertsActivity extends BaseActivity {
 				// Try to register again, but not in the UI thread.
 				// It's also necessary to cancel the thread onDestroy(),
 				// hence the use of AsyncTask instead of a raw thread.
-				final Context context = this;
 				mRegisterTask = new AsyncTask<Void, Void, Void>() {
 
 					@Override

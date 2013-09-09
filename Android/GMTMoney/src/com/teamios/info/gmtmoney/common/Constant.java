@@ -30,4 +30,8 @@ public class Constant {
 	public static final String kServer_Step2		 				= "http://www.gmtmoney.com.au/istep2.aspx?regid=%s&remid=%s&sid=%s&paytype=%s&online=%s";
 	public static final String kServer_Step3		 				= "http://www.gmtmoney.com.au/istep3.aspx?regid=%s&remid=%s&benID=%s&paytype=%s&online=%s";
 	public static final String kServer_Step4		 				= "http://www.gmtmoney.com.au/iconfirmpage.aspx?regid=%s&remid=%s&sid=%s&paytype=%s&benid=%s&bnkID=%s&online=%s";
+	public static final String kServer_Sms_kTwilioSID 				= "AC804d07d85308200fed9e8c318ec52213";
+	public static final String kServer_Sms_token 					= "d187b5d108907702f01b21c2ad5bffa2";
+	public static final String kServer_Sms_kFromNumber 				= "+12016693458";
+	public static final String kServer_Sms 							= String.format("https://api.twilio.com/2010-04-01/Accounts/%s/SMS/Messages", kServer_Sms_kTwilioSID);
 }

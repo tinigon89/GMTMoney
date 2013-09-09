@@ -13,6 +13,7 @@ public class TransactionHistoryInfo {
 	private String BankName;
 	private String ACNo;
 	private String CurrSym;
+	private String RDate;
 	
 	public TransactionHistoryInfo() {
 		super();
@@ -21,7 +22,7 @@ public class TransactionHistoryInfo {
 	public TransactionHistoryInfo(String remitId, String fName1,
 			String surName1, String firstN, String surN, String payAmt,
 			String exRate, String forAmt, String bankName, String aCNo,
-			String currSym) {
+			String currSym, String rDate) {
 		super();
 		RemitId = remitId;
 		FName1 = fName1;
@@ -34,6 +35,7 @@ public class TransactionHistoryInfo {
 		BankName = bankName;
 		ACNo = aCNo;
 		CurrSym = currSym;
+		RDate = rDate;
 	}
 
 	public String getRemitId() {
@@ -122,6 +124,14 @@ public class TransactionHistoryInfo {
 
 	public void setCurrSym(String currSym) {
 		CurrSym = currSym;
+	}
+
+	public String getRDate() {
+		return RDate;
+	}
+
+	public void setRDate(String rDate) {
+		RDate = rDate;
 	}
 	
 }

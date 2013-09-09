@@ -104,7 +104,7 @@ public class Step4Activity extends BaseActivity {
 		
 		int step2 = Integer.parseInt(getSharedPreferences("step2_position"));
 		step4_sender_fullname.setText(listSenderInfo.get(step2).getFName() + " " + listSenderInfo.get(step2).getSurName());
-		step4_sender_dateofbirth.setText(listSenderInfo.get(step2).getDBirth());
+		step4_sender_dateofbirth.setText(getDateFromMilli(listSenderInfo.get(step2).getDBirth(), "MM/dd/yyyy"));
 		step4_sender_nationally.setText(getNationFromId(listSenderInfo.get(step2).getNationID()));
 		step4_sender_companyname.setText(listSenderInfo.get(step2).getBisName());
 		step4_sender_identification.setText(listSenderInfo.get(step2).getIdCode());

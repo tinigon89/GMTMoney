@@ -7,9 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 
 public class HomeActivity extends BaseActivity {
@@ -112,18 +110,26 @@ public class HomeActivity extends BaseActivity {
 		Button home_btn_facebook = (Button) findViewById(R.id.home_btn_facebook);
 		home_btn_facebook.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent i = new Intent(getBaseContext(),
-						FacebookActivity.class);
-				startActivity(i);
+				if(getSharedPreferences("FinishTransaction").equals("true")){
+					Intent i = new Intent(getBaseContext(),
+							FacebookActivity.class);
+					startActivity(i);
+				} else {
+					showDialog("Finish a transaction and share on facebook to get 10 SMS for free.");
+				}
 			}
 		});
 		
 		Button home_btn_sms = (Button) findViewById(R.id.home_btn_sms);
 		home_btn_sms.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent i = new Intent(getBaseContext(),
-						SmsActivity.class);
-				startActivity(i);
+				if(getSharedPreferences("FinishTransaction").equals("true")){
+					Intent i = new Intent(getBaseContext(),
+							SmsActivity.class);
+					startActivity(i);
+				} else {
+					showDialog("Finish a transaction and share on facebook to get 10 SMS for free.");
+				}
 			}
 		});
 

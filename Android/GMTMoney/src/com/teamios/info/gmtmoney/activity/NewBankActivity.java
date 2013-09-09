@@ -1,30 +1,20 @@
 package com.teamios.info.gmtmoney.activity;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.BankService;
-import com.teamios.info.gmtmoney.service.LoginService;
-import com.teamios.info.gmtmoney.service.SenderService;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class NewBankActivity extends BaseActivity {
 	private EditText new_bank_holdername, new_bank_accountnumber,
@@ -32,7 +22,6 @@ public class NewBankActivity extends BaseActivity {
 			new_bank_rountingnumber, new_bank_address1, new_bank_address2,
 			new_bank_city, new_bank_state, new_bank_postcode;
 	private AutoCompleteTextView new_bank_country;
-	private int idPos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -3,10 +3,8 @@ package com.teamios.info.gmtmoney.activity;
 import com.teamios.info.gmtmoney.R;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 public class BankingDetailActivity extends Activity {

@@ -1,18 +1,13 @@
 package com.teamios.info.gmtmoney.activity;
 
-import java.util.HashMap;
-import java.util.List;
-
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.TransactionHistoryService;
-import com.teamios.info.gmtmoney.service.info.TransactionHistoryInfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;

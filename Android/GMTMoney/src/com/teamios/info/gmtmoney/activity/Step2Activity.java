@@ -7,18 +7,14 @@ import java.util.List;
 import com.teamios.info.gmtmoney.R;
 import com.teamios.info.gmtmoney.service.RemittanceService;
 import com.teamios.info.gmtmoney.service.SenderService;
-import com.teamios.info.gmtmoney.service.info.SenderInfo;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -45,15 +41,16 @@ public class Step2Activity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.remittance_step2);
 
+		checkSessionExpired();
 		lv = (ListView) findViewById(R.id.step2_listview1);
 		fillMaps = new ArrayList<HashMap<String, String>>();
 
 		String[] from = null;
 		int[] to = null;
 		from = new String[] { "step2_item_title", "step2_item_right",
-				"step2_item_info" };
+				"step2_item_info", "step2_item_date" };
 		to = new int[] { R.id.step2_item_title, R.id.step2_item_right,
-				R.id.step2_item_info };
+				R.id.step2_item_info, R.id.step2_item_date };
 		adapter = new SimpleAdapter(this, fillMaps,
 				R.layout.listview_item_step2, from, to);
 		lv.setAdapter(adapter);
@@ -62,7 +59,9 @@ public class Step2Activity extends BaseActivity {
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
 				TextView idSender = (TextView) arg1.findViewById(R.id.step2_item_right);
+				TextView IDExpiry = (TextView) arg1.findViewById(R.id.step2_item_date);
 				saveSharedPreferences("senderid", idSender.getText().toString());
+				saveSharedPreferences("IDExpiry", IDExpiry.getText().toString());
 				ImageView step2_item_img = (ImageView) arg1
 						.findViewById(R.id.step2_item_img);
 				step2_item_img.setVisibility(View.VISIBLE);
@@ -150,18 +149,21 @@ public class Step2Activity extends BaseActivity {
 		step2_next_btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if(isSelectItem){
-//					saveSharedPreferences("RegisterID","8");
-//					saveSharedPreferences("remid","5185");
-//					saveSharedPreferences("senderid","1595");
-//					saveSharedPreferences("PayMethod","2");
-//					saveSharedPreferences("online","0");
+					if(checkExpired(getSharedPreferences("IDExpiry"))){
+						if(isSessionExpired){
+							showDialogGoHome("Your session has expired!");
+							return;
+						}
+						new submitAsyncTask().execute(
+								getSharedPreferences("RegisterID"),
+								getSharedPreferences("remid"),
+								getSharedPreferences("senderid"),
+								getSharedPreferences("PayMethod"),
+								getSharedPreferences("online"));
+					} else {
+						showDialog("Your ID has expired please update your new ID or select another sender!");
+					}
 					
-					new submitAsyncTask().execute(
-							getSharedPreferences("RegisterID"),
-							getSharedPreferences("remid"),
-							getSharedPreferences("senderid"),
-							getSharedPreferences("PayMethod"),
-							getSharedPreferences("online"));
 				} else {
 					showDialog("Please select a sender.");
 				}
@@ -221,6 +223,8 @@ public class Step2Activity extends BaseActivity {
 								+ listSenderInfo.get(i).getRState()
 								+ ", "
 								+ listSenderInfo.get(i).getRPost());
+						map.put("step2_item_date", listSenderInfo.get(i)
+								.getIDExpiry());
 						fillMaps.add(map);
 						adapter.notifyDataSetChanged();
 					}
@@ -235,8 +239,6 @@ public class Step2Activity extends BaseActivity {
 	}
 
 	private class submitAsyncTask extends AsyncTask<String, Integer, String> {
-
-		private String result;
 
 		@Override
 		protected void onPreExecute() {

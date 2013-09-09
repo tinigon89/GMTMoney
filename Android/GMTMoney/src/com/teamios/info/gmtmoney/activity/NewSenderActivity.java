@@ -5,7 +5,6 @@ import java.util.Calendar;
 
 
 import com.teamios.info.gmtmoney.R;
-import com.teamios.info.gmtmoney.service.LoginService;
 import com.teamios.info.gmtmoney.service.SenderService;
 
 import android.app.AlertDialog;
@@ -23,7 +22,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class NewSenderActivity extends BaseActivity {
 	private EditText new_sender_personal_firstname,

@@ -19,6 +19,20 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dip"
             android:background="@drawable/nav_btn_nav_back" />
+        
+        <TextView
+            android:id="@+id/sms_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="7dip"
+            android:paddingTop="7dip"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/webview_bar1_title" />
 
         <TextView
             android:id="@+id/webview_bar1_title"
@@ -28,7 +42,7 @@
             android:layout_centerVertical="true"
             android:paddingBottom="7dip"
             android:paddingTop="7dip"
-            android:text="0 of 160"
+            android:text=" of 160"
             android:textColor="@android:color/white"
             android:textSize="22dp"
             android:textStyle="bold" />
@@ -64,20 +78,36 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/smsto" />
 
-            <EditText
-                android:id="@+id/sms_plus60"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="+60" >
-            </EditText>
+                android:gravity="center_horizontal" >
+
+                <AutoCompleteTextView
+                    android:id="@+id/sms_codearea"
+                    android:layout_width="60dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="20dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:text="+61" 
+                    android:gravity="center"/>
+
+                <Button
+                    android:id="@+id/sms_codearea_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:background="@android:color/transparent" 
+                    android:layout_marginLeft="20dp"/>
+            </RelativeLayout>
 
             <EditText
                 android:id="@+id/sms_number_to"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:ems="10" >
+                android:ems="10" 
+                android:inputType="number">
             </EditText>
         </LinearLayout>
 
@@ -95,8 +125,10 @@
                 android:layout_marginRight="10dp"
                 android:ems="10"
                 android:gravity="top|left"
+                android:imeOptions="actionDone"
                 android:inputType="textMultiLine"
-                android:lines="12" >
+                android:lines="9" 
+                android:maxLength="160">
             </EditText>
         </LinearLayout>
 
@@ -108,12 +140,21 @@
             android:gravity="center" >
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dip"
+                android:paddingTop="7dip"
+                android:text="SMS: "
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+            
+            <TextView
                 android:id="@+id/sms_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="7dip"
                 android:paddingTop="7dip"
-                android:text="SMS: 1"
+                android:text="0"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
         </LinearLayout>
