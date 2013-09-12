@@ -145,6 +145,8 @@ public class RateAlertsActivity extends BaseActivity {
 			// showDialog("Successful!");
 			if (!rate_alert_checkbox_notification.isChecked()) {
 				tokenString = "";
+			} else {
+				tokenString = getSharedPreferences("tokenString");
 			}
 			new RateAlertAsyncTask().execute(rate_alert_email.getText()
 					.toString(), currencyId, tokenString, rate_alerts_rate
@@ -197,7 +199,7 @@ public class RateAlertsActivity extends BaseActivity {
 					protected Void doInBackground(Void... params) {
 						// Register on our server
 						// On server creates a new user
-						tokenString = regId;
+						saveSharedPreferences("tokenString", regId);
 						Log.d("regisToken", tokenString);
 						return null;
 					}
