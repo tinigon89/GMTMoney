@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.teamios.info.gmtmoney"
+    package="com.hindvds.gmtmoney"
     android:versionCode="1"
     android:versionName="1.1" >
 
@@ -16,10 +16,10 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <permission
-        android:name="com.teamios.info.gmtmoney.permission.C2D_MESSAGE"
+        android:name="com.hindvds.gmtmoney.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.teamios.info.gmtmoney.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.hindvds.gmtmoney.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -30,7 +30,7 @@
         android:icon="@drawable/ic_launcher"
         android:theme="@android:style/Theme.Black.NoTitleBar" >
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.HomeActivity"
+            android:name="com.hindvds.gmtmoney.activity.HomeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -40,101 +40,101 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.WebViewScreenActivity"
+            android:name="com.hindvds.gmtmoney.activity.WebViewScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.BankingDetailActivity"
+            android:name="com.hindvds.gmtmoney.activity.BankingDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.ContactUsActivity"
+            android:name="com.hindvds.gmtmoney.activity.ContactUsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.MoreActivity"
+            android:name="com.hindvds.gmtmoney.activity.MoreActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.DailyRatesActivity"
+            android:name="com.hindvds.gmtmoney.activity.DailyRatesActivity"
             android:configChanges="keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.LoginActivity"
+            android:name="com.hindvds.gmtmoney.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.CalculatorActivity"
+            android:name="com.hindvds.gmtmoney.activity.CalculatorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.ForgotActivity"
+            android:name="com.hindvds.gmtmoney.activity.ForgotActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.AccountActivity"
+            android:name="com.hindvds.gmtmoney.activity.AccountActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.NewsActivity"
+            android:name="com.hindvds.gmtmoney.activity.NewsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.RegisterActivity"
+            android:name="com.hindvds.gmtmoney.activity.RegisterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.RateAlertsActivity"
+            android:name="com.hindvds.gmtmoney.activity.RateAlertsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.FindRemittanceActivity"
+            android:name="com.hindvds.gmtmoney.activity.FindRemittanceActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.FacebookActivity"
+            android:name="com.hindvds.gmtmoney.activity.FacebookActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.SmsActivity"
+            android:name="com.hindvds.gmtmoney.activity.SmsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.Step1Activity"
+            android:name="com.hindvds.gmtmoney.activity.Step1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.Step2Activity"
+            android:name="com.hindvds.gmtmoney.activity.Step2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.Step3Activity"
+            android:name="com.hindvds.gmtmoney.activity.Step3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.NewSenderActivity"
+            android:name="com.hindvds.gmtmoney.activity.NewSenderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.NewBeneficiaryActivity"
+            android:name="com.hindvds.gmtmoney.activity.NewBeneficiaryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.Step3ContActivity"
+            android:name="com.hindvds.gmtmoney.activity.Step3ContActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.NewBankActivity"
+            android:name="com.hindvds.gmtmoney.activity.NewBankActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.Step4Activity"
+            android:name="com.hindvds.gmtmoney.activity.Step4Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
         <activity
-            android:name="com.teamios.info.gmtmoney.activity.SuccessActivity"
+            android:name="com.hindvds.gmtmoney.activity.SuccessActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyScreenTranNorman" />
 
@@ -148,11 +148,11 @@
                 <!-- Receives the registration id. -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <category android:name="com.teamios.info.gmtmoney" />
+                <category android:name="com.hindvds.gmtmoney" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.teamios.info.gmtmoney.service.GCMIntentService" />
+        <service android:name="com.hindvds.gmtmoney.service.GCMIntentService" />
     </application>
 
 </manifest>
