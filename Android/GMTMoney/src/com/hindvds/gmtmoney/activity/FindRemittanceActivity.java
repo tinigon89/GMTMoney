@@ -134,11 +134,11 @@ public class FindRemittanceActivity extends BaseActivity {
 					i.putExtra("name", "find_remittance");
 					startActivity(i);
 				} else {
-					showDialog("No Sullt");
+					showDialog("No Result");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				showDialog("No Sullt");
+				showDialog("No Result");
 			}
 		}
 	}

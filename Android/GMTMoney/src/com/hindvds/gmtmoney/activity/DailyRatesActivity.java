@@ -39,26 +39,30 @@ public class DailyRatesActivity extends BaseActivity {
 		String[] from = null;
 		int[] to = null;
 
-		if(getSharedPreferences("isLogin").equals("false")){
-			from = new String[] { "daily_rates_item_img", "daily_rates_item_title",
-					"daily_rates_item_info", "daily_rates_item_right" };
+		if (getSharedPreferences("isLogin").equals("false")) {
+			from = new String[] { "daily_rates_item_img",
+					"daily_rates_item_title", "daily_rates_item_info",
+					"daily_rates_item_right" };
 			to = new int[] { R.id.daily_rates_item_img,
 					R.id.daily_rates_item_title, R.id.daily_rates_item_info,
 					R.id.daily_rates_item_right };
 
 			adapter = new SimpleAdapter(this, fillMaps,
 					R.layout.listview_item_daily_rates, from, to);
-		} else if(getSharedPreferences("isLogin").equals("true")){
-			from = new String[] { "daily_rates_item_img", "daily_rates_item_title",
-					"daily_rates_item_info", "daily_rates_value1", "daily_rates_value2" };
+		} else if (getSharedPreferences("isLogin").equals("true")) {
+			from = new String[] { "daily_rates_item_img",
+					"daily_rates_item_title", "daily_rates_item_info",
+					"daily_rates_value1", "daily_rates_value2" };
 			to = new int[] { R.id.daily_rates_item_img,
-					R.id.daily_rates_item_title, R.id.daily_rates_item_info,R.id.daily_rates_value1 ,R.id.daily_rates_value2 };
+					R.id.daily_rates_item_title, R.id.daily_rates_item_info,
+					R.id.daily_rates_value1, R.id.daily_rates_value2 };
 
 			adapter = new SimpleAdapter(this, fillMaps,
 					R.layout.listview_item_daily_rates2, from, to);
 		} else {
-			from = new String[] { "daily_rates_item_img", "daily_rates_item_title",
-					"daily_rates_item_info", "daily_rates_item_right" };
+			from = new String[] { "daily_rates_item_img",
+					"daily_rates_item_title", "daily_rates_item_info",
+					"daily_rates_item_right" };
 			to = new int[] { R.id.daily_rates_item_img,
 					R.id.daily_rates_item_title, R.id.daily_rates_item_info,
 					R.id.daily_rates_item_right };
@@ -66,9 +70,9 @@ public class DailyRatesActivity extends BaseActivity {
 			adapter = new SimpleAdapter(this, fillMaps,
 					R.layout.listview_item_daily_rates, from, to);
 		}
-		
+
 		lv.setAdapter(adapter);
-		
+
 		new RefreshDailyRatesAsyncTask().execute("");
 
 		initNavButton();
@@ -121,7 +125,8 @@ public class DailyRatesActivity extends BaseActivity {
 			public void onClick(View view) {
 				daily_rates_editText1.setText("");
 				InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-				imm.hideSoftInputFromWindow(daily_rates_editText1.getWindowToken(), 0);
+				imm.hideSoftInputFromWindow(
+						daily_rates_editText1.getWindowToken(), 0);
 			}
 		});
 	}
@@ -158,28 +163,29 @@ public class DailyRatesActivity extends BaseActivity {
 						String flag = listDailyRates.get(i).getCurrSym();
 						flag = flag.substring(0, 2);
 						flag = flag.toLowerCase();
-						if(getSharedPreferences("isLogin").equals("false")){
+						if (getSharedPreferences("isLogin").equals("false")) {
 							map.put("daily_rates_item_img",
 									"android.resource://com.hindvds.gmtmoney/"
 											+ getResources().getIdentifier(
 													"drawable/" + flag, null,
 													getPackageName()));
-							map.put("daily_rates_item_title", listDailyRates.get(i)
-									.getCurrSym());
-							map.put("daily_rates_item_info", listDailyRates.get(i)
-									.getCurText());
-							map.put("daily_rates_item_right", listDailyRates.get(i)
-									.getERate());
-						} else if(getSharedPreferences("isLogin").equals("true")){
+							map.put("daily_rates_item_title", listDailyRates
+									.get(i).getCurrSym());
+							map.put("daily_rates_item_info", listDailyRates
+									.get(i).getCurText());
+							map.put("daily_rates_item_right", listDailyRates
+									.get(i).getERate());
+						} else if (getSharedPreferences("isLogin").equals(
+								"true")) {
 							map.put("daily_rates_item_img",
 									"android.resource://com.hindvds.gmtmoney/"
 											+ getResources().getIdentifier(
 													"drawable/" + flag, null,
 													getPackageName()));
-							map.put("daily_rates_item_title", listDailyRates.get(i)
-									.getCurrSym());
-							map.put("daily_rates_item_info", listDailyRates.get(i)
-									.getCurText());
+							map.put("daily_rates_item_title", listDailyRates
+									.get(i).getCurrSym());
+							map.put("daily_rates_item_info", listDailyRates
+									.get(i).getCurText());
 							map.put("daily_rates_value1", listDailyRates.get(i)
 									.getERate());
 							map.put("daily_rates_value2", listDailyRates.get(i)
@@ -190,12 +196,12 @@ public class DailyRatesActivity extends BaseActivity {
 											+ getResources().getIdentifier(
 													"drawable/" + flag, null,
 													getPackageName()));
-							map.put("daily_rates_item_title", listDailyRates.get(i)
-									.getCurrSym());
-							map.put("daily_rates_item_info", listDailyRates.get(i)
-									.getCurText());
-							map.put("daily_rates_item_right", listDailyRates.get(i)
-									.getERate());
+							map.put("daily_rates_item_title", listDailyRates
+									.get(i).getCurrSym());
+							map.put("daily_rates_item_info", listDailyRates
+									.get(i).getCurText());
+							map.put("daily_rates_item_right", listDailyRates
+									.get(i).getERate());
 						}
 						fillMaps.add(map);
 						adapter.notifyDataSetChanged();

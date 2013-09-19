@@ -173,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/home_btn_cash"
                     android:layout_marginTop="5dp"
-                    android:text="Case Locations"
+                    android:text="Cash Locations"
                     android:textColor="#063860"
                     android:textStyle="bold" 
                     android:layout_centerHorizontal="true" />

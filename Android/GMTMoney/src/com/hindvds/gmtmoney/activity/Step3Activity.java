@@ -220,11 +220,11 @@ public class Step3Activity extends BaseActivity {
 						adapter.notifyDataSetChanged();
 					}
 				} else {
-					// showDialog("No Sullt");
+					// showDialog("No Result");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				// showDialog("No Sullt");
+				// showDialog("No Result");
 			}
 		}
 	}

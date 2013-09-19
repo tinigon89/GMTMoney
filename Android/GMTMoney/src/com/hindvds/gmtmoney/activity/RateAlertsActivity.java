@@ -319,7 +319,7 @@ public class RateAlertsActivity extends BaseActivity {
 				i.putExtra("name", "alerts");
 				startActivity(i);
 			} else {
-				showDialog("No Sullt");
+				showDialog("No Result");
 			}
 		}
 	}

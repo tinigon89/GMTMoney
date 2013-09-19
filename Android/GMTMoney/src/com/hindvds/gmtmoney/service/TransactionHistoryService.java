@@ -25,7 +25,6 @@ public class TransactionHistoryService {
 	public List<TransactionHistoryInfo> searchRemittance(String RegisterID, String index, String data) throws IllegalStateException, ClientProtocolException, IOException,JSONException {
 		data = URLEncoder.encode(data, "utf-8");
 		String json = getStringJson(String.format(Constant.kServer_Get_Search_Remitance, RegisterID, index, data), null);
-		Log.d("result", json);
 		return parseJson(json);
 	}
 	
@@ -49,6 +48,8 @@ public class TransactionHistoryService {
 			item.setBankName(String.valueOf(jsonUnit.get("BankName")));
 			item.setACNo(String.valueOf(jsonUnit.get("ACNo")));
 			item.setRDate(String.valueOf(jsonUnit.get("RDate")));
+			item.setPaymethod(String.valueOf(jsonUnit.get("Paymethod")));
+			item.setRState(String.valueOf(jsonUnit.get("RState")));
 			if(!jsonUnit.isNull("CurrSym")){
 				item.setCurrSym(String.valueOf(jsonUnit.get("CurrSym")));
 			} else {

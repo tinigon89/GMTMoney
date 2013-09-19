@@ -12,6 +12,8 @@
 	<color name="darkblue">#1E4576</color>
 	<color name="white">#FAFAFA</color>
 	<color name ="rightbutton">#8CA0AD</color>
+	<color name ="transactionRed">#ffbec4</color>
+	<color name ="transactionScreen">#ceffd6</color>
 	
 	
 </resources>

@@ -183,8 +183,8 @@ public class NewsActivity extends BaseActivity {
 		if (name.equals("transaction_history")) {
 			news_rates_title.setText("Transaction History");
 			news_rates_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
-			from = new String[] {"transaction_item_right1", "transaction_item_left1", "transaction_item_right2", "transaction_item_right3", "daily_rates_value1","daily_rates_value2","daily_rates_value3" ,"transaction_item_right4","transaction_item_right5"};
-			to = new int[] {R.id.transaction_item_right1, R.id.transaction_item_left1, R.id.transaction_item_right2, R.id.transaction_item_right3 , R.id.daily_rates_value1, R.id.daily_rates_value2, R.id.daily_rates_value3 , R.id.transaction_item_right4, R.id.transaction_item_right5};
+			from = new String[] {"transaction_item_bottom_right", "transaction_item_right1", "transaction_item_left1", "transaction_item_right2", "transaction_item_right3", "daily_rates_value1","daily_rates_value2","daily_rates_value3" ,"transaction_item_right4","transaction_item_right5"};
+			to = new int[] {R.id.transaction_item_bottom_right, R.id.transaction_item_right1, R.id.transaction_item_left1, R.id.transaction_item_right2, R.id.transaction_item_right3 , R.id.daily_rates_value1, R.id.daily_rates_value2, R.id.daily_rates_value3 , R.id.transaction_item_right4, R.id.transaction_item_right5};
 			adapter = new SimpleAdapter(this, fillMaps,
 					R.layout.listview_item_transaction, from, to);
 			lv.setAdapter(adapter);
@@ -195,13 +195,27 @@ public class NewsActivity extends BaseActivity {
 		if (name.equals("find_remittance")) {
 			news_rates_title.setText("Transaction List");
 			news_rates_btn_home.setBackgroundResource(R.drawable.btn_nav_back);
-			from = new String[] {"transaction_item_right1",  "transaction_item_left1", "transaction_item_right2", "transaction_item_right3", "daily_rates_value1","daily_rates_value2","daily_rates_value3" ,"transaction_item_right4","transaction_item_right5"};
-			to = new int[] {R.id.transaction_item_right1, R.id.transaction_item_left1, R.id.transaction_item_right2, R.id.transaction_item_right3 , R.id.daily_rates_value1, R.id.daily_rates_value2, R.id.daily_rates_value3 , R.id.transaction_item_right4, R.id.transaction_item_right5};
+			from = new String[] {"transaction_item_right_status_processed", "transaction_item_right_status_pendding", "transaction_item_image", "transaction_item_bottom_right", "transaction_item_right1", "transaction_item_left1", "transaction_item_right2", "transaction_item_right3", "daily_rates_value1","daily_rates_value2","daily_rates_value3" ,"transaction_item_right4","transaction_item_right5"};
+			to = new int[] {R.id.transaction_item_right_status_processed, R.id.transaction_item_right_status_pendding, R.id.transaction_item_image, R.id.transaction_item_bottom_right, R.id.transaction_item_right1, R.id.transaction_item_left1, R.id.transaction_item_right2, R.id.transaction_item_right3 , R.id.daily_rates_value1, R.id.daily_rates_value2, R.id.daily_rates_value3 , R.id.transaction_item_right4, R.id.transaction_item_right5};
 			adapter = new SimpleAdapter(this, fillMaps, R.layout.listview_item_transaction2, from, to);
 			lv.setAdapter(adapter);
 
 			for (int i = 0; i < listResultSearchRemittance.size(); i++) {
 				HashMap<String, String> map = new HashMap<String, String>();
+				if(listResultSearchRemittance.get(i).getRState().equals("1")){
+					map.put("transaction_item_image", "android.resource://com.hindvds.gmtmoney/" + R.drawable.item_listview_selector_red);
+					map.put("transaction_item_right_status_processed", "");
+					map.put("transaction_item_right_status_pendding", "PENDING");
+				} else {
+					map.put("transaction_item_image", "android.resource://com.hindvds.gmtmoney/" + R.drawable.item_listview_selector_screen);
+					map.put("transaction_item_right_status_processed", "PROCESSED");
+					map.put("transaction_item_right_status_pendding", "");
+				}
+				if(listResultSearchRemittance.get(i).getPaymethod().equals("2")){
+					map.put("transaction_item_bottom_right", "ACCOUNT DEPOSIT");
+				} else if(listResultSearchRemittance.get(i).getPaymethod().equals("1")){
+					map.put("transaction_item_bottom_right", "CASH PAYMENT");
+				}
 				map.put("transaction_item_right1", getDateFromMilli(listResultSearchRemittance.get(i).getRDate(), "MM/dd/yyyy hh:mm a"));
 				map.put("transaction_item_left1", "OTT" + listResultSearchRemittance.get(i).getRemitId());
 				map.put("transaction_item_right2", listResultSearchRemittance.get(i).getFName1() + " " + listResultSearchRemittance.get(i).getSurName1());
@@ -322,6 +336,11 @@ public class NewsActivity extends BaseActivity {
 			if (progress[0] == 1) {
 				for (int i = 0; i < listItems.size(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
+					if(listItems.get(i).getPaymethod().equals("2")){
+						map.put("transaction_item_bottom_right", "ACCOUNT DEPOSIT");
+					} else if(listItems.get(i).getPaymethod().equals("1")){
+						map.put("transaction_item_bottom_right", "CASH PAYMENT");
+					}
 					map.put("transaction_item_right1", getDateFromMilli(listItems.get(i).getRDate(), "MM/dd/yyyy hh:mm a"));
 					map.put("transaction_item_left1", "OTT" + listItems.get(i).getRemitId());
 					map.put("transaction_item_right2", listItems.get(i).getFName1() + " " + listItems.get(i).getSurName1());

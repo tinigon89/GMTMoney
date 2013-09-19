@@ -14,6 +14,8 @@ public class TransactionHistoryInfo {
 	private String ACNo;
 	private String CurrSym;
 	private String RDate;
+	private String Paymethod;
+	private String RState;
 	
 	public TransactionHistoryInfo() {
 		super();
@@ -22,7 +24,7 @@ public class TransactionHistoryInfo {
 	public TransactionHistoryInfo(String remitId, String fName1,
 			String surName1, String firstN, String surN, String payAmt,
 			String exRate, String forAmt, String bankName, String aCNo,
-			String currSym, String rDate) {
+			String currSym, String rDate, String paymethod, String rState) {
 		super();
 		RemitId = remitId;
 		FName1 = fName1;
@@ -36,6 +38,8 @@ public class TransactionHistoryInfo {
 		ACNo = aCNo;
 		CurrSym = currSym;
 		RDate = rDate;
+		Paymethod = paymethod;
+		RState = rState;
 	}
 
 	public String getRemitId() {
@@ -132,6 +136,22 @@ public class TransactionHistoryInfo {
 
 	public void setRDate(String rDate) {
 		RDate = rDate;
+	}
+
+	public String getPaymethod() {
+		return Paymethod;
+	}
+
+	public void setPaymethod(String paymethod) {
+		Paymethod = paymethod;
+	}
+
+	public String getRState() {
+		return RState;
+	}
+
+	public void setRState(String rState) {
+		RState = rState;
 	}
 	
 }
